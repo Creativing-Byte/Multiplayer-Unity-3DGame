@@ -55,10 +55,6 @@ public class Ganster : Player
             disparo.GetComponent<Fireball>().StatsP.velocidad = 0f;
         }
     }
-    void Desactivacion()
-    {
-
-    }
     IEnumerator Destrucion()
     {
         personaje.SetActive(false);

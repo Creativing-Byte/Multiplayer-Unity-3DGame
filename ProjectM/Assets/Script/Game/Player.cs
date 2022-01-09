@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IPunObservable
 {
-    [HideInInspector]
     public Stats Stats = new Stats();
-    [HideInInspector]
     public GameObject Destino;
 
     protected Animator MyAnim;
@@ -284,11 +282,8 @@ public class Player : MonoBehaviour, IPunObservable
     }
     void OnDrawGizmosSelected()
     {
-        if (Application.isEditor)
-        {
-            Gizmos.color = HaveenemyClose ? Color.green : Color.yellow;
-            Gizmos.DrawSphere(transform.position, Stats.Range);
-        }
+        Gizmos.color = HaveenemyClose ? Color.green : Color.yellow;
+        Gizmos.DrawSphere(transform.position, Stats.Range);
     }
     public virtual void CheckStatus()
     {

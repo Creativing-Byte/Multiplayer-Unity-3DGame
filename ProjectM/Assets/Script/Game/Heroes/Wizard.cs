@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Wizard : Player
 {
@@ -18,7 +20,9 @@ public class Wizard : Player
         Stats.vidacurrent = Stats.vidamax;
         AtaqueTimer = Stats.vataque;
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
+       
     }
+
     override public void Attack()
     {
         GameObject disparo;
@@ -46,13 +50,17 @@ public class Wizard : Player
         }
         else
         {
+            
             disparo = PhotonNetwork.Instantiate("Fireball", PosDisparo.transform.position, Quaternion.identity);
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
             disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
+            
+
         }
     }
+    
     override public void CheckStatus()
     {
         timerCheck += Time.deltaTime;
@@ -101,5 +109,5 @@ public class Wizard : Player
         {
             HaveenemyClose = false;
         }
-    } 
+    }
 }
