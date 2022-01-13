@@ -21,48 +21,22 @@ public class Ganster : Player
         AtaqueTimer = Stats.vataque;
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
     }
-    override public void Attack()
+    void LateUpdate()
     {
-        GameObject disparo;
-        SoundSfx();
-        if (SceneManager.GetActiveScene().name == "Tutorial")
+        if (Stats.vidacurrent <= 51)
         {
-            if (enemiesInRange > 1)
-            {
-                disparo = Instantiate(Tornado, PosDisparo.transform.position, transform.rotation);
-                disparo.GetComponent<Tornado>().StatsP.team = Stats.team;
-                disparo.GetComponent<Tornado>().StatsP.HitBoxRadious = 25;
-                disparo.GetComponent<Tornado>().StatsP.Objectivo = Stats.Objetivo;
-                disparo.GetComponent<Tornado>().StatsP.daño = Stats.ataque;
-                disparo.GetComponent<Tornado>().StatsP.velocidad = 100f;
-            }
-            else
-            {
-                disparo = Instantiate(Fireball, PosDisparo.transform.position, Quaternion.identity);
-                disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
-                disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
-                disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
-                disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
-            }
-
-        }
-        else
-        {
+            personaje.SetActive(false);
+            GameObject
             disparo = PhotonNetwork.Instantiate("Explosion", PosDisparo.transform.position, Quaternion.identity);
-            disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
-            disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
-            disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
-            disparo.GetComponent<Fireball>().StatsP.velocidad = 0f;
+            disparo.GetComponent<Explosion>().StatsP.HitBoxRadious = 10;
+            disparo.GetComponent<Explosion>().StatsP.Objectivo = Stats.Objetivo;
+            disparo.GetComponent<Explosion>().StatsP.daño = Stats.ataque;
+            disparo.GetComponent<Explosion>().StatsP.velocidad = 0f;
+            Stats.vidacurrent = 0;
+            
         }
     }
-    IEnumerator Destrucion()
-    {
-        personaje.SetActive(false);
-        vfxExplosion.SetActive(true);
-        yield return new WaitForSecondsRealtime(2);
-        Destroy(this.gameObject);
 
-    }
     override public void CheckStatus()
     {
         timerCheck += Time.deltaTime;
