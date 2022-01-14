@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 public class CardUI : MonoBehaviour
 {
     [HideInInspector] public Card card;
     [HideInInspector] public Image image;
     [HideInInspector] public Button button;
+    [HideInInspector] public Text Type;
 
     private void Start()
     {
