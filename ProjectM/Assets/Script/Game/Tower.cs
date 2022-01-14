@@ -1,4 +1,6 @@
-﻿using Photon.Pun;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Photon.Pun;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Tower : MonoBehaviour, IPunObservable
 {
     public Stats Stats = new Stats();
+    public GameObject destruccion;
 
     public GameObject BarraVida, balaOffline;
 
@@ -53,7 +56,7 @@ public class Tower : MonoBehaviour, IPunObservable
         {
             if (Stats.team.ToLower() == PhotonInit.MyTeam.ToLower())
             {
-                if(PhotonInit.MyTeam.ToLower().Equals("red"))
+                if (PhotonInit.MyTeam.ToLower().Equals("red"))
                     health.transform.localPosition = new Vector3(health.transform.localPosition.x, 4f, health.transform.localPosition.z);
                 else health.transform.localPosition = new Vector3(health.transform.localPosition.x, -4f, health.transform.localPosition.z);
             }
@@ -145,6 +148,8 @@ public class Tower : MonoBehaviour, IPunObservable
                 }
 
                 isDestroyed = true;
+                destruccion.SetActive(true);
+                PhotonNetwork.Instantiate("Explosion", this.transform.position, Quaternion.identity);
                 PhotonNetwork.Destroy(gameObject);
             }
 
@@ -275,5 +280,10 @@ public class Tower : MonoBehaviour, IPunObservable
         }
 
         BattleManager.instance.EndGame();
+    }
+    IEnumerator Explosion()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        PhotonNetwork.Destroy(gameObject);
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Photon.Pun;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -7,6 +9,7 @@ public class Player : MonoBehaviour, IPunObservable
 {
     public Stats Stats = new Stats();
     public GameObject Destino;
+    public Transform punchVFXpuntoi;
 
     protected Animator MyAnim;
 
@@ -36,7 +39,7 @@ public class Player : MonoBehaviour, IPunObservable
     public AudioClip Sfx;
 
     private bool firstLoad = true;
-
+    public GameObject punchVFX;
     [Space(10)]
     [SerializeField] private Healthbar health;
 
@@ -337,6 +340,19 @@ public class Player : MonoBehaviour, IPunObservable
         GetComponent<AudioSource>().clip = Sfx;
         GetComponent<AudioSource>().Play();
     }
+    public virtual void Punch()
+    {
+        
+        punchVFX=PhotonNetwork.Instantiate("Punch", punchVFXpuntoi.transform.position, Quaternion.Euler(90,0,0));
+        StartCoroutine("DestroyMIVfx");
+
+    }
+    public IEnumerator DestroyMIVfx()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        PhotonNetwork.Destroy(punchVFX);
+    }
+    
     //-------------------------------------------
     public virtual void Attack()
     {

@@ -60,7 +60,13 @@ public class Wizard : Player
 
         }
     }
-    
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("WizardAttack", punchVFXpuntoi.transform.position, Quaternion.identity);
+        StartCoroutine("DestroyMIVfx");
+    }
+
+
     override public void CheckStatus()
     {
         timerCheck += Time.deltaTime;
