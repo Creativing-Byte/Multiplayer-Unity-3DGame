@@ -180,7 +180,7 @@ public class DataManager : MonoBehaviour
     {
         BattleManager.DiceBet = diceBet;
 
-        if(diceBet > 0)
+        if (diceBet > 0)
         {
             var diceRef = FirebaseDatabase.DefaultInstance.GetReference("users").Child(Launcher.DatosUser.Key).Child("Date").Child("dice");
             if (int.Parse((await diceRef.GetValueAsync()).Value.ToString()) < diceBet)
