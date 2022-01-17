@@ -62,7 +62,7 @@ public class Wizard : Player
     }
     public override void Punch()
     {
-        punchVFX = PhotonNetwork.Instantiate("WizardAttack", punchVFXpuntoi.transform.position, Quaternion.identity);
+        punchVFX = PhotonNetwork.Instantiate("WizardAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
         StartCoroutine("DestroyMIVfx");
     }
 
