@@ -40,11 +40,11 @@ public class Skater : Player
         else
         {
             //arma.SetActive(true);
-            disparo = PhotonNetwork.Instantiate("Fireball", PosDisparo.transform.position, Quaternion.identity);
+            disparo = PhotonNetwork.Instantiate("Lata", PosDisparo.transform.position, Quaternion.identity);
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
-            disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
+            disparo.GetComponent<Fireball>().StatsP.velocidad = 10f;
             //StartCoroutine("ActiveArma");
         }
     }
