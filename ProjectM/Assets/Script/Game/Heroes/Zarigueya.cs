@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
+using UnityEngine.AI;
 
 public class Zarigueya : Player
 {
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("AnimalAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
+    }
     public override void attackEnemy()
     {
         AtaqueTimer += Time.deltaTime;

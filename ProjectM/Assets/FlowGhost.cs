@@ -19,6 +19,11 @@ public class FlowGhost :Player
         AtaqueTimer = Stats.vataque;
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
     }
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("FlowGhostRay", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
+    }
     override public void Attack()
     {
         GameObject disparo;

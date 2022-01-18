@@ -244,7 +244,84 @@ public class CardPlayer : MonoBehaviour
                         Reload.fillAmount = 1;
                         secondsCounter = Carta.time;
                     }
+                    switch (Carta.Prefabs)
+                    {
+                        case "Velociraptor":
+                            for (int i = 0; i < CartaPrebafs.Length; i++)
+                            {
+                                if (CartaPrebafs[i].name == Carta.Prefabs)
+                                {
+                                    if (poslanzamiento != Vector3.zero)
+                                    {
+                                        for (int x = 0; x < 2; x++)
+                                        {
+                                            Spawn = Instantiate(CartaPrebafs[i], poslanzamiento, Quaternion.identity);
+                                        }
+
+
+                                        Spawn.GetComponent<Velociraptors>().PosLanzamiento = poslanzamiento;
+                                        poslanzamiento = Vector3.zero;
+                                        foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
+                                        {
+                                            if (!m.enabled)
+                                                m.enabled = true;
+                                        }
+                                        LoadStats(Spawn);
+                                        GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
+                                        spawn -= 1;
+                                        if (spawn <= 0)
+                                        {
+                                            DeleteCard();
+                                        }
+                                        else
+                                        {
+                                            Reload.fillAmount = 1;
+                                            secondsCounter = Carta.time;
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            break;
+                        case "ZarigueyaPrefac":
+                            for (int i = 0; i < CartaPrebafs.Length; i++)
+                            {
+                                if (CartaPrebafs[i].name == Carta.Prefabs)
+                                {
+                                    if (poslanzamiento != Vector3.zero)
+                                    {
+                                        for (int x = 0; x < 2; x++)
+                                        {
+                                            Spawn = Instantiate(CartaPrebafs[i], poslanzamiento, Quaternion.identity);
+                                        }
+                                        Spawn.GetComponent<Velociraptors>().PosLanzamiento = poslanzamiento;
+                                        poslanzamiento = Vector3.zero;
+                                        foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
+                                        {
+                                            if (!m.enabled)
+                                                m.enabled = true;
+                                        }
+                                        LoadStats(Spawn);
+                                        GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
+                                        spawn -= 1;
+                                        if (spawn <= 0)
+                                        {
+                                            DeleteCard();
+                                        }
+                                        else
+                                        {
+                                            Reload.fillAmount = 1;
+                                            secondsCounter = Carta.time;
+                                        }
+                                    }
+                                    break;
+                                }
+
+                            }
+                            break;
+                    }
                 }
+
             }
         }
     }
@@ -328,6 +405,35 @@ public class CardPlayer : MonoBehaviour
                                 }
                                 LoadStats(Spawn);
                                 GetComponentInParent<PowerCardSystem>().Spawn(Carta.level*10);
+                                Carta.spawn -= 1;
+                                if (Carta.spawn <= 0)
+                                {
+                                    DeleteCard();
+                                }
+                                else
+                                {
+                                    Reload.fillAmount = 1;
+                                    secondsCounter = Carta.time;
+                                }
+                            }
+                            break;
+                        case "ZarigueyaPrefac":
+                            if (poslanzamiento != Vector3.zero)
+                            {
+                                Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, PosLanzamiento, Quaternion.identity);
+
+                                Throwable.GetComponent<ThrowableTrigger>().ObjectName = Spawn.gameObject.name;
+
+                                Spawn.GetComponent<Velociraptors>().PosLanzamiento = poslanzamiento;
+                                poslanzamiento = Vector3.zero;
+
+                                foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
+                                {
+                                    if (!m.enabled)
+                                        m.enabled = true;
+                                }
+                                LoadStats(Spawn);
+                                GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
                                 Carta.spawn -= 1;
                                 if (Carta.spawn <= 0)
                                 {

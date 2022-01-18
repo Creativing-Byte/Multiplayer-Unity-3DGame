@@ -23,7 +23,11 @@ public class DragonBaby : Player
         AtaqueTimer = Stats.vataque;
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
     }
-
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("DragonBabyFire", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
+    }
     override public void Attack()
     {
         GameObject disparo;

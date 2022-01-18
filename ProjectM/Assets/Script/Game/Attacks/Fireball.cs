@@ -2,12 +2,17 @@
 using System;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Fireball : MonoBehaviour
 {
     [HideInInspector]
     public StatsP StatsP = new StatsP();
     PhotonView myview;
+    public bool vfx;
+    public string vfxList;
+    public Transform instanciaVFX;
     void Start()
     {
         myview = GetComponent<PhotonView>();
@@ -62,7 +67,15 @@ public class Fireball : MonoBehaviour
                         if (myview.IsMine)
                         {
                             StatsP.Objectivo.GetComponent<PhotonView>().RPC("RecibirDanoRPC", RpcTarget.All, StatsP.daño);
-                            PhotonNetwork.Destroy(myview);
+                            if (vfx==true)
+                            {
+                                PhotonNetwork.Instantiate(vfxList,instanciaVFX.position,Quaternion.identity);
+                                PhotonNetwork.Destroy(myview);
+                            }
+                            else
+                            {
+                                PhotonNetwork.Destroy(myview);
+                            }
                         }
                     }
                     catch (NullReferenceException)
@@ -87,6 +100,12 @@ public class Fireball : MonoBehaviour
                 }
             }
         }
+    }
+    IEnumerator VfxActivador()
+    {
+        PhotonNetwork.Instantiate(vfxList, transform.transform.position, transform.rotation);
+        yield return new WaitForSecondsRealtime(1);
+        PhotonNetwork.Destroy(myview);
     }
     void OnDrawGizmosSelected()
     {

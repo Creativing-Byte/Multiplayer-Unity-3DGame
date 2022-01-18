@@ -1,4 +1,4 @@
-﻿
+﻿using Photon.Pun;
 using UnityEngine.AI;
 
 public class Velociraptor : Player
@@ -19,5 +19,10 @@ public class Velociraptor : Player
         Stats.Flying = GetComponentInParent<Velociraptors>().Stats.Flying;
 
         GetComponent<NavMeshAgent>().stoppingDistance = Stats.Range - 1f;
+    }
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("AnimalAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
     }
 }
