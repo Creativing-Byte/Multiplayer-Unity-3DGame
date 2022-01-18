@@ -305,6 +305,7 @@ MonoBehaviour:
     TipoFlying: 0
     Ground: 1
     Flying: 1
+  destruccion: {fileID: 0}
   BarraVida: {fileID: 8602738698150380907}
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -466,7 +467,7 @@ PrefabInstance:
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}
@@ -491,12 +492,12 @@ PrefabInstance:
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -215
+      value: -214
       objectReference: {fileID: 0}
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}

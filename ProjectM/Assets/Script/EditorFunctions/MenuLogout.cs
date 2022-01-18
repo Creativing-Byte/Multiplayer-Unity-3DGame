@@ -1,13 +1,11 @@
-﻿#if UNITY_EDITOR
+﻿
 using UnityEngine;
 using UnityEditor;
 using Firebase.Auth;
 
 public class MenuLogout : MonoBehaviour
 {
-    // Add a menu item named "Do Something" to MyMenu in the menu bar.
-    [MenuItem("Mis Funciones/ Logout Firebase")]
-    static void LogOut()
+    public void LogOut()
     {
         FirebaseAuth auth = FirebaseAuth.DefaultInstance;
         if(auth!=null)
@@ -48,4 +46,3 @@ public class MenuLogout : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 }
-#endif

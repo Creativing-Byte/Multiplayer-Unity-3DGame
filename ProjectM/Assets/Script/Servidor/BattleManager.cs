@@ -10,7 +10,8 @@ public class BattleManager : MonoBehaviour
     public static int DiceBet;
     public GameObject PanelWin, PanelEmpate, PanelLose;
     public GameObject endGamePanel;
-    public string opponentName;
+    public string opponentName, DestrezaOp;
+    public float opponentDestreza;
     GameObject Launcher;
     UserDbInit userDb;
     public bool isDraw = false;
@@ -37,7 +38,11 @@ public class BattleManager : MonoBehaviour
     {
         userId = PhotonNetwork.PlayerList.Where(x => (string)x.CustomProperties["UserId"] != userDb.DatosUser.Key).FirstOrDefault().CustomProperties["UserId"];
         opponentName = (string)(await FirebaseDatabase.DefaultInstance.GetReference($"users/{userId}/Date/username").GetValueAsync()).Value;
+        opponentDestreza = float.Parse((await FirebaseDatabase.DefaultInstance.GetReference($"users/{userId}/Date/destreza").GetValueAsync()).Value.ToString());
         GameObject.FindGameObjectWithTag("EnemyName").GetComponent<TextMeshProUGUI>().text = opponentName;
+        DestrezaOp = opponentDestreza.ToString(); 
+        GameObject.FindGameObjectWithTag("EnemyDestreza").GetComponent<TextMeshProUGUI>().text = DestrezaOp;
+
     }
 
     public async void EndGame()
