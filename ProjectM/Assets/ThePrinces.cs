@@ -21,6 +21,11 @@ public class ThePrinces : Player
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
 
     }
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("ThePrincesAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
+    }
 
     override public void Attack()
     {
