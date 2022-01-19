@@ -1,11 +1,13 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class Healthbar : MonoBehaviour
 {
     [SerializeField] private Sprite healthBarRed;
     [SerializeField] private Image healthbarBack;
     [SerializeField] private Image healthbarFill;
+    [SerializeField] public TextMeshProUGUI Amount;
     [SerializeField] private float healthMax = 100;
     [SerializeField] private float startingHealth = 100;
 
@@ -31,6 +33,7 @@ public class Healthbar : MonoBehaviour
         }
     }
 
+
     private void Start() => Set(startingHealth);
 
     public void SetColor(bool isMine)
@@ -45,7 +48,7 @@ public class Healthbar : MonoBehaviour
             if (PhotonInit.MyTeam.ToLower() == "blue")
                 healthbarFill.sprite = healthBarRed;
         }
-    }    
+    }
 
     public void Set(float health)
     {
@@ -53,7 +56,16 @@ public class Healthbar : MonoBehaviour
         healthbarFill.fillAmount = healthMax / hp;
     }
 
+    private void Update()
+    {
+        float Amoun = healthbarFill.fillAmount * 1000;
+        Amount.text = Amoun.ToString();
+
+    }
+
+
     public void Damage(float amount) => healthbarFill.fillAmount -= amount / healthMax;
-    
+
     public void Heal(float amount) => healthbarFill.fillAmount += amount / healthMax;
+
 }

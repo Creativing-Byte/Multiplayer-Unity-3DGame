@@ -16,6 +16,7 @@ public class DataManager : MonoBehaviour
     public TextMeshProUGUI TextLoading;
     public LobbyControl Lobbycontrol;
     public Text username;
+    public Image progress;
 
     [Header("User Exp System")]
     public Image BarExp;
@@ -82,9 +83,12 @@ public class DataManager : MonoBehaviour
         //    }
         //}
 
+
+
         VersionInfo.text = "Version: " + Application.version;
         float Range = 1.0f / ExpMax * ExpCurrent;
         BarExp.fillAmount = Range;
+        progress.fillAmount = float.Parse(Launcher.DatosUser.Child("Date").Child("destreza").Value.ToString())/20;
 
         Exp.text = ExpCurrent + "/" + ExpMax;
         Exp.gameObject.transform.GetChild(0).GetComponent<Text>().text = Exp.text;

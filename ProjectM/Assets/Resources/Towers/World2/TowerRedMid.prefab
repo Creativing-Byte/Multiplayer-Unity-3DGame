@@ -438,6 +438,7 @@ MonoBehaviour:
   healthBarRed: {fileID: 21300000, guid: 63e4ea33590fee24d8160f23f885b208, type: 3}
   healthbarBack: {fileID: 6925851196087028605}
   healthbarFill: {fileID: 8702357986870811588}
+  Amount: {fileID: 0}
   healthMax: 100
   startingHealth: 100
 --- !u!114 &3380997584125127152
@@ -692,6 +693,7 @@ MonoBehaviour:
     TipoFlying: 0
     Ground: 1
     Flying: 1
+  destruccion: {fileID: 0}
   BarraVida: {fileID: 3449945998971994854}
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -1226,7 +1228,7 @@ PrefabInstance:
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}
@@ -1251,12 +1253,12 @@ PrefabInstance:
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -219
+      value: -229.5
       objectReference: {fileID: 0}
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4
+      value: 16.7
       objectReference: {fileID: 0}
     - target: {fileID: 8317092727986689856, guid: e842e5862359a5240a31e151f96b0fcd,
         type: 3}

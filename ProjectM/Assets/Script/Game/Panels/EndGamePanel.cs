@@ -4,6 +4,9 @@ using TMPro;
 
 public class EndGamePanel : MonoBehaviour
 {
+    [Header("UI Config")]
+    [SerializeField] private GameObject Battle;
+
     [Header("Mine")]
     [SerializeField] private TMP_Text nameMine;
     [SerializeField] private TMP_Text teamMine;
@@ -36,6 +39,9 @@ public class EndGamePanel : MonoBehaviour
 
     private void OnEnable()
     {
+        Battle = GameObject.FindGameObjectWithTag("GameInterface");
+        Battle.SetActive(false);
+
         btnOK.onClick.AddListener(() =>
         {
             BattleManager.instance.BackToLobby();
@@ -52,12 +58,12 @@ public class EndGamePanel : MonoBehaviour
         teamColorMine.sprite = teamColor == "red" ? sprRed : sprBlue;
         nameMine.text = name;
         teamMine.text = string.IsNullOrEmpty(team) ? "NO TEAM" : team;
-        teamMine.color = teamColor == "red" ? colRed : colBlue;
+        nameMine.color = teamColor == "red" ? colRed : colBlue;
 
         teamColorOpponent.sprite = teamColor == "red" ? sprBlue: sprRed;
         nameOpponent.text = opponentName;
         teamOpponent.text = string.IsNullOrEmpty(teamEnemy) ? "NO TEAM" : teamEnemy;
-        teamOpponent.color = teamColor == "red" ? colBlue : colRed;
+        nameOpponent.color = teamColor == "red" ? colBlue : colRed;
 
         for (int i = 0; i < 3; ++i)
         {
