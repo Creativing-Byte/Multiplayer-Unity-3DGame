@@ -14,6 +14,7 @@ public class DataManager : MonoBehaviour
     [Header("User data Hud")]
     public Text[] Divisas; // 0 trofeos, 1 monedas, 2 diamantes
     public TextMeshProUGUI TextLoading;
+    public TextMeshProUGUI[] CasinoDivisas; // 0 tokens, 1 Etokens 
     public LobbyControl Lobbycontrol;
     public Text username;
     public Image progress;
@@ -52,6 +53,9 @@ public class DataManager : MonoBehaviour
         Divisas[0].text = Launcher.DatosUser.Child("Date").Child("destreza").Value.ToString();
         Divisas[1].text = Launcher.DatosUser.Child("Date").Child("coins").Value.ToString();
         Divisas[2].text = Launcher.DatosUser.Child("Date").Child("diamond").Value.ToString();
+
+        CasinoDivisas[0].text = Launcher.DatosUser.Child("Date").Child("tokens").Value.ToString();
+        CasinoDivisas[1].text = Launcher.DatosUser.Child("Date").Child("Etokens").Value.ToString();
 
         username.text = Launcher.DatosUser.Child("Date").Child("username").Value.ToString();
         username.gameObject.transform.GetChild(0).GetComponent<Text>().text = username.text;
@@ -157,6 +161,14 @@ public class DataManager : MonoBehaviour
             {
                 UserDataRef.Child("diamond").SetValueAsync(0);
             }
+            if (int.Parse(args.Snapshot.Child("tokens").Value.ToString()) < 0)
+            {
+                UserDataRef.Child("tokens").SetValueAsync(0);
+            }
+            if (int.Parse(args.Snapshot.Child("Etokens").Value.ToString()) < 0)
+            {
+                UserDataRef.Child("Etokens").SetValueAsync(0);
+            }
             if (int.Parse(args.Snapshot.Child("dice").Value.ToString()) < 0)
             {
                 UserDataRef.Child("dice").SetValueAsync(0);
@@ -164,6 +176,11 @@ public class DataManager : MonoBehaviour
             Divisas[0].text = args.Snapshot.Child("destreza").Value.ToString();
             Divisas[1].text = args.Snapshot.Child("coins").Value.ToString();
             Divisas[2].text = args.Snapshot.Child("diamond").Value.ToString();
+
+            CasinoDivisas[0].text = args.Snapshot.Child("tokens").Value.ToString();
+            CasinoDivisas[1].text = args.Snapshot.Child("Etokens").Value.ToString();
+
+
             username.text = args.Snapshot.Child("username").Value.ToString();
 
             gift = int.Parse(args.Snapshot.Child("gift").Value.ToString());

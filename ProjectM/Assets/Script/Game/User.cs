@@ -6,6 +6,8 @@ public class User
     public int destreza;
     public int coins;
     public int diamond;
+    public int tokens;
+    public int Etokens;
     public string ultcon;
     public string scene;
     public string deckid;
@@ -19,13 +21,15 @@ public class User
     {
     }
 
-    public User(string username, string email, int destreza, int coins, int diamond, string ultcon, string scene, string deckid, int level, int exp, int dice, int gift, string giftUnlocked, List<string> friends)
+    public User(string username, string email, int destreza, int coins, int diamond, int tokens, int Etokens, string ultcon, string scene, string deckid, int level, int exp, int dice, int gift, string giftUnlocked, List<string> friends)
     {
         this.username = username;
         this.email = email;
         this.destreza = destreza;
         this.coins = coins;
         this.diamond = diamond;
+        this.tokens = tokens;
+        this.Etokens = Etokens;
         this.ultcon = ultcon;
         this.scene = scene;
         this.deckid = deckid;
