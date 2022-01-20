@@ -56,7 +56,7 @@ public class DropSlotDeckManager : MonoBehaviour
             itemdragging.GetComponent<Image>().enabled = false;
         }
     }
-    async void UpdateCardsToCards()
+    void UpdateCardsToCards()
     {
         cardold = GetComponent<CardInfo>().Carta;
         cardnew = itemdragging.GetComponent<CardInfo>().Carta;

@@ -11,8 +11,8 @@ public class LoginRegistre : MonoBehaviour
 {
     public InputField[] LoginRegistreInput; //0 email, 1 password, 2 email, 3 username, 4 password, 5 re-password, 6 email recovery
     public Button[] ButtonLoginRegistre; // 0 login, 1 registre, 2 Recovery;
-    public TextMeshProUGUI[] Errormsg; // 0 login, 1 registre,
-    public GameObject[] Advertencia;// 0 login, 1 registre,
+    public TextMeshProUGUI[] Errormsg; // 0 login, 1 registre, 2 recovery
+    public GameObject[] Advertencia;// 0 login, 1 registre, 2 Recovery
 
     int seconds;
     float secondsF;
@@ -33,14 +33,15 @@ public class LoginRegistre : MonoBehaviour
                 if (task.IsCanceled)
                 {
                     Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
-                    msgerror(0, "Error de conexion, Intente nuevamente.");
+                    msgerror(0,"Error de conexion, Intente nuevamente.");
                     ButtonLoginRegistre[0].interactable = true;
                     return;
                 }
                 if (task.IsFaulted)
                 {
                     Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
-                    msgerror(0, "Correo o contraseña incorrecta, por favor verifique");
+                    const string Msg = "Correo o contraseña incorrecta, por favor verifique";
+                    msgerror(0, Msg);
                     ButtonLoginRegistre[0].interactable = true;
                     return;
                 }
@@ -66,14 +67,14 @@ public class LoginRegistre : MonoBehaviour
                     if (task.IsCanceled)
                     {
                         Debug.LogError("CreateUserWithEmailAndPasswordAsync was canceled.");
-                        msgerror(1, "Error de conexion, Intente nuevamente.");
+                        msgerror(1,"Error de conexion, Intente nuevamente.");
                         ButtonLoginRegistre[1].interactable = true;
                         return null;
                     }
                     if (task.IsFaulted)
                     {
                         Debug.LogError(task.Exception);
-                        msgerror(1, "Correo actualmente en uso, por favor verifique");
+                        msgerror(1,"Correo actualmente en uso, por favor verifique");
                         ButtonLoginRegistre[1].interactable = true;
                         return null;
                     }
@@ -89,19 +90,19 @@ public class LoginRegistre : MonoBehaviour
                     string deck1 = Guid.NewGuid().ToString();
                     GameObject Launcher = GameObject.FindGameObjectWithTag("Launcher");
                     var userDb = Launcher.GetComponent<UserDbInit>();
-                    await userDb.writeNewUser(user.UserId, LoginRegistreInput[3].text, user.Email, 50, 50, 50, DateTime.UtcNow.ToString("MM'/'dd'/'yyyy' 'HH':'mm':'ss"), "Tutorial", deck1, deck1, Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), carta, friends);
+                    await userDb.writeNewUser(user.UserId, LoginRegistreInput[3].text, user.Email, 50, 50, 50, 0, 0, DateTime.UtcNow.ToString("MM'/'dd'/'yyyy' 'HH':'mm':'ss"), "Tutorial", deck1, deck1, Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), carta, friends);
                     userDb.reloadDate();
                 }
             }
             else
             {
-                msgerror(1, "Las contrasenas no coinciden");
+                msgerror(1,"Las contrasenas no coinciden");
                 ButtonLoginRegistre[0].interactable = true;
                 ButtonLoginRegistre[1].interactable = true;
             }
         }
     }
-    public void RecoveryPassword(FirebaseAuth auth) // 6.B.C) Funcion de registro de usuario : Finaliza el Flujo;
+    public void RecoveryPassword(FirebaseAuth auth)// 6.B.C) Funcion de registro de usuario : Finaliza el Flujo;
     {
         if (emailverify(LoginRegistreInput[6].text, 2))
         {
@@ -121,7 +122,7 @@ public class LoginRegistre : MonoBehaviour
                 ButtonLoginRegistre[1].interactable = true;
                 ButtonLoginRegistre[2].interactable = true;
                 blankspace();
-                msgerror(2, "Password reset email sent successfully.");
+                msgerror(2,"Password reset email sent successfully.");
                 Debug.Log("Password reset email sent successfully.");
             });
         }
