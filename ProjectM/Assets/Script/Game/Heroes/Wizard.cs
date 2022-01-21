@@ -56,8 +56,6 @@ public class Wizard : Player
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
             disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
-            
-
         }
     }
     public override void Punch()

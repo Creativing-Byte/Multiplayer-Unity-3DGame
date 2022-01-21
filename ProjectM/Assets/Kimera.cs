@@ -48,12 +48,18 @@ public class Kimera : Player
         }
         else
         {
-            disparo = PhotonNetwork.Instantiate("Fireball", PosDisparo.transform.position, Quaternion.identity);
+            disparo = PhotonNetwork.Instantiate("TimeStop", PosDisparo.transform.position, Quaternion.identity);
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
-            disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
+            disparo.GetComponent<Fireball>().StatsP.daño = 0;
             disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
         }
+
+    }
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("KimeraAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
     }
     override public void CheckStatus()
     {

@@ -1085,6 +1085,7 @@ MonoBehaviour:
   healthBarRed: {fileID: 21300000, guid: 63e4ea33590fee24d8160f23f885b208, type: 3}
   healthbarBack: {fileID: 569316101818959778}
   healthbarFill: {fileID: 2333309375926766946}
+  Amount: {fileID: 0}
   healthMax: 100
   startingHealth: 100
 --- !u!114 &3778123942018266553
@@ -2337,6 +2338,7 @@ GameObject:
   - component: {fileID: 7829326153401886124}
   - component: {fileID: 1131603234799152227}
   - component: {fileID: 5964714494410714955}
+  - component: {fileID: -5504129918455175846}
   m_Layer: 10
   m_Name: DwarfPrefac
   m_TagString: Untagged
@@ -2633,6 +2635,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5504129918455175846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6765607014864517722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17c3b1e58bacf342a25fe8815039cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  myBrain: {fileID: 0}
+  playerRB: {fileID: 0}
 --- !u!1 &6791363350270617226
 GameObject:
   m_ObjectHideFlags: 0

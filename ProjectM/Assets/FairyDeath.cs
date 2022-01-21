@@ -20,7 +20,7 @@ public class FairyDeath : MonoBehaviour
                     if (Compañero != null && Compañero.Stats.team == Stats.team)
                     {
                         Stats.Objetivo = Compañero.gameObject;
-                        Compañero.Stats.vidacurrent += Compañero.Stats.vidacurrent + 10;
+                        Compañero.Stats.vidacurrent = Compañero.Stats.vidacurrent + 10;
                         return;
                     }
                 }

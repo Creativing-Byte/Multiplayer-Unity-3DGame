@@ -347,12 +347,30 @@ public class Player : MonoBehaviour, IPunObservable
         StartCoroutine("DestroyMIVfx");
 
     }
+
     public IEnumerator DestroyMIVfx()
     {
         yield return new WaitForSecondsRealtime(1);
         PhotonNetwork.Destroy(punchVFX);
     }
-    
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "TimeStop")
+        {
+            StartCoroutine("TimeStoped");
+        }
+    }
+    [PunRPC]
+    IEnumerator TimeStoped()
+    {
+        Stats.Objetivo = null;
+        Stats.velocidad = 0;
+        Stats.Range = 0;
+        yield return new WaitForSecondsRealtime(2);
+        Stats = new Stats();
+
+    }
+
     //-------------------------------------------
     public virtual void Attack()
     {

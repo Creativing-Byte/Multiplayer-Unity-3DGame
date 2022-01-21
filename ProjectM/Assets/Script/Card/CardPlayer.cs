@@ -8,9 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class CardPlayer : MonoBehaviour
 {
+    public GameObject vfxSpawn;
+
     [HideInInspector]
     public Card Carta = new Card();
-
     [HideInInspector]
     public bool start, elixir;
 
@@ -20,7 +21,6 @@ public class CardPlayer : MonoBehaviour
     [HideInInspector]
     public GameObject Launcher, Portal;
 
-    [HideInInspector]
     public string team;
     [HideInInspector]
     public Image Reload;
@@ -58,6 +58,7 @@ public class CardPlayer : MonoBehaviour
         Camera = GetComponentInParent<Camera>();
         Marco = transform.parent.gameObject;
         Reload = transform.GetChild(0).GetComponent<Image>();
+      
 
         endpoint = transform.position;
         endScale = transform.localScale;
@@ -223,8 +224,17 @@ public class CardPlayer : MonoBehaviour
                 {
                     GameObject Spawn;
                     SpawnSfx();
-
-                    Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+                    if (team=="Red")
+                    {
+                        Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.Euler(0,180,0));
+                        
+                    }
+                    else
+                    {
+                        Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+                    }
+                    print(team);
+                    vfxSpawn = PhotonNetwork.Instantiate("spawn", poslanzamiento, Quaternion.Euler(90, 0, 0));
 
                     foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
                     {
@@ -247,76 +257,63 @@ public class CardPlayer : MonoBehaviour
                     switch (Carta.Prefabs)
                     {
                         case "Velociraptor":
-                            for (int i = 0; i < CartaPrebafs.Length; i++)
+                            GameObject Spawnv1;
+                            GameObject Spawnv2;
+                            GameObject Spawnv3;
+
+                            SpawnSfx();
+
+                            Spawnv1 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+                            Spawnv2 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+                            Spawnv3 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+
+                            foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
                             {
-                                if (CartaPrebafs[i].name == Carta.Prefabs)
-                                {
-                                    if (poslanzamiento != Vector3.zero)
-                                    {
-                                        for (int x = 0; x < 2; x++)
-                                        {
-                                            Spawn = Instantiate(CartaPrebafs[i], poslanzamiento, Quaternion.identity);
-                                        }
+                                if (!m.enabled)
+                                    m.enabled = true;
+                            }
 
-
-                                        Spawn.GetComponent<Velociraptors>().PosLanzamiento = poslanzamiento;
-                                        poslanzamiento = Vector3.zero;
-                                        foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
-                                        {
-                                            if (!m.enabled)
-                                                m.enabled = true;
-                                        }
-                                        LoadStats(Spawn);
-                                        GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
-                                        spawn -= 1;
-                                        if (spawn <= 0)
-                                        {
-                                            DeleteCard();
-                                        }
-                                        else
-                                        {
-                                            Reload.fillAmount = 1;
-                                            secondsCounter = Carta.time;
-                                        }
-                                    }
-                                    
-                                }
+                            LoadStats(Spawn);
+                            GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
+                            Carta.spawn -= 1;
+                            if (Carta.spawn <= 0)
+                            {
+                                DeleteCard();
+                            }
+                            else
+                            {
+                                Reload.fillAmount = 1;
+                                secondsCounter = Carta.time;
                             }
                             break;
                         case "ZarigueyaPrefac":
-                            for (int i = 0; i < CartaPrebafs.Length; i++)
-                            {
-                                if (CartaPrebafs[i].name == Carta.Prefabs)
-                                {
-                                    if (poslanzamiento != Vector3.zero)
-                                    {
-                                        for (int x = 0; x < 2; x++)
-                                        {
-                                            Spawn = Instantiate(CartaPrebafs[i], poslanzamiento, Quaternion.identity);
-                                        }
-                                        Spawn.GetComponent<Velociraptors>().PosLanzamiento = poslanzamiento;
-                                        poslanzamiento = Vector3.zero;
-                                        foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
-                                        {
-                                            if (!m.enabled)
-                                                m.enabled = true;
-                                        }
-                                        LoadStats(Spawn);
-                                        GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
-                                        spawn -= 1;
-                                        if (spawn <= 0)
-                                        {
-                                            DeleteCard();
-                                        }
-                                        else
-                                        {
-                                            Reload.fillAmount = 1;
-                                            secondsCounter = Carta.time;
-                                        }
-                                    }
-                                    break;
-                                }
+                            GameObject Spawnz1;
+                            GameObject Spawnz2;
+                            GameObject Spawnz3;
 
+                            SpawnSfx();
+
+                            Spawnz1 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+                            Spawnz2 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+                            Spawnz3 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+
+                            foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
+                            {
+                                if (!m.enabled)
+                                    m.enabled = true;
+                            }
+
+                            LoadStats(Spawn);
+                            GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
+                            Carta.spawn -= 1;
+                            if (Carta.spawn <= 0)
+                            {
+                                DeleteCard();
+                            }
+                            else
+                            {
+                                Reload.fillAmount = 1;
+                                secondsCounter = Carta.time;
                             }
                             break;
                     }

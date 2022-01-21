@@ -19,7 +19,7 @@ public class CardLoaded : MonoBehaviour
 
     [HideInInspector]
     public List<Card> Cartas;
-    [HideInInspector]
+   
     public string team;
 
     private List<CardPlayer> drawingCardsAnimated = new List<CardPlayer>();

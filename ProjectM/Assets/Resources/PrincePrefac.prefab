@@ -2180,6 +2180,7 @@ GameObject:
   - component: {fileID: 3482364774602269526}
   - component: {fileID: 3482364774602269527}
   - component: {fileID: 3482364774602269512}
+  - component: {fileID: 3640081774810108987}
   m_Layer: 10
   m_Name: PrincePrefac
   m_TagString: Untagged
@@ -2482,6 +2483,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.124716, y: 6.206019, z: 2.3929064}
   m_Center: {x: 0.16453482, y: -0.40083364, z: -0.030400751}
+--- !u!114 &3640081774810108987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482364774602269513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17c3b1e58bacf342a25fe8815039cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  myBrain: {fileID: 0}
+  playerRB: {fileID: 0}
 --- !u!1 &3482364774641130650
 GameObject:
   m_ObjectHideFlags: 0
