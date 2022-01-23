@@ -22,7 +22,11 @@ public class TheLord : Player
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
 
     }
-
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("ZeusAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
+    }
     override public void Attack()
     {
         GameObject disparo;

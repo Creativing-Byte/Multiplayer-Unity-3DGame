@@ -11,7 +11,7 @@ public class Archer : Player
     public int enemiesInRange = 0;
     public GameObject PosDisparo;
     public GameObject Fireball;
-    //public GameObject arma;
+    public GameObject arma;
     void Start()
     {
         MyBrain = GetComponent<NavMeshAgent>();
@@ -39,14 +39,22 @@ public class Archer : Player
         }
         else
         {
-            //arma.SetActive(true);
-            disparo = PhotonNetwork.Instantiate("Fireball", PosDisparo.transform.position, Quaternion.identity);
+            
+            disparo = PhotonNetwork.Instantiate("FlechaArcher", PosDisparo.transform.position, Quaternion.identity);
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
-            disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
-            //StartCoroutine("ActiveArma");
+            disparo.GetComponent<Fireball>().StatsP.velocidad = 10f;
+            
         }
+    }
+    public void FlechaActiva()
+    {
+        arma.SetActive(true);
+    }
+    public void FlechaDesactiva()
+    {
+        arma.SetActive(false);
     }
 
     override public void CheckStatus()

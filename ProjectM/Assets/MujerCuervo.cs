@@ -22,6 +22,11 @@ public class MujerCuervo : Player
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
 
     }
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("PoisonZone", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
+    }
 
     override public void Attack()
     {

@@ -21,6 +21,11 @@ public class Zeus : Player
         AtaqueTimer = Stats.vataque;
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
     }
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("ZeusAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
+    }
     override public void Attack()
     {
         GameObject disparo;
@@ -48,8 +53,8 @@ public class Zeus : Player
         }
         else
         {
-            disparo = PhotonNetwork.Instantiate("Fireball", PosDisparo.transform.position, Quaternion.identity);
-            disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
+            disparo = PhotonNetwork.Instantiate("ZeusAttackGeneral", PosDisparo.transform.position, Quaternion.identity);
+            disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 10;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
             disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
