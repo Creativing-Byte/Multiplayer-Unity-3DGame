@@ -44,7 +44,7 @@ public class Archer : Player
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
-            disparo.GetComponent<Fireball>().StatsP.velocidad = 10f;
+            disparo.GetComponent<Fireball>().StatsP.velocidad = 50f;
             
         }
     }

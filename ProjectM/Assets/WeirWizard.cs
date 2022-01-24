@@ -21,7 +21,11 @@ public class WeirWizard : Player
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
 
     }
-
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("WeirdWizardZone", punchVFXpuntoi.transform.position, Quaternion.identity);
+        StartCoroutine("DestroyMIVfx");
+    }
     override public void Attack()
     {
         GameObject disparo;
@@ -50,7 +54,7 @@ public class WeirWizard : Player
         else
         {
 
-            disparo = PhotonNetwork.Instantiate("WeirdWizard", PosDisparo.transform.position, Quaternion.identity);
+            disparo = PhotonNetwork.Instantiate("FireBall", PosDisparo.transform.position, Quaternion.identity);
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 8;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;

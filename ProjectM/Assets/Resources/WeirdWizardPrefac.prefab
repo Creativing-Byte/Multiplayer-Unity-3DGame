@@ -1042,6 +1042,7 @@ Transform:
   - {fileID: 2178662541453596261}
   - {fileID: 6670174222237361933}
   - {fileID: 7148341486966043878}
+  - {fileID: 3095713149441361291}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1090,7 +1091,7 @@ MonoBehaviour:
     Ground: 0
     Flying: 0
   Destino: {fileID: 0}
-  punchVFXpuntoi: {fileID: 0}
+  punchVFXpuntoi: {fileID: 3095713149441361291}
   attackminions: 1
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -1693,6 +1694,36 @@ Transform:
   m_Father: {fileID: 7587086574236298830}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -19.58041, y: 48.274456, z: -12.607311}
+--- !u!1 &6364994956727969978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3095713149441361291}
+  m_Layer: 10
+  m_Name: PostVFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3095713149441361291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6364994956727969978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3795535854744163767}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6591793622648928797
 GameObject:
   m_ObjectHideFlags: 0

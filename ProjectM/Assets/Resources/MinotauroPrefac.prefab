@@ -638,6 +638,7 @@ MonoBehaviour:
   healthBarRed: {fileID: 21300000, guid: 63e4ea33590fee24d8160f23f885b208, type: 3}
   healthbarBack: {fileID: 4124647027059787139}
   healthbarFill: {fileID: 2481031056124166212}
+  Amount: {fileID: 0}
   healthMax: 100
   startingHealth: 100
 --- !u!114 &5128100325307899008
@@ -729,6 +730,7 @@ GameObject:
   - component: {fileID: 4116287654762630789}
   - component: {fileID: 9208588780340604045}
   - component: {fileID: 1796650359396505989}
+  - component: {fileID: 7579060885719816825}
   m_Layer: 10
   m_Name: MinotauroPrefac
   m_TagString: Untagged
@@ -1041,6 +1043,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2809792, y: 3.4854245, z: 4.0189857}
   m_Center: {x: -0.04965782, y: -0.15670002, z: 0.41046917}
+--- !u!114 &7579060885719816825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377864617499124834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99da1b711784d374d9f114f147d72b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miView: {fileID: 0}
 --- !u!1 &1852410288012887712
 GameObject:
   m_ObjectHideFlags: 0

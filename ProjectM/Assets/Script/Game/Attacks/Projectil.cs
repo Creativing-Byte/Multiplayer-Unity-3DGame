@@ -8,6 +8,9 @@ public class Projectil : MonoBehaviour
     [HideInInspector]
     public StatsP StatsP = new StatsP();
     PhotonView myview;
+    public bool vfx;
+    public string vfxList;
+    public Transform instanciaVFX;
     void Start()
     {
         myview = GetComponent<PhotonView>();
@@ -61,7 +64,15 @@ public class Projectil : MonoBehaviour
                         if (myview.IsMine)
                         {
                             StatsP.Objectivo.GetComponent<PhotonView>().RPC("RecibirDanoRPC", RpcTarget.All, StatsP.daño);
-                            PhotonNetwork.Destroy(myview);
+                            if (vfx == true)
+                            {
+                                PhotonNetwork.Instantiate(vfxList, instanciaVFX.position, Quaternion.identity);
+                                PhotonNetwork.Destroy(myview);
+                            }
+                            else
+                            {
+                                PhotonNetwork.Destroy(myview);
+                            }
                         }
                     }
                     catch (NullReferenceException)

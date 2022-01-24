@@ -13,6 +13,7 @@ public class Minotauro : Player
         punchVFX = PhotonNetwork.Instantiate("MamutPunch", punchVFXpuntoi.transform.position, Quaternion.identity);
         StartCoroutine("DestroyMIVfx");
     }
+
     override public void CheckStatus()
     {
         timerCheck += Time.deltaTime;
