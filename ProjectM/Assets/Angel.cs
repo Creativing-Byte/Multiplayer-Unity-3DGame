@@ -50,7 +50,7 @@ public class Angel : Player
         else
         {
 
-            disparo = PhotonNetwork.Instantiate("AngelAttack", PosDisparo.transform.position, PosDisparo.transform.rotation);
+            disparo = PhotonNetwork.Instantiate("AngelAttack", PosDisparo.transform.position, Quaternion.identity);
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;

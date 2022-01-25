@@ -24,7 +24,7 @@ public class TheLord : Player
     }
     public override void Punch()
     {
-        punchVFX = PhotonNetwork.Instantiate("ZeusAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        punchVFX = PhotonNetwork.Instantiate("FirelordShoot", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
         StartCoroutine("DestroyMIVfx");
     }
     override public void Attack()

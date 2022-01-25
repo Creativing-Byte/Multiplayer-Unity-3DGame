@@ -23,7 +23,7 @@ public class WeirWizard : Player
     }
     public override void Punch()
     {
-        punchVFX = PhotonNetwork.Instantiate("WeirdWizardZone", punchVFXpuntoi.transform.position, Quaternion.identity);
+        punchVFX = PhotonNetwork.Instantiate("WeirdWizardZone", punchVFXpuntoi.transform.position, punchVFXpuntoi.transform.rotation);
         StartCoroutine("DestroyMIVfx");
     }
     override public void Attack()
