@@ -22,13 +22,7 @@ public class Fairy :Player
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
 
     }
-    void Update()
-    {
-        if (Stats.vidacurrent<=0)
-        {
-            PhotonNetwork.Instantiate("FairyDeath", transform.position, Quaternion.identity);
-        }
-    }
+
 
     override public void Attack()
     {
