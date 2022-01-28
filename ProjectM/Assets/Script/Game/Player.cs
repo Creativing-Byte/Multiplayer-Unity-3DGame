@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IPunObservable
 {
+    public Vector3 posInicial;
     public Stats Stats = new Stats();
     public GameObject Destino;
     public Transform punchVFXpuntoi;
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour, IPunObservable
 
     void Start()
     {
+        posInicial = transform.position;
         TryGetComponent(out MyBrain);
         TryGetComponent(out MyView);
         TryGetComponent(out MyAnim);
