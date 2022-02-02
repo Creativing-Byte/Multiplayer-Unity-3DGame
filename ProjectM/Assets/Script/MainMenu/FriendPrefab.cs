@@ -6,8 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class FriendPrefab : MonoBehaviour
 {
-    public TextMeshProUGUI Nickname, Destreza, Team;
+    public TextMeshProUGUI Nickname, Destreza, Team, Level, LastConnection;
     public Image OnOff;
+    public Button InfoUser;
+    public GameObject InfoPanel;
 
     public Sprite[] OfflineOnline;
 
@@ -23,6 +25,12 @@ public class FriendPrefab : MonoBehaviour
     int dias, horas, minutos;
 
     string datenow;
+
+    void Start()
+    {
+        InfoUser.onClick.AddListener(OnOptionsChange);
+
+    }
     void Update()
     {
         Nickname.text = f.nickname;
@@ -31,6 +39,8 @@ public class FriendPrefab : MonoBehaviour
         Destreza.gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = Destreza.text;
         Team.text = f.team;
         Team.gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = Team.text;
+        Level.text = f.level.ToString();
+        LastConnection.text = f.ultcon;
         if (Launcher == null)
         {
             try
@@ -92,5 +102,14 @@ public class FriendPrefab : MonoBehaviour
         yield return new WaitForSeconds(3);
         f.ultcon = result.ultcon;
         yield return null;
+    }
+
+    public void OnOptionsChange()
+    {
+        Launcher.GetComponent<UserDbInit>().reloadDate();
+        if (InfoPanel != null)
+        {
+            InfoPanel.SetActive(!InfoPanel.activeSelf);
+        }
     }
 }

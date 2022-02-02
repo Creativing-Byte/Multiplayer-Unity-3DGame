@@ -157,7 +157,7 @@ PrefabInstance:
     - target: {fileID: 4164045599272191130, guid: 40a68e10f90809346ab0ec3662fe49b4,
         type: 3}
       propertyPath: m_Intensity
-      value: 1.04
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 4164045599272191130, guid: 40a68e10f90809346ab0ec3662fe49b4,
         type: 3}
@@ -13303,7 +13303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &5611339208554666698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13422,6 +13422,8 @@ MonoBehaviour:
   PanelLose: {fileID: 5611339209666155448}
   endGamePanel: {fileID: 1297669677}
   opponentName: 
+  DestrezaOp: 
+  opponentDestreza: 0
   isDraw: 0
   GuidBattle: 
   Date: 

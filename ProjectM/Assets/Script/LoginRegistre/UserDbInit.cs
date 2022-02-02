@@ -135,10 +135,12 @@ public class UserDbInit : MonoBehaviour
          else if (task.IsCompleted)
          {
              f.Id = friend;
+             f.level = int.Parse(task.Result.Child("Date").Child("level").Value.ToString());
              f.nickname = task.Result.Child("Date").Child("username").Value.ToString();
              f.destreza = int.Parse(task.Result.Child("Date").Child("destreza").Value.ToString());
              f.ultcon = task.Result.Child("Date").Child("ultcon").Value.ToString();
              f.team = task.Result.Child("Date").Child("team").Value.ToString();
+
          }
      });
         return f;
@@ -158,6 +160,7 @@ public class UserDbInit : MonoBehaviour
         int exp = 0;
         int dice = 10;
         int gift = 0;
+
         string giftUnlocked = "None";
         Debug.Log("nuevo user realtime database");
         User user = new User(name, email, destreza, coins, diamond, tokens, Etokens, ultcon, scene, deckid, level, exp, dice, gift, giftUnlocked, friends);

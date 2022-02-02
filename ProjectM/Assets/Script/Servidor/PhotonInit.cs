@@ -52,6 +52,7 @@ public class PhotonInit : MonoBehaviourPunCallbacks
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
     }
 
+  
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= SceneManager_sceneLoaded;

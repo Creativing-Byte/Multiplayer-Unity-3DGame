@@ -14,10 +14,15 @@ public class DataManager : MonoBehaviour
     [Header("User data Hud")]
     public Text[] Divisas; // 0 trofeos, 1 monedas, 2 diamantes
     public TextMeshProUGUI TextLoading;
-    public TextMeshProUGUI[] CasinoDivisas; // 0 tokens, 1 Etokens 
+    public TextMeshProUGUI[] CasinoDivisas; // 0 tokens, 1 Etokens, 2 Etokens(Userinfo)
+    public TextMeshProUGUI InfoUsername;
+    public TextMeshProUGUI InfoTrofeos;
+    public TextMeshProUGUI Infolevel;
     public LobbyControl Lobbycontrol;
     public Text username;
     public Image progress;
+    public Button UserInfo;
+    public GameObject UserInfoPanel;
 
     [Header("User Exp System")]
     public Image BarExp;
@@ -46,19 +51,23 @@ public class DataManager : MonoBehaviour
 
     void Start()
     {
+        UserInfo.onClick.AddListener(OnOptionsChange);
         Launcher = GameObject.FindGameObjectWithTag("Launcher").GetComponent<UserDbInit>();
 
         UserDataRef = FirebaseDatabase.DefaultInstance.GetReference("users").Child(Launcher.DatosUser.Key).Child("Date");
 
         Divisas[0].text = Launcher.DatosUser.Child("Date").Child("destreza").Value.ToString();
+        InfoTrofeos.text = Launcher.DatosUser.Child("Date").Child("destreza").Value.ToString();
         Divisas[1].text = Launcher.DatosUser.Child("Date").Child("coins").Value.ToString();
         Divisas[2].text = Launcher.DatosUser.Child("Date").Child("diamond").Value.ToString();
 
         CasinoDivisas[0].text = Launcher.DatosUser.Child("Date").Child("tokens").Value.ToString();
         CasinoDivisas[1].text = Launcher.DatosUser.Child("Date").Child("Etokens").Value.ToString();
+        CasinoDivisas[2].text = Launcher.DatosUser.Child("Date").Child("Etokens").Value.ToString();
 
         username.text = Launcher.DatosUser.Child("Date").Child("username").Value.ToString();
         username.gameObject.transform.GetChild(0).GetComponent<Text>().text = username.text;
+
 
         LevelCurrent = int.Parse(Launcher.DatosUser.Child("Date").Child("level").Value.ToString());
         Level.text = LevelCurrent.ToString();
@@ -71,6 +80,11 @@ public class DataManager : MonoBehaviour
         giftTimeUnlocked = Launcher.DatosUser.Child("Date").Child("giftUnlocked").Value.ToString();
 
         UserDataRef.ValueChanged += DateValueChanged;
+
+        InfoUsername.text = Launcher.DatosUser.Child("Date").Child("username").Value.ToString();
+        Infolevel.text = LevelCurrent.ToString();
+
+
 
         UpdateDate();
     }
@@ -137,6 +151,13 @@ public class DataManager : MonoBehaviour
             UserDataRef.Child("exp").SetValueAsync(0);
         }
     }
+    public void OnOptionsChange()
+    {
+        if (UserInfoPanel != null)
+        {
+            UserInfoPanel.SetActive(!UserInfoPanel.activeSelf);
+        }
+    }
     void DateValueChanged(object sender, ValueChangedEventArgs args)
     {
         if (args.DatabaseError != null)
@@ -174,17 +195,23 @@ public class DataManager : MonoBehaviour
                 UserDataRef.Child("dice").SetValueAsync(0);
             }
             Divisas[0].text = args.Snapshot.Child("destreza").Value.ToString();
+            InfoTrofeos.text = args.Snapshot.Child("destreza").Value.ToString();
             Divisas[1].text = args.Snapshot.Child("coins").Value.ToString();
             Divisas[2].text = args.Snapshot.Child("diamond").Value.ToString();
 
             CasinoDivisas[0].text = args.Snapshot.Child("tokens").Value.ToString();
             CasinoDivisas[1].text = args.Snapshot.Child("Etokens").Value.ToString();
+            CasinoDivisas[2].text = args.Snapshot.Child("Etokens").Value.ToString();
 
 
             username.text = args.Snapshot.Child("username").Value.ToString();
 
+
             gift = int.Parse(args.Snapshot.Child("gift").Value.ToString());
             giftTimeUnlocked = args.Snapshot.Child("giftUnlocked").Value.ToString();
+
+            InfoUsername.text = args.Snapshot.Child("username").Value.ToString();
+            Infolevel.text = args.Snapshot.Child("level").Value.ToString();
 
             UpdateDate();
         }
@@ -259,6 +286,8 @@ public class DataManager : MonoBehaviour
         }
         return (x / y) * y;
     }
+
+
     public void UnlockGift()
     {
         if (gift == 0)
@@ -319,6 +348,7 @@ public class DataManager : MonoBehaviour
             Debug.Log("Exp " + ExpReward);
             UserDataRef.Child("exp").SetValueAsync(ExpReward);
         }
+
     }
 
     private void OnDestroy() 
