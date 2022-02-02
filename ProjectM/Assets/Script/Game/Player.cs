@@ -7,9 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IPunObservable
 {
+    public Vector3 posInicial;
     public Stats Stats = new Stats();
     public GameObject Destino;
     public Transform punchVFXpuntoi;
+    public bool ada;
+    public bool mujerCuervo;
 
     protected Animator MyAnim;
 
@@ -45,6 +48,7 @@ public class Player : MonoBehaviour, IPunObservable
 
     void Start()
     {
+        posInicial = transform.position;
         TryGetComponent(out MyBrain);
         TryGetComponent(out MyView);
         TryGetComponent(out MyAnim);
@@ -79,8 +83,37 @@ public class Player : MonoBehaviour, IPunObservable
         {
             if (Stats.vidacurrent <= 0)
             {
+
                 if (MyView.IsMine)
-                    PhotonNetwork.Destroy(MyView);
+                {
+                    if (ada==true)
+                    {
+                        
+                        PhotonNetwork.Instantiate("FairyDeath", punchVFXpuntoi.transform.position, Quaternion.Euler(90,0,0));
+                        PhotonNetwork.Destroy(MyView);
+                    }
+                    else
+                    {
+                        PhotonNetwork.Destroy(MyView);
+                    }
+                    
+                }
+            }
+            if (mujerCuervo==true)
+            {
+                if (Stats.vidacurrent<Stats.vidamax)
+                {
+                    if (MyView.IsMine)
+                    {
+                        Stats.velocidad = 0;
+                        MyAnim.SetBool("isWalk", false);
+                        MyAnim.SetBool("isAttack", true);
+                        if (Stats.vidacurrent<=0)
+                        {
+                            PhotonNetwork.Destroy(MyView);
+                        }
+                    }
+                }
             }
         }
 

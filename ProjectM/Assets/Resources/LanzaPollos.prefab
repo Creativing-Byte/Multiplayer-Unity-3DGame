@@ -351,6 +351,7 @@ MonoBehaviour:
   healthBarRed: {fileID: 21300000, guid: 63e4ea33590fee24d8160f23f885b208, type: 3}
   healthbarBack: {fileID: 4751805028999433597}
   healthbarFill: {fileID: 6271849475233564265}
+  Amount: {fileID: 0}
   healthMax: 100
   startingHealth: 100
 --- !u!114 &5903557854712479197
@@ -479,6 +480,8 @@ MonoBehaviour:
     Ground: 1
     Flying: 0
   Destino: {fileID: 0}
+  punchVFXpuntoi: {fileID: 0}
+  ada: 0
   attackminions: 1
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -487,8 +490,9 @@ MonoBehaviour:
   AnchuraMax: 10
   AlturaMax: 18
   Sfx: {fileID: 8300000, guid: 34240dac5100af04a93cd82afb44941f, type: 3}
+  punchVFX: {fileID: 0}
   health: {fileID: 4474596602960590343}
-  PolloPrefabs: {fileID: 4726367121751458833, guid: 728335416ea56f2429855da585eab810,
+  PolloPrefabs: {fileID: 749741588427268433, guid: 728335416ea56f2429855da585eab810,
     type: 3}
   PosDisparo: {fileID: 6042291555273480957}
 --- !u!54 &7248920625437878978

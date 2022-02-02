@@ -21,21 +21,48 @@ public class Ganster : Player
         AtaqueTimer = Stats.vataque;
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
     }
-    void LateUpdate()
+    public override void Punch()
     {
-        if (Stats.vidacurrent <= 51)
+        punchVFX = PhotonNetwork.Instantiate("Explosion", punchVFXpuntoi.transform.position, punchVFXpuntoi.transform.rotation);
+        StartCoroutine("DestroyMIVfx");
+    }
+    override public void Attack()
+    {
+        GameObject disparo;
+        SoundSfx();
+        if (SceneManager.GetActiveScene().name == "Tutorial")
         {
-            personaje.SetActive(false);
-            GameObject
-            disparo = PhotonNetwork.Instantiate("Explosion", PosDisparo.transform.position, Quaternion.identity);
-            disparo.GetComponent<Explosion>().StatsP.HitBoxRadious = 10;
-            disparo.GetComponent<Explosion>().StatsP.Objectivo = Stats.Objetivo;
-            disparo.GetComponent<Explosion>().StatsP.daño = Stats.ataque;
-            disparo.GetComponent<Explosion>().StatsP.velocidad = 0f;
-            Stats.vidacurrent = 0;
-            
+            if (enemiesInRange > 1)
+            {
+                disparo = Instantiate(Tornado, PosDisparo.transform.position, transform.rotation);
+                disparo.GetComponent<Tornado>().StatsP.team = Stats.team;
+                disparo.GetComponent<Tornado>().StatsP.HitBoxRadious = 25;
+                disparo.GetComponent<Tornado>().StatsP.Objectivo = Stats.Objetivo;
+                disparo.GetComponent<Tornado>().StatsP.daño = Stats.ataque;
+                disparo.GetComponent<Tornado>().StatsP.velocidad = 100f;
+            }
+            else
+            {
+                disparo = Instantiate(Fireball, PosDisparo.transform.position, Quaternion.identity);
+                disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
+                disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
+                disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
+                disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
+            }
+
+        }
+        else
+        {
+
+            disparo = PhotonNetwork.Instantiate("FireBall", PosDisparo.transform.position, Quaternion.identity);
+            disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 8;
+            disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
+            disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
+            disparo.GetComponent<Fireball>().StatsP.velocidad = 10f;
+
         }
     }
+
 
     override public void CheckStatus()
     {
