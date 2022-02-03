@@ -923,6 +923,7 @@ MonoBehaviour:
     Ground: 1
     Flying: 0
   Destino: {fileID: 0}
+  punchVFXpuntoi: {fileID: 0}
   attackminions: 1
   balaOffline: {fileID: 5688194942223606593, guid: acc148691314f0c47ba17eaad86366b2,
     type: 3}
@@ -931,6 +932,7 @@ MonoBehaviour:
   AnchuraMax: 13
   AlturaMax: 16
   Sfx: {fileID: 8300000, guid: b4287c95c121dad4690af6bf9e420259, type: 3}
+  punchVFX: {fileID: 0}
   health: {fileID: 3956172536827900272}
 --- !u!54 &1055719602748982438
 Rigidbody:
@@ -9652,6 +9654,7 @@ MonoBehaviour:
   healthBarRed: {fileID: 21300000, guid: 63e4ea33590fee24d8160f23f885b208, type: 3}
   healthbarBack: {fileID: 7081020064304569646}
   healthbarFill: {fileID: 9038799697341760285}
+  Amount: {fileID: 0}
   healthMax: 100
   startingHealth: 100
 --- !u!114 &6484375055781058281
