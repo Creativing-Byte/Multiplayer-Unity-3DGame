@@ -15,11 +15,11 @@ E:/Rpo/Untime-Clash-Beta/ProjectM
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59179
+58582
 Successfully changed project path to: E:/Rpo/Untime-Clash-Beta/ProjectM
 E:/Rpo/Untime-Clash-Beta/ProjectM
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 126.94 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 131.38 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.18f1 (a7d1c678663c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
@@ -30,214 +30,47 @@ Direct3D:
     Renderer: NVIDIA GeForce GTX 1650 SUPER (ID=0x2187)
     Vendor:   
     VRAM:     3955 MB
-    Driver:   30.0.15.1123
+    Driver:   30.0.15.1165
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56800
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56728
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001021 seconds.
+Registered in 0.001346 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 104.02 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 113.94 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.349 seconds
+- Completed reload, in  3.700 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1349ms)
-		BeginReloadAssembly (42ms)
+	ReloadAssembly (3700ms)
+		BeginReloadAssembly (47ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (406ms)
-			LoadAssemblies (41ms)
+		EndReloadAssembly (500ms)
+			LoadAssemblies (45ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (124ms)
+			SetupTypeCache (149ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (22ms)
-			SetupLoadedEditorAssemblies (205ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (258ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (104ms)
-				BeforeProcessingInitializeOnLoad (13ms)
-				ProcessInitializeOnLoadAttributes (62ms)
-				ProcessInitializeOnLoadMethodAttributes (23ms)
+				RefreshPlugins (114ms)
+				BeforeProcessingInitializeOnLoad (16ms)
+				ProcessInitializeOnLoadAttributes (69ms)
+				ProcessInitializeOnLoadMethodAttributes (55ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.011980 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 125.09 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.389 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1390ms)
-		BeginReloadAssembly (134ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (1192ms)
-			LoadAssemblies (101ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (377ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (60ms)
-			SetupLoadedEditorAssemblies (464ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (125ms)
-				BeforeProcessingInitializeOnLoad (98ms)
-				ProcessInitializeOnLoadAttributes (197ms)
-				ProcessInitializeOnLoadMethodAttributes (37ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.98 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3872 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 163.9 MB.
-System memory in use after: 164.2 MB.
-
-Unloading 126 unused Assets to reduce memory usage. Loaded Objects now: 4218.
-Total: 7.120000 ms (FindLiveObjects: 0.448900 ms CreateObjectMapping: 0.114300 ms MarkObjects: 6.435500 ms  DeleteObjects: 0.120000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  path: Assets/Models/Explosive Chest/Explosive Chest1/Chest.fbx
-  artifactKey: Guid(f6eed54d9959fee4d84cc7b52b22bae5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Explosive Chest1/Chest.fbx using Guid(f6eed54d9959fee4d84cc7b52b22bae5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbb8ba40df1b04c9ff5a2b4faff8449b') in 0.280523 seconds 
-  Import took 0.289201 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000188 seconds.
-  path: Assets/Models/Explosive Chest/Explosive Chest1
-  artifactKey: Guid(9d365893ec4e9ea4a908d8a32e609c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Explosive Chest1 using Guid(9d365893ec4e9ea4a908d8a32e609c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9a41e2d72eec4008cf6719587344516') in 0.006683 seconds 
-  Import took 0.012606 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.075917 seconds.
-  path: Assets/Models/Explosive Chest/Explosive Chest1/Walk Explosive Trunk.fbx
-  artifactKey: Guid(01b86b4145f378f4aa99c397e1b8c2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Explosive Chest1/Walk Explosive Trunk.fbx using Guid(01b86b4145f378f4aa99c397e1b8c2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0979f962042caf5736afe0847c7216b4') in 0.180932 seconds 
-  Import took 0.192229 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.731792 seconds.
-  path: Assets/Models/Explosive Chest/Explosive Chest1/Warriors Trow.fbx
-  artifactKey: Guid(0964f62978f0c6646b0aa87a45384c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Explosive Chest1/Warriors Trow.fbx using Guid(0964f62978f0c6646b0aa87a45384c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64e6efdc4997c519f8a6db1b608c783c') in 0.175140 seconds 
-  Import took 0.183267 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.720555 seconds.
-  path: Assets/Models/Explosive Chest/Explosive Chest1/Warriors Walk.fbx
-  artifactKey: Guid(1fc52fe4bd8c7c64c935c78b12a24216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Explosive Chest1/Warriors Walk.fbx using Guid(1fc52fe4bd8c7c64c935c78b12a24216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '837f84343be50907e3f107af944d6d89') in 0.119766 seconds 
-  Import took 0.128896 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4015.950117 seconds.
-  path: Assets/Models/Explosive Chest/Warriors Trow.fbx
-  artifactKey: Guid(64d09e030449dbb4c932f57ddc02d08c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Warriors Trow.fbx using Guid(64d09e030449dbb4c932f57ddc02d08c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dacda55c017ed0824dc52fcae0dd5c91') in 0.126711 seconds 
-  Import took 0.135449 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7016.491853 seconds.
-  path: Assets/Models/Explosive Chest/Animacion soldaditos caminata.fbx
-  artifactKey: Guid(1c8487693c3077c49a2b92f7b59432ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Animacion soldaditos caminata.fbx using Guid(1c8487693c3077c49a2b92f7b59432ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4075d6499866aca90495f62e71a9c7ca') in 0.176088 seconds 
-  Import took 0.196192 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.037731 seconds.
-  path: Assets/Models/Explosive Chest/Animacion soldaditos lanzar.fbx
-  artifactKey: Guid(6eb2fb587dfb1894e94cb5b2e90d52cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Animacion soldaditos lanzar.fbx using Guid(6eb2fb587dfb1894e94cb5b2e90d52cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93f5d6a649b4920c8504ae7ba94845ac') in 0.142194 seconds 
-  Import took 0.171642 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 236.132235 seconds.
-  path: Assets/Models/Explosive Chest
-  artifactKey: Guid(d27d67608507e8a46b385eaabd205974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest using Guid(d27d67608507e8a46b385eaabd205974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af819b8c03d5deedabd94bbb73f8843b') in 0.007431 seconds 
-  Import took 0.043920 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 45.283506 seconds.
-  path: Assets/Models/Explosive Chest/New Animator Controller.controller
-  artifactKey: Guid(a665d8835d0df6041b46467985cb89ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/New Animator Controller.controller using Guid(a665d8835d0df6041b46467985cb89ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63730fbfeeff237f3b9ead382c4fd73d') in 0.015667 seconds 
-  Import took 0.071155 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.525929 seconds.
-  path: Assets/Models/Explosive Chest/Explosive.controller
-  artifactKey: Guid(5a10c5e24e8ce924ba5b8d314dab2a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Explosive.controller using Guid(5a10c5e24e8ce924ba5b8d314dab2a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1e8293c7b320617f6ca79af745450af') in 0.152536 seconds 
-  Import took 0.189369 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.365882 seconds.
-  path: Assets/Models/Explosive Chest/New Animator Controller 1.controller
-  artifactKey: Guid(065e40451950f8149ac4282a3d6b335d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/New Animator Controller 1.controller using Guid(065e40451950f8149ac4282a3d6b335d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4adc9e6061427a56ef4e9fc9e90848c') in 0.007889 seconds 
-  Import took 0.048949 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.007266 seconds.
-  path: Assets/Models/Explosive Chest/Chest.fbx
-  artifactKey: Guid(6cd718a6284ffd844828d074a6e4e90d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Chest.fbx using Guid(6cd718a6284ffd844828d074a6e4e90d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b7eedd3a81627da0eb64fb7ad799523') in 0.069310 seconds 
-  Import took 0.099160 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.022220 seconds.
-  path: Assets/Models/Explosive Chest/Chest.fbx
-  artifactKey: Guid(6cd718a6284ffd844828d074a6e4e90d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Explosive Chest/Chest.fbx using Guid(6cd718a6284ffd844828d074a6e4e90d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b7eedd3a81627da0eb64fb7ad799523') in 0.034567 seconds 
-  Import took 0.041335 seconds .
-
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+Registered in 0.047990 seconds.

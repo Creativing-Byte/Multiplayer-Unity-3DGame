@@ -1,23 +1,34 @@
 ﻿using Photon.Pun;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Velociraptor : Player
 {
+    public Velociraptors VelociraptorClone;
+    public PhotonView velociraptoview;
     void Awake()
     {
-        Stats.team = GetComponentInParent<Velociraptors>().Stats.team;
-        Stats.vidamax = GetComponentInParent<Velociraptors>().Stats.vidamax;
-        Stats.vidacurrent = GetComponentInParent<Velociraptors>().Stats.vidacurrent;
-        Stats.ataque = GetComponentInParent<Velociraptors>().Stats.ataque;
-        Stats.velocidad = GetComponentInParent<Velociraptors>().Stats.velocidad;
-        Stats.vataque = GetComponentInParent<Velociraptors>().Stats.vataque;
-        Stats.Range = GetComponentInParent<Velociraptors>().Stats.Range;
-        Stats.Objetivo = GetComponentInParent<Velociraptors>().Stats.Objetivo;
-        Stats.TipoGround = GetComponentInParent<Velociraptors>().Stats.TipoGround;
-        Stats.TipoFlying = GetComponentInParent<Velociraptors>().Stats.TipoFlying;
-        Stats.Ground = GetComponentInParent<Velociraptors>().Stats.Ground;
-        Stats.Flying = GetComponentInParent<Velociraptors>().Stats.Flying;
 
+        velociraptoview= GameObject.Find("Velociraptor(Clone)").GetComponent<PhotonView>();
+        if (velociraptoview.IsMine)
+        {
+            VelociraptorClone = velociraptoview.gameObject.GetComponent<Velociraptors>();
+            Stats.team = VelociraptorClone.Stats.team;
+            Stats.vidamax = VelociraptorClone.Stats.vidamax;
+            Stats.vidacurrent = VelociraptorClone.Stats.vidacurrent;
+            Stats.ataque = VelociraptorClone.Stats.ataque;
+            Stats.velocidad = VelociraptorClone.Stats.velocidad;
+            Stats.vataque = VelociraptorClone.Stats.vataque;
+            Stats.Range = VelociraptorClone.Stats.Range;
+            Stats.Objetivo = VelociraptorClone.Stats.Objetivo;
+            Stats.TipoGround = VelociraptorClone.Stats.TipoGround;
+            Stats.TipoFlying = VelociraptorClone.Stats.TipoFlying;
+            Stats.Ground = VelociraptorClone.Stats.Ground;
+            Stats.Flying = VelociraptorClone.Stats.Flying;
+        }
         GetComponent<NavMeshAgent>().stoppingDistance = Stats.Range - 1f;
     }
     public override void Punch()

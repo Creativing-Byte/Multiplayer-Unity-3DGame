@@ -254,69 +254,7 @@ public class CardPlayer : MonoBehaviour
                         Reload.fillAmount = 1;
                         secondsCounter = Carta.time;
                     }
-                    switch (Carta.Prefabs)
-                    {
-                        case "Velociraptor":
-                            GameObject Spawnv1;
-                            GameObject Spawnv2;
-                            GameObject Spawnv3;
 
-                            SpawnSfx();
-
-                            Spawnv1 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
-                            Spawnv2 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
-                            Spawnv3 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
-
-                            foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
-                            {
-                                if (!m.enabled)
-                                    m.enabled = true;
-                            }
-
-                            LoadStats(Spawn);
-                            GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
-                            Carta.spawn -= 1;
-                            if (Carta.spawn <= 0)
-                            {
-                                DeleteCard();
-                            }
-                            else
-                            {
-                                Reload.fillAmount = 1;
-                                secondsCounter = Carta.time;
-                            }
-                            break;
-                        case "ZarigueyaPrefac":
-                            GameObject Spawnz1;
-                            GameObject Spawnz2;
-                            GameObject Spawnz3;
-
-                            SpawnSfx();
-
-                            Spawnz1 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
-                            Spawnz2 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
-                            Spawnz3 = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
-
-                            foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
-                            {
-                                if (!m.enabled)
-                                    m.enabled = true;
-                            }
-
-                            LoadStats(Spawn);
-                            GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
-                            Carta.spawn -= 1;
-                            if (Carta.spawn <= 0)
-                            {
-                                DeleteCard();
-                            }
-                            else
-                            {
-                                Reload.fillAmount = 1;
-                                secondsCounter = Carta.time;
-                            }
-                            break;
-                    }
                 }
 
             }
@@ -340,7 +278,6 @@ public class CardPlayer : MonoBehaviour
                                 if (poslanzamiento != Vector3.zero)
                                 {
                                     Spawn = Instantiate(CartaPrebafs[i], PosLanzamiento, Quaternion.identity);
-
                                     Throwable.GetComponent<ThrowableTrigger>().ObjectName = Spawn.gameObject.name;
 
                                     Spawn.GetComponent<Velociraptors>().PosLanzamiento = poslanzamiento;
@@ -351,7 +288,7 @@ public class CardPlayer : MonoBehaviour
                                             m.enabled = true;
                                     }
                                     LoadStats(Spawn);
-                                    GetComponentInParent<PowerCardSystem>().Spawn(Carta.level*10);
+                                    GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
                                     spawn -= 1;
                                     if (spawn <= 0)
                                     {
@@ -386,35 +323,6 @@ public class CardPlayer : MonoBehaviour
                     switch (Carta.Prefabs)
                     {
                         case "Velociraptor":
-                            if (poslanzamiento != Vector3.zero)
-                            {
-                                Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, PosLanzamiento, Quaternion.identity);
-
-                                Throwable.GetComponent<ThrowableTrigger>().ObjectName = Spawn.gameObject.name;
-
-                                Spawn.GetComponent<Velociraptors>().PosLanzamiento = poslanzamiento;
-                                poslanzamiento = Vector3.zero;
-
-                                foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
-                                {
-                                    if (!m.enabled)
-                                        m.enabled = true;
-                                }
-                                LoadStats(Spawn);
-                                GetComponentInParent<PowerCardSystem>().Spawn(Carta.level*10);
-                                Carta.spawn -= 1;
-                                if (Carta.spawn <= 0)
-                                {
-                                    DeleteCard();
-                                }
-                                else
-                                {
-                                    Reload.fillAmount = 1;
-                                    secondsCounter = Carta.time;
-                                }
-                            }
-                            break;
-                        case "ZarigueyaPrefac":
                             if (poslanzamiento != Vector3.zero)
                             {
                                 Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, PosLanzamiento, Quaternion.identity);

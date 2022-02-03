@@ -2,38 +2,115 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class HollToHell : Player
 {
-    public PhotonView miView;
-    public Player[] personaje;
-    public GameObject puntodeRegreso;
-    private void Start()
+    [HideInInspector]
+    public int enemiesInRange = 0;
+    public GameObject PosDisparo;
+    public GameObject Fireball, Tornado;
+    void Start()
     {
-        miView = GetComponent<PhotonView>();
-        if (Stats.team=="Red")
+        MyBrain = GetComponent<NavMeshAgent>();
+        MyView = GetComponent<PhotonView>();
+        MyAnim = GetComponent<Animator>();
+        Launcher = GameObject.FindGameObjectWithTag("Launcher");
+        Stats.vidacurrent = Stats.vidamax;
+        AtaqueTimer = Stats.vataque;
+        GetComponentInChildren<SphereCollider>().radius = Stats.Range;
+
+    }
+    public override void Punch()
+    {
+        punchVFX = PhotonNetwork.Instantiate("PoisonZone", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
+        StartCoroutine("DestroyMIVfx");
+    }
+
+    override public void Attack()
+    {
+        GameObject disparo;
+        SoundSfx();
+        if (SceneManager.GetActiveScene().name == "Tutorial")
         {
-            puntodeRegreso = GameObject.Find("puntoRegresoRed");
+            if (enemiesInRange > 1)
+            {
+                disparo = Instantiate(Tornado, PosDisparo.transform.position, transform.rotation);
+                disparo.GetComponent<Tornado>().StatsP.team = Stats.team;
+                disparo.GetComponent<Tornado>().StatsP.HitBoxRadious = 25;
+                disparo.GetComponent<Tornado>().StatsP.Objectivo = Stats.Objetivo;
+                disparo.GetComponent<Tornado>().StatsP.daño = Stats.ataque;
+                disparo.GetComponent<Tornado>().StatsP.velocidad = 100f;
+            }
+            else
+            {
+                disparo = Instantiate(Fireball, PosDisparo.transform.position, Quaternion.identity);
+                disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
+                disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
+                disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
+                disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
+            }
+
         }
         else
         {
-            puntodeRegreso = GameObject.Find("puntoRegresoblue");
+            disparo = PhotonNetwork.Instantiate("InstanciadorEnemigo", PosDisparo.transform.position, Quaternion.identity);
+            disparo.GetComponent<InstanciadorPersonajes>().StatsP.HitBoxRadious = 2;
+            disparo.GetComponent<InstanciadorPersonajes>().StatsP.Objectivo = Stats.Objetivo;
+            disparo.GetComponent<InstanciadorPersonajes>().StatsP.daño = Stats.ataque;
+            disparo.GetComponent<InstanciadorPersonajes>().StatsP.velocidad = 100f;
         }
     }
-    public void DestroyMiView()
+
+    override public void CheckStatus()
     {
-        PhotonNetwork.Destroy(miView);
-    }
-    override public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer==10)
+        timerCheck += Time.deltaTime;
+        if (timerCheck < 0.25f)
+            return;
+
+        timerCheck = 0;
+
+        Collider[] Enemigos = Physics.OverlapSphere(transform.position, Stats.Range);
+
+        foreach (var enemigo_ in Enemigos)
         {
-            personaje = other.gameObject.GetComponents<Player>();
-            if (personaje[0].Stats.team!=Stats.team)
+            if (enemigo_ != null)
             {
-                personaje[0].transform.position = puntodeRegreso.transform.position;
-                DestroyMiView();
+                if (enemigo_.gameObject.layer == 9)
+                {
+                    Tower EnemigoT = enemigo_.gameObject.GetComponent<Tower>();
+                    if (EnemigoT != null && EnemigoT.Stats.team != Stats.team)
+                    {
+                        if (Stats.Objetivo == null)
+                        {
+                            Stats.Objetivo = enemigo_.gameObject;
+                        }
+                        EstadoActual = Status.Ataque;
+                        HaveenemyClose = true;
+                        return;
+                    }
+                }
+                else if (attackminions && enemigo_.gameObject.layer == 10)
+                {
+                    Player Enemigo = enemigo_.gameObject.GetComponent<Player>();
+                    if (Enemigo != null && Enemigo.Stats.team != Stats.team)
+                    {
+                        if (Stats.Objetivo == null)
+                        {
+                            Stats.Objetivo = enemigo_.gameObject;
+                        }
+                        EstadoActual = Status.Ataque;
+                        HaveenemyClose = true;
+                        return;
+                    }
+                }
             }
         }
+        if (Stats.Objetivo == null)
+        {
+            HaveenemyClose = false;
+        }
     }
+
 }

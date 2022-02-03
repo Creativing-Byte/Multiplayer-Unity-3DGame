@@ -13,6 +13,7 @@ public class Player : MonoBehaviour, IPunObservable
     public Transform punchVFXpuntoi;
     public bool ada;
     public bool mujerCuervo;
+    public string prefac;
 
     protected Animator MyAnim;
 
