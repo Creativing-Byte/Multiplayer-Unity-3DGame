@@ -84,11 +84,8 @@ public class DataManager : MonoBehaviour
         InfoUsername.text = Launcher.DatosUser.Child("Date").Child("username").Value.ToString();
         Infolevel.text = LevelCurrent.ToString();
 
-<<<<<<< Updated upstream
 
 
-=======
->>>>>>> Stashed changes
         UpdateDate();
     }
 
