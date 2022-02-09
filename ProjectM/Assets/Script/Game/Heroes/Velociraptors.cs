@@ -16,7 +16,7 @@ public class Velociraptors : MonoBehaviour
     float Velocidad;
     public GameObject Egg;
     public GameObject[] Velociraptor;
-    bool active;
+    public bool active;
 
     PhotonView mypv, eggpv;
     void Start()
@@ -29,13 +29,13 @@ public class Velociraptors : MonoBehaviour
     {
         Velocidad += Time.deltaTime;
         Velocidad = Velocidad % 1.4f;
-        if (!active)
+        /*if (!active)
         {
             if (Egg != null)
             {
                 transform.position = Parabola(PosInit, PosLanzamiento, 70f, Velocidad / 1.4f);
             }
-        }
+        }*/
 
         if (Velociraptor[0] == null && Velociraptor[1] == null && Velociraptor[2] == null)
         {
