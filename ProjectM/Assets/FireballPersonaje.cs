@@ -8,10 +8,16 @@ public class FireballPersonaje : Player
 {
     public FireballPrefac VelociraptorClone;
     public PhotonView velociraptoview;
+    public PhotonView miView;
+    public MoveLanzables moveLanzable;
+    public bool activacion;
+    public MeshRenderer mesh;
     void Awake()
     {
-
+        moveLanzable = GetComponent<MoveLanzables>();
+        mesh = GetComponent<MeshRenderer>();
         velociraptoview = GameObject.Find("FireballLanzador(Clone)").GetComponent<PhotonView>();
+        miView = GetComponent<PhotonView>();
         if (velociraptoview.IsMine)
         {
             VelociraptorClone = velociraptoview.gameObject.GetComponent<FireballPrefac>();
@@ -30,9 +36,20 @@ public class FireballPersonaje : Player
         }
         GetComponent<NavMeshAgent>().stoppingDistance = Stats.Range - 1f;
     }
-    public override void Punch()
+    public void Vfx()
     {
-        punchVFX = PhotonNetwork.Instantiate("AnimalAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
-        StartCoroutine("DestroyMIVfx");
+        PhotonNetwork.Instantiate("FireFierBall", transform.transform.position, Quaternion.identity);
+        moveLanzable.velocidad = 0;
+        mesh.enabled = false;
+        StartCoroutine("Attaque");
+
     }
+    IEnumerator Attaque()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        PhotonNetwork.Destroy(miView);
+    }
+
+
+
 }

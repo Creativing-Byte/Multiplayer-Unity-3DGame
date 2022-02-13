@@ -16,6 +16,7 @@ public class FireballPrefac : MonoBehaviour
     public GameObject Egg;
     public GameObject[] Velociraptor;
     public bool active;
+    public GameObject spawn;
 
     PhotonView mypv, eggpv;
     void Start()
@@ -26,6 +27,7 @@ public class FireballPrefac : MonoBehaviour
     }
     public void Update()
     {
+
         Velocidad += Time.deltaTime;
         Velocidad = Velocidad % 1.4f;
         /*if (!active)
@@ -65,10 +67,8 @@ public class FireballPrefac : MonoBehaviour
     }
     IEnumerator Instancia()
     {
-        yield return new WaitForSecondsRealtime(2);
-        GameObject spawv1;
-        PhotonNetwork.Instantiate("DragonBabyFire", Velociraptor[0].transform.position, Quaternion.identity);
-        spawv1 = PhotonNetwork.Instantiate("FireballPrefac", Velociraptor[0].transform.position, Quaternion.identity);
+
+        spawn = PhotonNetwork.Instantiate("FireBallBall", Egg.transform.position, Quaternion.identity);
         yield return new WaitForSecondsRealtime(2);
         PhotonNetwork.Destroy(mypv);
 

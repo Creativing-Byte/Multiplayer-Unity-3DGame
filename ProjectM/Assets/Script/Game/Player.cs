@@ -317,6 +317,7 @@ public class Player : MonoBehaviour, IPunObservable
             }
         }
     }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = HaveenemyClose ? Color.green : Color.yellow;
@@ -387,19 +388,27 @@ public class Player : MonoBehaviour, IPunObservable
         yield return new WaitForSecondsRealtime(1);
         PhotonNetwork.Destroy(punchVFX);
     }
+    public void Congelamiento()
+    {
+        MyAnim.SetBool("Congelado", false);
+    }
     public virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "TimeStop")
         {
-            StartCoroutine("TimeStoped");
+            MyAnim.SetBool("isAttack", false);
+            MyAnim.SetBool("isWalk", false);
+            MyAnim.SetBool("Congelado", true);
+            Stats.Objetivo = null;
+            Stats.velocidad = 0;
+            Stats.Range = 0;
+            MyBrain.isStopped = true;
         }
     }
     [PunRPC]
     IEnumerator TimeStoped()
     {
-        Stats.Objetivo = null;
-        Stats.velocidad = 0;
-        Stats.Range = 0;
+
         yield return new WaitForSecondsRealtime(2);
         Stats = new Stats();
 
