@@ -474,6 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6583b79d035285647af25d91231f5279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posInicial: {x: 0, y: 0, z: 0}
   Stats:
     team: 
     vidamax: 0
@@ -489,6 +490,9 @@ MonoBehaviour:
     Flying: 0
   Destino: {fileID: 0}
   punchVFXpuntoi: {fileID: 506521802145384852}
+  ada: 0
+  mujerCuervo: 0
+  prefac: 
   attackminions: 1
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -496,7 +500,7 @@ MonoBehaviour:
   StopMove: 20
   AnchuraMax: 9
   AlturaMax: 9
-  Sfx: {fileID: 8300000, guid: 0c596245542756f4ea5b11f5c11cec3b, type: 3}
+  Sfx: {fileID: 8300000, guid: 40d345f8a64d1ca488b1b39167548d59, type: 3}
   punchVFX: {fileID: 0}
   health: {fileID: 2510940320360311415}
   enemiesInRange: 0
