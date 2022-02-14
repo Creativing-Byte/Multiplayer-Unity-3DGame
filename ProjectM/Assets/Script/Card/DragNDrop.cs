@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     public static GameObject itemDragging;
-    public Lanzamiento lanzador;
+
     Vector3 startPosition;
     Transform startParent;
     Vector3 startScale;
@@ -20,11 +20,6 @@ public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
     void Awake()
     {
         Camera = GetComponentInParent<Camera>();
-        
-    }
-    public void Start()
-    {
-        lanzador = gameObject.GetComponentInParent<Lanzamiento>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -92,7 +87,7 @@ public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
                         if (GetComponent<CardPlayer>().Carta.throwable)
                         {
                             
-                            GameObject newThorw = Instantiate(GetComponent<CardPlayer>().ThrowableTrigger, /*GetComponent<CardPlayer>().poslanzamientolanzador.throwableTriggerPosition.position*/lanzador.throwableTriggerPosition.transform.position, Quaternion.identity);
+                            GameObject newThorw = Instantiate(GetComponent<CardPlayer>().ThrowableTrigger, GetComponent<CardPlayer>().poslanzamiento, Quaternion.identity);
                             GetComponent<CardPlayer>().Spawnthrowable(GameObject.FindGameObjectWithTag("Throwable" + GetComponent<CardPlayer>().team).transform.position, newThorw);
                         }
                         else 
