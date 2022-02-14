@@ -1,9 +1,10 @@
-﻿using Photon.Pun;
+﻿ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Catapulta : Player
 {
+    public GameObject PosDisparo;
     public override void Attack()
     {
         GameObject disparo;
@@ -13,7 +14,7 @@ public class Catapulta : Player
         }
         else
         {
-            disparo = PhotonNetwork.Instantiate("Fireball", transform.position, Quaternion.identity);
+            disparo = PhotonNetwork.Instantiate("PiedraSister", PosDisparo.transform.position, Quaternion.identity);
         }
         disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
         disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;

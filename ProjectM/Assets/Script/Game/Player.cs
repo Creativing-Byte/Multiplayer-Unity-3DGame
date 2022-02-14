@@ -13,9 +13,13 @@ public class Player : MonoBehaviour, IPunObservable
     public Transform punchVFXpuntoi;
     public bool ada;
     public bool mujerCuervo;
+    public bool pCongelar;
     public string prefac;
-
+    public GameObject objetivo;
+    public float velocidad;
+    public float rango;
     protected Animator MyAnim;
+
 
     protected Status EstadoActual = Status.Moviendo;
 
@@ -56,12 +60,16 @@ public class Player : MonoBehaviour, IPunObservable
         Launcher = GameObject.FindGameObjectWithTag("Launcher");
         Stats.vidacurrent = Stats.vidamax;
         AtaqueTimer = Stats.vataque;
+        objetivo = Stats.Objetivo;
+        velocidad = Stats.velocidad;
+        rango = Stats.Range;
 
         health.SetColor(MyView.IsMine);
     }
     //-------------------------------------------
     void Update()
     {
+
         CheckStatus();
 
         if (!HaveenemyClose)
@@ -392,9 +400,16 @@ public class Player : MonoBehaviour, IPunObservable
     {
         MyAnim.SetBool("Congelado", false);
     }
+    public void Stadisticas()
+    {
+        Stats.Objetivo = objetivo;
+        Stats.velocidad = velocidad;
+        Stats.Range = rango;
+
+    }
     public virtual void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "TimeStop")
+        if (other.gameObject.tag == "TimeStop"&&pCongelar==false&&other.GetComponent<Fireball>().StatsP.team!=Stats.team)
         {
             MyAnim.SetBool("isAttack", false);
             MyAnim.SetBool("isWalk", false);
@@ -403,14 +418,15 @@ public class Player : MonoBehaviour, IPunObservable
             Stats.velocidad = 0;
             Stats.Range = 0;
             MyBrain.isStopped = true;
+            StartCoroutine("TimeStoped");
         }
     }
     [PunRPC]
     IEnumerator TimeStoped()
     {
 
-        yield return new WaitForSecondsRealtime(2);
-        Stats = new Stats();
+        yield return new WaitForSecondsRealtime(5);
+        Stadisticas();
 
     }
 
