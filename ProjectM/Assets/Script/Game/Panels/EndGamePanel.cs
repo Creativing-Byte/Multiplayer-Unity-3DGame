@@ -6,6 +6,11 @@ public class EndGamePanel : MonoBehaviour
 {
     [Header("UI Config")]
     [SerializeField] private GameObject Battle;
+    [Header("EndGameSounds")]
+    public AudioClip Victory;
+    public AudioClip Loser;
+    public AudioClip End;
+
 
     [Header("Mine")]
     [SerializeField] private TMP_Text nameMine;
@@ -41,7 +46,6 @@ public class EndGamePanel : MonoBehaviour
     {
         Battle = GameObject.FindGameObjectWithTag("GameInterface");
         Battle.SetActive(false);
-
         btnOK.onClick.AddListener(() =>
         {
             BattleManager.instance.BackToLobby();
@@ -49,9 +53,9 @@ public class EndGamePanel : MonoBehaviour
         });
     }
 
-    public void SetData(bool isWinner, string teamColor, 
-        string name, string opponentName, 
-        string team, string teamEnemy, 
+    public void SetData(bool isWinner, string teamColor,
+        string name, string opponentName,
+        string team, string teamEnemy,
         int myStars, int enemyStars,
         int coinsReward, int xpReward, int gemsReward, int trophyReward)
     {
@@ -60,7 +64,7 @@ public class EndGamePanel : MonoBehaviour
         teamMine.text = string.IsNullOrEmpty(team) ? "NO TEAM" : team;
         nameMine.color = teamColor == "red" ? colRed : colBlue;
 
-        teamColorOpponent.sprite = teamColor == "red" ? sprBlue: sprRed;
+        teamColorOpponent.sprite = teamColor == "red" ? sprBlue : sprRed;
         nameOpponent.text = opponentName;
         teamOpponent.text = string.IsNullOrEmpty(teamEnemy) ? "NO TEAM" : teamEnemy;
         nameOpponent.color = teamColor == "red" ? colBlue : colRed;
@@ -79,9 +83,31 @@ public class EndGamePanel : MonoBehaviour
         this.gemsReward.text = $"+{gemsReward}";
         this.trophyReward.text = $"+{trophyReward}";
 
+        Endsound();
+
         if (BattleManager.instance.isDraw)
             txtWinnerOrLoser.text = "DRAW!";
         else
             txtWinnerOrLoser.text = isWinner ? "WINNER!" : "LOSER!";
+        if (isWinner == true)
+        {
+
+            Victorysound();
+        }
+        else
+        {
+            Endsound();
+
+        }
+    }
+    void Victorysound()
+    {
+        GetComponent<AudioSource>().clip = Victory;
+        GetComponent<AudioSource>().Play();
+    }
+    void Endsound()
+    {
+        GetComponent<AudioSource>().clip = End;
+        GetComponent<AudioSource>().Play();
     }
 }

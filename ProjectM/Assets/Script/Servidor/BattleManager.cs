@@ -10,11 +10,13 @@ public class BattleManager : MonoBehaviour
     public static int DiceBet;
     public GameObject PanelWin, PanelEmpate, PanelLose;
     public GameObject endGamePanel;
+    public GameObject danger;
     public string opponentName, DestrezaOp;
     public float opponentDestreza;
     GameObject Launcher;
     UserDbInit userDb;
     public bool isDraw = false;
+
 
     public string GuidBattle, Date, IdUserLose, DestrezaLose;
 
@@ -22,7 +24,9 @@ public class BattleManager : MonoBehaviour
 
     public int bluePoints = 0;
     public int redPoints = 0;
-
+    public AudioClip Point;
+    public GameObject Pointmarker;
+    public GameObject Pointmarker2;
     private object userId;
 
     void Start()
@@ -33,6 +37,22 @@ public class BattleManager : MonoBehaviour
 
         Init();
     }
+    void Update()
+    {
+        if (bluePoints >= 2)
+        {
+            danger.SetActive(true);
+        }
+        else if (redPoints >= 2)
+        {
+            danger.SetActive(true);
+        }
+        else
+        {
+            danger.SetActive(false);
+        }
+    }
+
 
     async void Init()
     {
@@ -43,6 +63,26 @@ public class BattleManager : MonoBehaviour
         DestrezaOp = opponentDestreza.ToString(); 
         GameObject.FindGameObjectWithTag("EnemyDestreza").GetComponent<TextMeshProUGUI>().text = DestrezaOp;
 
+    }
+
+
+    public void GetPoint()
+    {
+        GameObject P = GameObject.FindGameObjectWithTag("Camera1");
+        GameObject PP = GameObject.FindGameObjectWithTag("Camera2");
+        Pointmarker2 = PP.transform.GetChild(0).GetChild(10).gameObject;
+        Pointmarker2.SetActive(true);
+        Pointmarker.SetActive(true);
+        Pointmarker2.GetComponent<Animator>().Play("Point");
+        Pointmarker = P.transform.GetChild(0).GetChild(10).gameObject;
+        Pointmarker.GetComponent<Animator>().Play("Point");
+        Pointsound();
+    }
+
+    void Pointsound()
+    {
+        GetComponent<AudioSource>().clip = Point;
+        GetComponent<AudioSource>().Play();
     }
 
     public async void EndGame()

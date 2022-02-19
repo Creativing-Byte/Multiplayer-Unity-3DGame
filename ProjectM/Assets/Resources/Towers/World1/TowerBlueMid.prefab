@@ -240,6 +240,7 @@ MonoBehaviour:
     Ground: 1
     Flying: 1
   destruccion: {fileID: 1615218425804293167}
+  DestruccionFx: {fileID: 8300000, guid: cd010edbec4999c46bc5942659a4aec1, type: 3}
   BarraVida: {fileID: 1804200761118418897, guid: b16711a4ad1823543955f70141f8770e,
     type: 3}
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
@@ -251,10 +252,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   PortalTag: TowerBlueMid
+  EscombrosTag: EscombroAzulMid
   IsCentral: 1
   AttackfxClip: {fileID: 8300000, guid: 86a86263976772a48a49983cea3f3b5e, type: 3}
   AttackBool: 0
   health: {fileID: 5395813684068330353}
+  BoolActivate1: {fileID: 0}
+  BoolActivate2: {fileID: 0}
+  Escombros: {fileID: 0}
 --- !u!135 &5111109168002275131
 SphereCollider:
   m_ObjectHideFlags: 0
