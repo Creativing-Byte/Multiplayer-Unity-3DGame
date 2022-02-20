@@ -44,7 +44,7 @@ public class TheSister : Player
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
-            disparo.GetComponent<Fireball>().StatsP.velocidad = 30f;
+            disparo.GetComponent<Fireball>().StatsP.velocidad = 6f;
             //StartCoroutine("ActiveArma");
         }
     }
