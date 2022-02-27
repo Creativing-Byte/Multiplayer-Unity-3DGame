@@ -1833,6 +1833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9422589181e7c2145868ee227c17c4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posInicial: {x: 0, y: 0, z: 0}
   Stats:
     team: 
     vidamax: 0
@@ -1848,6 +1849,13 @@ MonoBehaviour:
     Flying: 0
   Destino: {fileID: 0}
   punchVFXpuntoi: {fileID: 3295908170373213541}
+  ada: 0
+  mujerCuervo: 0
+  pCongelar: 0
+  prefac: 
+  objetivo: {fileID: 0}
+  velocidad: 0
+  rango: 0
   attackminions: 1
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -1971,6 +1979,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: isAttack
+  - Type: 4
+    SynchronizeType: 0
+    Name: Congelado
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0

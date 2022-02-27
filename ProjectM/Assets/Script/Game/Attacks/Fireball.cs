@@ -69,7 +69,7 @@ public class Fireball : MonoBehaviour
                             StatsP.Objectivo.GetComponent<PhotonView>().RPC("RecibirDanoRPC", RpcTarget.All, StatsP.daño);
                             if (vfx==true)
                             {
-                                PhotonNetwork.Instantiate(vfxList,instanciaVFX.position,Quaternion.identity);
+                                PhotonNetwork.Instantiate(vfxList,instanciaVFX.position,instanciaVFX.transform.rotation);
                                 PhotonNetwork.Destroy(myview);
                             }
                             else
