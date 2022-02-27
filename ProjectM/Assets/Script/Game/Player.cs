@@ -69,7 +69,7 @@ public class Player : MonoBehaviour, IPunObservable
     //-------------------------------------------
     void Update()
     {
-
+        
         CheckStatus();
 
         if (!HaveenemyClose)
@@ -79,6 +79,7 @@ public class Player : MonoBehaviour, IPunObservable
         else
         {
             attackEnemy();
+            print(Vector3.Distance(Stats.Objetivo.transform.position, gameObject.transform.position) + "distancia");
         }
 
         if (SceneManager.GetActiveScene().name == "Tutorial")
@@ -274,9 +275,10 @@ public class Player : MonoBehaviour, IPunObservable
             {
                 if (Stats.Objetivo != null && MyBrain)
                 {
-                    if (Vector3.Distance(Stats.Objetivo.transform.position, gameObject.transform.position) <= (Stats.Range))
+                    if (Vector3.Distance(Stats.Objetivo.transform.position, this.gameObject.transform.position) <= (Stats.Range+1))
                     {
-                        if (MyView.IsMine && AtaqueTimer >= Stats.vataque)
+                        print(Vector3.Distance(Stats.Objetivo.transform.position, gameObject.transform.position) + "distancia");
+                        if (MyView.IsMine /*&& AtaqueTimer >= Stats.vataque*/)
                         {
                             if (MyAnim)
                             {

@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class Tower : MonoBehaviour, IPunObservable
 {
     public Stats Stats = new Stats();
-    public GameObject destruccion;
 
     public GameObject BarraVida, balaOffline;
 
@@ -148,8 +147,7 @@ public class Tower : MonoBehaviour, IPunObservable
                 }
 
                 isDestroyed = true;
-                destruccion.SetActive(true);
-                PhotonNetwork.Instantiate("Explosion", this.transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate("Explosion", transform.position, Quaternion.identity);
                 PhotonNetwork.Destroy(gameObject);
             }
 

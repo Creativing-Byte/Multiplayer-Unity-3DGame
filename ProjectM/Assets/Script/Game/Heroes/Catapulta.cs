@@ -1,146 +1,54 @@
-﻿ using Photon.Pun;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class Catapulta : Player
 {
+    [HideInInspector]
+    public int enemiesInRange = 0;
     public GameObject PosDisparo;
-    public override void Attack()
+    public GameObject Fireball;
+    void Start()
+    {
+        MyBrain = GetComponent<NavMeshAgent>();
+        MyView = GetComponent<PhotonView>();
+        MyAnim = GetComponent<Animator>();
+        Launcher = GameObject.FindGameObjectWithTag("Launcher");
+        Stats.vidacurrent = Stats.vidamax;
+        AtaqueTimer = Stats.vataque;
+        GetComponentInChildren<SphereCollider>().radius = Stats.Range;
+    }
+
+    override public void Attack()
     {
         GameObject disparo;
+        SoundSfx();
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
-            disparo = Instantiate(balaOffline, transform.position, Quaternion.identity);
+            //arma.SetActive(true);
+            disparo = Instantiate(Fireball, PosDisparo.transform.position, Quaternion.identity);
+            disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
+            disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
+            disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
+            disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
+            //StartCoroutine("ActiveArma");
         }
         else
         {
+            //arma.SetActive(true);
             disparo = PhotonNetwork.Instantiate("PiedraSister", PosDisparo.transform.position, Quaternion.identity);
-        }
-        disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
-        disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
-        disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
-        disparo.GetComponent<Fireball>().StatsP.velocidad = 50f;
-    }
-    public override void attackEnemy()
-    {
-        AtaqueTimer += Time.deltaTime;
-
-        if (SceneManager.GetActiveScene().name == "Tutorial")
-        {
-            if (Stats.Objetivo != null && MyBrain)
-            {
-                if (Vector3.Distance(Stats.Objetivo.transform.position, gameObject.transform.position) <= (Stats.Range))
-                {
-                    if (AtaqueTimer >= Stats.vataque)
-                    {
-                        if (MyAnim)
-                        {
-                            MyAnim.SetBool("isWalk", false);
-                            MyAnim.SetBool("isAttack", true);
-                        }
-
-                        if (MyBrain)
-                        {
-                            if (!MyBrain.isStopped)
-                            {
-                                MyBrain.isStopped = true;
-                            }
-                        }
-
-                        Vector3 pos_ = Stats.Objetivo.transform.position;
-                        pos_.y = transform.position.y;
-                        transform.LookAt(pos_);
-
-                        Attack();
-
-                        AtaqueTimer = 0;
-                    }
-                }
-                else
-                {
-                    if (MyBrain)
-                    {
-                        if (MyBrain.isStopped)
-                        {
-                            MyBrain.isStopped = false;
-                        }
-                    }
-
-                    Vector3 posTarget_ = Stats.Objetivo.transform.position;
-                    MyBrain.SetDestination(posTarget_);
-                    MyBrain.speed = Stats.velocidad * 2;
-                    MyBrain.autoRepath = true;
-                    MyBrain.stoppingDistance = Stats.Range - 1f;
-
-                    if (MyAnim)
-                    {
-                        MyAnim.SetBool("isAttack", false);
-                        MyAnim.SetBool("isWalk", true);
-                    }
-                }
-            }
-        }
-        else
-        {
-            if (MyView.IsMine)
-            {
-                if (Stats.Objetivo != null && MyBrain)
-                {
-
-                    if (Vector3.Distance(Stats.Objetivo.transform.position, gameObject.transform.position) <= (Stats.Range))
-                    {
-                        if (MyView.IsMine && AtaqueTimer >= Stats.vataque)
-                        {
-                            if (MyAnim)
-                            {
-                                MyAnim.SetBool("isWalk", false);
-                                MyAnim.SetBool("isAttack", true);
-                            }
-
-                            if (MyBrain)
-                            {
-                                if (!MyBrain.isStopped)
-                                {
-                                    MyBrain.isStopped = true;
-                                }
-                            }
-
-                            Vector3 pos_ = Stats.Objetivo.transform.position;
-                            pos_.y = transform.position.y;
-                            transform.LookAt(pos_);
-
-                            Attack();
-
-                            AtaqueTimer = 0;
-                        }
-                    }
-                    else
-                    {
-                        if (MyBrain)
-                        {
-                            if (MyBrain.isStopped)
-                            {
-                                MyBrain.isStopped = false;
-                            }
-                        }
-
-                        Vector3 posTarget_ = Stats.Objetivo.transform.position;
-                        MyBrain.SetDestination(posTarget_);
-                        MyBrain.speed = Stats.velocidad * 2;
-                        MyBrain.autoRepath = true;
-                        MyBrain.stoppingDistance = Stats.Range - 1f;
-
-                        if (MyAnim)
-                        {
-                            MyAnim.SetBool("isAttack", false);
-                            MyAnim.SetBool("isWalk", true);
-                        }
-                    }
-                }
-            }
+            disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
+            disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
+            disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
+            disparo.GetComponent<Fireball>().StatsP.velocidad = 40f;
+            //StartCoroutine("ActiveArma");
         }
     }
-    public override void CheckStatus()
+
+    override public void CheckStatus()
     {
         timerCheck += Time.deltaTime;
         if (timerCheck < 0.25f)
@@ -157,14 +65,13 @@ public class Catapulta : Player
                 if (enemigo_.gameObject.layer == 9)
                 {
                     Tower EnemigoT = enemigo_.gameObject.GetComponent<Tower>();
-                    if (EnemigoT != null && EnemigoT.Stats.team != Stats.team && Stats.Objetivo == null)
+                    if (EnemigoT != null && EnemigoT.Stats.team != Stats.team)
                     {
                         if (Stats.Objetivo == null)
                         {
                             Stats.Objetivo = enemigo_.gameObject;
                         }
                         EstadoActual = Status.Ataque;
-                        StopMove = Stats.Range;
                         HaveenemyClose = true;
                         return;
                     }
@@ -172,11 +79,13 @@ public class Catapulta : Player
                 else if (attackminions && enemigo_.gameObject.layer == 10)
                 {
                     Player Enemigo = enemigo_.gameObject.GetComponent<Player>();
-                    if (Enemigo != null && Enemigo.Stats.team != Stats.team && Stats.Objetivo == null)
+                    if (Enemigo != null && Enemigo.Stats.team != Stats.team)
                     {
-                        Stats.Objetivo = enemigo_.gameObject;
+                        if (Stats.Objetivo == null)
+                        {
+                            Stats.Objetivo = enemigo_.gameObject;
+                        }
                         EstadoActual = Status.Ataque;
-                        StopMove = Stats.Range;
                         HaveenemyClose = true;
                         return;
                     }
