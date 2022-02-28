@@ -26,7 +26,7 @@ namespace FirstGearGames.SmoothCameraShaker.Demo
         private Slider _scaleSlider = null;
 
         [SerializeField]
-        private ShakeData _earthquakeData = null;
+        private ShakeData _Explosion = null;
         [SerializeField]
         private ShakeData _offRoadData = null;
 
@@ -186,7 +186,7 @@ namespace FirstGearGames.SmoothCameraShaker.Demo
             }
             else
             {
-                _earthQuakeInstance = CameraShakerHandler.Shake(_earthquakeData);
+                _earthQuakeInstance = CameraShakerHandler.Shake(_Explosion);
                 _earthQuakeInstance.Data.SetShakeCanvases(ShakeCanvas);
                 _earthQuakeInstance.Data.SetShakeRigidbodies(ShakeRigidbodies);
             }

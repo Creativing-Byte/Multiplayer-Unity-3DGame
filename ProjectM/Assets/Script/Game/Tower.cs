@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class Tower : MonoBehaviour, IPunObservable
 {
     public Stats Stats = new Stats();
+    public GameObject destruccion;
+    public AudioClip DestruccionFx;
 
     public GameObject BarraVida, balaOffline;
 
@@ -21,6 +23,7 @@ public class Tower : MonoBehaviour, IPunObservable
     public GameObject[] Portal;
 
     public string PortalTag;
+    public string EscombrosTag;
 
     Collider[] Enemigos;
     public bool IsCentral;
@@ -31,6 +34,9 @@ public class Tower : MonoBehaviour, IPunObservable
 
     [Space(10)]
     [SerializeField] private Healthbar health;
+    public Camera_Shake BoolActivate1;
+    public Camera_Shake BoolActivate2;
+    public GameObject Escombros;
 
     private bool isDestroyed = false;
 
@@ -50,7 +56,6 @@ public class Tower : MonoBehaviour, IPunObservable
 
         health.transform.GetChild(0).gameObject.SetActive(true);
         health.SetColor(myview.IsMine);
-
         if (myview.IsMine)
         {
             if (Stats.team.ToLower() == PhotonInit.MyTeam.ToLower())
@@ -145,9 +150,11 @@ public class Tower : MonoBehaviour, IPunObservable
                 {
                     myview.RPC("WinBattle", RpcTarget.All, Stats.team);
                 }
-
+                CameraDestroyShake();
+                DestruccionSfx();
                 isDestroyed = true;
-                PhotonNetwork.Instantiate("Explosion", transform.position, Quaternion.identity);
+                destruccion.SetActive(true);
+                PhotonNetwork.Instantiate("Explosion", this.transform.position, Quaternion.identity);
                 PhotonNetwork.Destroy(gameObject);
             }
 
@@ -234,6 +241,27 @@ public class Tower : MonoBehaviour, IPunObservable
     {
         GetComponent<AudioSource>().clip = AttackfxClip;
         GetComponent<AudioSource>().Play();
+    }
+    void DestruccionSfx()
+    {
+        GetComponent<AudioSource>().clip = DestruccionFx;
+        GetComponent<AudioSource>().Play();
+    }
+
+    void CameraDestroyShake()
+    {
+        GameObject g = GameObject.FindGameObjectWithTag("Camera2");
+        GameObject g2 = GameObject.FindGameObjectWithTag("Camera1");
+        BoolActivate2 = g.GetComponent<Camera_Shake>();
+        BoolActivate2.start = true;
+        BoolActivate1 = g2.GetComponent<Camera_Shake>();
+        BoolActivate1.start = true;
+    }
+    void ActivateEscombros()
+    {
+        GameObject escombro = GameObject.FindGameObjectWithTag(EscombrosTag);
+        Escombros = escombro;
+        Escombros.SetActive(true);
     }
     void ActivatedTrigger(string gmname)
     {
