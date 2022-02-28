@@ -14,7 +14,6 @@ public class Velociraptors : MonoBehaviour
     [HideInInspector]
     public Vector3 PosLanzamiento;
     float Velocidad;
-    public GameObject Egg;
     public GameObject[] Velociraptor;
     bool active;
 
@@ -23,19 +22,18 @@ public class Velociraptors : MonoBehaviour
     {
         PosInit = transform.position;
         mypv = GetComponent<PhotonView>();
-        eggpv = Egg.GetComponent<PhotonView>();
     }
     public void Update()
     {
         Velocidad += Time.deltaTime;
         Velocidad = Velocidad % 1.4f;
-        if (!active)
+        /*if (!active)
         {
             if (Egg != null)
             {
                 transform.position = Parabola(PosInit, PosLanzamiento, 70f, Velocidad / 1.4f);
             }
-        }
+        }*/
 
         if (Velociraptor[0] == null && Velociraptor[1] == null && Velociraptor[2] == null)
         {
@@ -55,7 +53,7 @@ public class Velociraptors : MonoBehaviour
         
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
-            Destroy(Egg);
+            //Destroy(Egg);
         }
         else
         {
@@ -66,7 +64,6 @@ public class Velociraptors : MonoBehaviour
     }
     IEnumerator Instancia()
     {
-        yield return new WaitForSecondsRealtime(2);
         GameObject spawv1;
         GameObject spawv2;
         GameObject spawv3;
@@ -84,7 +81,7 @@ public class Velociraptors : MonoBehaviour
             spawv3 = PhotonNetwork.Instantiate("VelocitaptorDer", Velociraptor[2].transform.position, Quaternion.identity);
         }
 
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(3);
         PhotonNetwork.Destroy(mypv);
 
     }

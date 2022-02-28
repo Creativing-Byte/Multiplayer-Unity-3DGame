@@ -5,6 +5,30 @@ using UnityEngine.AI;
 
 public class Zarigueya : Player
 {
+    public ZarigueyaPrefac VelociraptorClone;
+    public PhotonView velociraptoview;
+    void Awake()
+    {
+
+        velociraptoview = GameObject.Find("ZarigueyaPrefacInstancia(Clone)").GetComponent<PhotonView>();
+        if (velociraptoview.IsMine)
+        {
+            VelociraptorClone = velociraptoview.gameObject.GetComponent<ZarigueyaPrefac>();
+            Stats.team = VelociraptorClone.Stats.team;
+            Stats.vidamax = VelociraptorClone.Stats.vidamax;
+            Stats.vidacurrent = VelociraptorClone.Stats.vidacurrent;
+            Stats.ataque = VelociraptorClone.Stats.ataque;
+            Stats.velocidad = VelociraptorClone.Stats.velocidad;
+            Stats.vataque = VelociraptorClone.Stats.vataque;
+            Stats.Range = VelociraptorClone.Stats.Range;
+            Stats.Objetivo = VelociraptorClone.Stats.Objetivo;
+            Stats.TipoGround = VelociraptorClone.Stats.TipoGround;
+            Stats.TipoFlying = VelociraptorClone.Stats.TipoFlying;
+            Stats.Ground = VelociraptorClone.Stats.Ground;
+            Stats.Flying = VelociraptorClone.Stats.Flying;
+        }
+        GetComponent<NavMeshAgent>().stoppingDistance = Stats.Range - 1f;
+    }
     public override void Punch()
     {
         punchVFX = PhotonNetwork.Instantiate("AnimalAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);

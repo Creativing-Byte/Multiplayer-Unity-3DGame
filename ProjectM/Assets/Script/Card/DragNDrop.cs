@@ -12,6 +12,7 @@ public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
     Camera Camera;
     GameObject Throw;
     GameObject Trigger;
+    public Lanzamiento lanzador;
 
     public delegate void OnCardUsed(CardPlayer cardUsed);
     public static event OnCardUsed onCardUsed;
@@ -20,6 +21,10 @@ public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
     void Awake()
     {
         Camera = GetComponentInParent<Camera>();
+    }
+    public void Start()
+    {
+        lanzador = gameObject.GetComponentInParent<Lanzamiento>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -86,8 +91,8 @@ public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
 
                         if (GetComponent<CardPlayer>().Carta.throwable)
                         {
-                            
-                            GameObject newThorw = Instantiate(GetComponent<CardPlayer>().ThrowableTrigger, GetComponent<CardPlayer>().poslanzamiento, Quaternion.identity);
+
+                            GameObject newThorw = Instantiate(GetComponent<CardPlayer>().ThrowableTrigger, /*GetComponent<CardPlayer>().poslanzamientolanzador.throwableTriggerPosition.position*/lanzador.throwableTriggerPosition.transform.position, Quaternion.identity);
                             GetComponent<CardPlayer>().Spawnthrowable(GameObject.FindGameObjectWithTag("Throwable" + GetComponent<CardPlayer>().team).transform.position, newThorw);
                         }
                         else 

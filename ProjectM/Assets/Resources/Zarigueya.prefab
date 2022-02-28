@@ -275,7 +275,7 @@ Transform:
   m_GameObject: {fileID: 1246811041486994780}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5863101, y: 1.5863101, z: 1.5863101}
   m_Children:
   - {fileID: 6925321452195165674}
   - {fileID: 7673670546479495510}
@@ -848,6 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc7ef4ab25941f4fac5b35f011bc590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posInicial: {x: 0, y: 0, z: 0}
   Stats:
     team: 
     vidamax: 100
@@ -862,6 +863,14 @@ MonoBehaviour:
     Ground: 1
     Flying: 0
   Destino: {fileID: 0}
+  punchVFXpuntoi: {fileID: 0}
+  ada: 0
+  mujerCuervo: 0
+  pCongelar: 0
+  prefac: 
+  objetivo: {fileID: 0}
+  velocidad: 0
+  rango: 0
   attackminions: 1
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -870,7 +879,10 @@ MonoBehaviour:
   AnchuraMax: 8
   AlturaMax: 12
   Sfx: {fileID: 8300000, guid: c39ebf0c4c9a6e1468c351bc0fe45ca9, type: 3}
+  punchVFX: {fileID: 0}
   health: {fileID: 2186471713358844527}
+  VelociraptorClone: {fileID: 0}
+  velociraptoview: {fileID: 0}
 --- !u!54 &2791498078043590919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -898,8 +910,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 4.27, z: 6.25}
-  m_Center: {x: 0, y: 1.96, z: 0.13705063}
+  m_Size: {x: 2.5, y: 1.9590089, z: 2.7308083}
+  m_Center: {x: 0, y: 0.80450463, z: 0.07022351}
 --- !u!195 &8654719640169396933
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -909,7 +921,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2966282787971915438}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.08
+  m_Radius: 0.4
   m_Speed: 3.5
   m_Acceleration: 80
   avoidancePriority: 50
@@ -918,8 +930,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 4.42
-  m_BaseOffset: 0.46
+  m_Height: 2.34
+  m_BaseOffset: 0.24
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2317790147449290578
@@ -1280,7 +1292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 5}
+  m_AnchoredPosition: {x: 0, y: 2.44}
   m_SizeDelta: {x: 400, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1372862587968945531
@@ -1326,7 +1338,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7755399992658508574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1372,6 +1384,7 @@ MonoBehaviour:
   healthBarRed: {fileID: 21300000, guid: 63e4ea33590fee24d8160f23f885b208, type: 3}
   healthbarBack: {fileID: 8210834583624600136}
   healthbarFill: {fileID: 8150046445955729812}
+  Amount: {fileID: 0}
   healthMax: 100
   startingHealth: 100
 --- !u!114 &1123705105414983730
@@ -2868,7 +2881,7 @@ Transform:
   m_GameObject: {fileID: 8323666870842535000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.52877, y: 0.52877, z: 0.52877}
   m_Children: []
   m_Father: {fileID: 8306465227417310193}
   m_RootOrder: 1

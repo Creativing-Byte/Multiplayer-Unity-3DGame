@@ -325,10 +325,127 @@ public class CardPlayer : MonoBehaviour
                         case "Velociraptor":
                             if (poslanzamiento != Vector3.zero)
                             {
-                                Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, PosLanzamiento, Quaternion.identity);
+                                Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
 
                                 Throwable.GetComponent<ThrowableTrigger>().ObjectName = Spawn.gameObject.name;
 
+                                //Spawn.GetComponent<Velociraptors>().PosLanzamiento = poslanzamiento;
+                                //poslanzamiento = Vector3.zero;
+
+                                foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
+                                {
+                                    if (!m.enabled)
+                                        m.enabled = true;
+                                }
+                                LoadStats(Spawn);
+                                GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
+                                Carta.spawn -= 1;
+                                if (Carta.spawn <= 0)
+                                {
+                                    DeleteCard();
+                                }
+                                else
+                                {
+                                    Reload.fillAmount = 1;
+                                    secondsCounter = Carta.time;
+                                }
+                            }
+                            break;
+                        case "ZarigueyaPrefacInstancia":
+                            if (poslanzamiento != Vector3.zero)
+                            {
+                                Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+
+                                Throwable.GetComponent<ThrowableTrigger>().ObjectName = Spawn.gameObject.name;
+
+                                Spawn.GetComponent<ZarigueyaPrefac>().PosLanzamiento = poslanzamiento;
+                                poslanzamiento = Vector3.zero;
+
+                                foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
+                                {
+                                    if (!m.enabled)
+                                        m.enabled = true;
+                                }
+                                LoadStats(Spawn);
+                                GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
+                                Carta.spawn -= 1;
+                                if (Carta.spawn <= 0)
+                                {
+                                    DeleteCard();
+                                }
+                                else
+                                {
+                                    Reload.fillAmount = 1;
+                                    secondsCounter = Carta.time;
+                                }
+                            }
+                            break;
+                        case "FireballLanzador":
+                            if (poslanzamiento != Vector3.zero)
+                            {
+                                Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+
+                                Throwable.GetComponent<ThrowableTrigger>().ObjectName = Spawn.gameObject.name;
+
+                                Spawn.GetComponent<FireballPrefac>().PosLanzamiento = poslanzamiento;
+                                poslanzamiento = Vector3.zero;
+
+                                foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
+                                {
+                                    if (!m.enabled)
+                                        m.enabled = true;
+                                }
+                                LoadStats(Spawn);
+                                GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
+                                Carta.spawn -= 1;
+                                if (Carta.spawn <= 0)
+                                {
+                                    DeleteCard();
+                                }
+                                else
+                                {
+                                    Reload.fillAmount = 1;
+                                    secondsCounter = Carta.time;
+                                }
+                            }
+                            break;
+                        case "HachasPrefac":
+                            if (poslanzamiento != Vector3.zero)
+                            {
+                                Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+
+                                Throwable.GetComponent<ThrowableTrigger>().ObjectName = Spawn.gameObject.name;
+
+                                Spawn.GetComponent<AxesPrefac>().PosLanzamiento = poslanzamiento;
+                                poslanzamiento = Vector3.zero;
+
+                                foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
+                                {
+                                    if (!m.enabled)
+                                        m.enabled = true;
+                                }
+                                LoadStats(Spawn);
+                                GetComponentInParent<PowerCardSystem>().Spawn(Carta.level * 10);
+                                Carta.spawn -= 1;
+                                if (Carta.spawn <= 0)
+                                {
+                                    DeleteCard();
+                                }
+                                else
+                                {
+                                    Reload.fillAmount = 1;
+                                    secondsCounter = Carta.time;
+                                }
+                            }
+                            break;
+                        case "DragonGigante":
+                            if (poslanzamiento != Vector3.zero)
+                            {
+                                Spawn = PhotonNetwork.Instantiate(Carta.Prefabs, poslanzamiento, Quaternion.identity);
+
+                                Throwable.GetComponent<ThrowableTrigger>().ObjectName = Spawn.gameObject.name;
+
+                                Spawn.GetComponent<DragonGigante>().PosLanzamiento = poslanzamiento;
                                 Spawn.GetComponent<Velociraptors>().PosLanzamiento = poslanzamiento;
                                 poslanzamiento = Vector3.zero;
 
@@ -367,6 +484,46 @@ public class CardPlayer : MonoBehaviour
             Spawn.GetComponent<Velociraptors>().Stats.velocidad = Carta.velocidad;
             Spawn.GetComponent<Velociraptors>().Stats.vataque = Carta.vataque;
             Spawn.GetComponent<Velociraptors>().Stats.Range = Carta.range;
+        }
+        if (Carta.Prefabs == "ZarigueyaPrefacInstancia")
+        {
+            Spawn.GetComponent<ZarigueyaPrefac>().Stats.team = team;
+            Spawn.GetComponent<ZarigueyaPrefac>().Stats.vidamax = Carta.vida;
+            Spawn.GetComponent<ZarigueyaPrefac>().Stats.vidacurrent = Carta.vida;
+            Spawn.GetComponent<ZarigueyaPrefac>().Stats.ataque = Carta.ataque;
+            Spawn.GetComponent<ZarigueyaPrefac>().Stats.velocidad = Carta.velocidad;
+            Spawn.GetComponent<ZarigueyaPrefac>().Stats.vataque = Carta.vataque;
+            Spawn.GetComponent<ZarigueyaPrefac>().Stats.Range = Carta.range;
+        }
+        if (Carta.Prefabs == "FireballLanzador")
+        {
+            Spawn.GetComponent<FireballPrefac>().Stats.team = team;
+            Spawn.GetComponent<FireballPrefac>().Stats.vidamax = Carta.vida;
+            Spawn.GetComponent<FireballPrefac>().Stats.vidacurrent = Carta.vida;
+            Spawn.GetComponent<FireballPrefac>().Stats.ataque = Carta.ataque;
+            Spawn.GetComponent<FireballPrefac>().Stats.velocidad = Carta.velocidad;
+            Spawn.GetComponent<FireballPrefac>().Stats.vataque = Carta.vataque;
+            Spawn.GetComponent<FireballPrefac>().Stats.Range = Carta.range;
+        }
+        if (Carta.Prefabs == "HachasPrefac")
+        {
+            Spawn.GetComponent<AxesPrefac>().Stats.team = team;
+            Spawn.GetComponent<AxesPrefac>().Stats.vidamax = Carta.vida;
+            Spawn.GetComponent<AxesPrefac>().Stats.vidacurrent = Carta.vida;
+            Spawn.GetComponent<AxesPrefac>().Stats.ataque = Carta.ataque;
+            Spawn.GetComponent<AxesPrefac>().Stats.velocidad = Carta.velocidad;
+            Spawn.GetComponent<AxesPrefac>().Stats.vataque = Carta.vataque;
+            Spawn.GetComponent<AxesPrefac>().Stats.Range = Carta.range;
+        }
+        if (Carta.Prefabs == "DragonGigante")
+        {
+            Spawn.GetComponent<DragonGigante>().Stats.team = team;
+            Spawn.GetComponent<DragonGigante>().Stats.vidamax = Carta.vida;
+            Spawn.GetComponent<DragonGigante>().Stats.vidacurrent = Carta.vida;
+            Spawn.GetComponent<DragonGigante>().Stats.ataque = Carta.ataque;
+            Spawn.GetComponent<DragonGigante>().Stats.velocidad = Carta.velocidad;
+            Spawn.GetComponent<DragonGigante>().Stats.vataque = Carta.vataque;
+            Spawn.GetComponent<DragonGigante>().Stats.Range = Carta.range;
         }
         else
         {
