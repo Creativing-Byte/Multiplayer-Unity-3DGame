@@ -475,6 +475,16 @@ public class CardPlayer : MonoBehaviour
     }
     void LoadStats(GameObject Spawn)
     {
+        if (Carta.Prefabs == "MiniKnight")
+        {
+            Spawn.GetComponent<LanzadorMiniK>().Stats.team = team;
+            Spawn.GetComponent<LanzadorMiniK>().Stats.vidamax = Carta.vida;
+            Spawn.GetComponent<LanzadorMiniK>().Stats.vidacurrent = Carta.vida;
+            Spawn.GetComponent<LanzadorMiniK>().Stats.ataque = Carta.ataque;
+            Spawn.GetComponent<LanzadorMiniK>().Stats.velocidad = Carta.velocidad;
+            Spawn.GetComponent<LanzadorMiniK>().Stats.vataque = Carta.vataque;
+            Spawn.GetComponent<LanzadorMiniK>().Stats.Range = Carta.range;
+        }
         if (Carta.Prefabs == "Velociraptor")
         {
             Spawn.GetComponent<Velociraptors>().Stats.team = team;

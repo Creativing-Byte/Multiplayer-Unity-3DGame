@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea9c91433b3da2479a473365e060ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lanzador: {fileID: 0}
 --- !u!1 &322030092031278855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3663,6 +3664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea9c91433b3da2479a473365e060ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lanzador: {fileID: 0}
 --- !u!1 &4725386982697073622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5339,6 +5341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea9c91433b3da2479a473365e060ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lanzador: {fileID: 0}
 --- !u!1 &6405094826921049708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,6 +6349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea9c91433b3da2479a473365e060ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lanzador: {fileID: 0}
 --- !u!1 &7649293125873348341
 GameObject:
   m_ObjectHideFlags: 0
@@ -7088,6 +7092,7 @@ GameObject:
   - component: {fileID: 2467352539392648856}
   - component: {fileID: 2575447417447680791}
   - component: {fileID: 5121785425170544622}
+  - component: {fileID: 2061963733861260971}
   m_Layer: 5
   m_Name: P2
   m_TagString: Camera2
@@ -7291,6 +7296,19 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Duration: 2
+--- !u!114 &2061963733861260971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332470124133915420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57cd66935331084ab4a4138f24c375c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwableTriggerPosition: {fileID: 0}
 --- !u!1 &8336967174197609562
 GameObject:
   m_ObjectHideFlags: 0

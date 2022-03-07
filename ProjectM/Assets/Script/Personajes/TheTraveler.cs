@@ -11,6 +11,8 @@ public class TheTraveler : Player
     public int enemiesInRange = 0;
     public GameObject PosDisparo;
     public GameObject Fireball;
+    public int destroyper;
+    public DestroyPunch destroid;
     //public GameObject arma;
 
     void Start()
@@ -26,7 +28,15 @@ public class TheTraveler : Player
     public override void Punch()
     {
         punchVFX = PhotonNetwork.Instantiate("TravelerZone", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
-        StartCoroutine("DestroyMIVfx");
+        destroyper++;
+        //StartCoroutine("DestroyMIVfx");
+    }
+    public void LateUpdate()
+    {
+        if (destroyper>2)
+        {
+            destroid.DestroyMiView();
+        }
     }
     override public void Attack()
     {
@@ -45,11 +55,11 @@ public class TheTraveler : Player
         else
         {
             //arma.SetActive(true);
-            disparo = PhotonNetwork.Instantiate("Fireball", PosDisparo.transform.position, Quaternion.identity);
+            disparo = PhotonNetwork.Instantiate("TimeStopTraveler", PosDisparo.transform.position, Quaternion.identity);
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
-            disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;
+            disparo.GetComponent<Fireball>().StatsP.velocidad = 0f;
             StartCoroutine("ActiveArma");
         }
     }
