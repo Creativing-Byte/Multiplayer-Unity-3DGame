@@ -53,6 +53,7 @@ public class Fairy :Player
         {
 
             disparo = PhotonNetwork.Instantiate("Fireball", PosDisparo.transform.position, Quaternion.identity);
+            disparo.GetComponent<Fireball>().StatsP.team = Stats.team;
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
@@ -64,7 +65,7 @@ public class Fairy :Player
     public override void Punch()
     {
         punchVFX = PhotonNetwork.Instantiate("FairyAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
-        StartCoroutine("DestroyMIVfx");
+        //StartCoroutine("DestroyMIVfx");
     }
 
 

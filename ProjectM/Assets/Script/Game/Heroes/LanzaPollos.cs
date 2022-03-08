@@ -67,14 +67,11 @@ public class LanzaPollos : Player
             {
                 Pollo = PhotonNetwork.Instantiate("Pollo", PosDisparo.transform.position, Quaternion.identity);
             }
-            Pollo.GetComponent<Pollo>().Stats.team = Stats.team;
-            Pollo.GetComponent<Pollo>().Stats.Objetivo = Stats.Objetivo;
-            Pollo.GetComponent<Pollo>().Stats.Range = 25;
-            PollosStacks -= 1;
-            if (PollosStacks < 1)
-            {
-                Stats.Objetivo = null;
-            }
+            Pollo.GetComponent<Fireball>().StatsP.team = Stats.team;
+            Pollo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
+            Pollo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
+            Pollo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
+            Pollo.GetComponent<Fireball>().StatsP.velocidad = 10f;
         }
         
     }

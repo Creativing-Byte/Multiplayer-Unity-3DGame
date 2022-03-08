@@ -237,6 +237,13 @@ public class Tower : MonoBehaviour, IPunObservable
             Gizmos.DrawSphere(transform.position, Stats.Range);
         }
     }
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "DañoArea"&&other.GetComponent<Fireball>().StatsP.team!=Stats.team)
+        {
+            Stats.vidacurrent -= 5;
+        }
+    }
     void AttackSfx()
     {
         GetComponent<AudioSource>().clip = AttackfxClip;

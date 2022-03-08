@@ -40,6 +40,7 @@ public class Catapulta : Player
         {
             //arma.SetActive(true);
             disparo = PhotonNetwork.Instantiate("PiedraSister", PosDisparo.transform.position, Quaternion.identity);
+            disparo.GetComponent<Fireball>().StatsP.team = Stats.team;
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;

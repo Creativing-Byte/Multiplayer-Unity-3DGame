@@ -25,7 +25,7 @@ public class MujerCuervo : Player
     public override void Punch()
     {
         punchVFX = PhotonNetwork.Instantiate("PoisonZone", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
-        StartCoroutine("DestroyMIVfx");
+        //StartCoroutine("DestroyMIVfx");
     }
 
     override public void Attack()
@@ -55,8 +55,9 @@ public class MujerCuervo : Player
         }
         else
         {
-            disparo = PhotonNetwork.Instantiate("Fireball", PosDisparo.transform.position, Quaternion.identity);
-            disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
+            disparo = PhotonNetwork.Instantiate("DañoArea", PosDisparo.transform.position, Quaternion.identity);
+            disparo.GetComponent<Fireball>().StatsP.team = Stats.team;
+            disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 10;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
             disparo.GetComponent<Fireball>().StatsP.velocidad = 100f;

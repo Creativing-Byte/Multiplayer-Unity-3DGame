@@ -7,18 +7,21 @@ using System.Collections.Generic;
 
 public class Fireball : MonoBehaviour
 {
-    [HideInInspector]
+    
     public StatsP StatsP = new StatsP();
     PhotonView myview;
     public bool vfx;
     public string vfxList;
     public Transform instanciaVFX;
+    public float time;
     void Start()
     {
         myview = GetComponent<PhotonView>();
     }
     void Update()
     {
+        time +=Time.deltaTime;
+
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
             if (StatsP.Objectivo)
@@ -88,6 +91,10 @@ public class Fireball : MonoBehaviour
                     gameObject.transform.Translate(Vector3.forward * StatsP.velocidad * Time.deltaTime);
                 }
             }
+            if (time>2)
+            {
+                PhotonNetwork.Destroy(myview);
+            }
             else if (!StatsP.Objectivo)
             {
                 if (myview.IsMine)
@@ -96,7 +103,7 @@ public class Fireball : MonoBehaviour
                 }
                 else
                 {
-                    //PhotonNetwork.Destroy(gameObject);
+                    PhotonNetwork.Destroy(gameObject);
                 }
             }
         }

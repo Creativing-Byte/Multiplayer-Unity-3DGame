@@ -56,6 +56,7 @@ public class HollToHell : Player
         else
         {
             disparo = PhotonNetwork.Instantiate("InstanciadorEnemigo", PosDisparo.transform.position, Quaternion.identity);
+            disparo.GetComponent<Fireball>().StatsP.team = Stats.team;
             disparo.GetComponent<InstanciadorPersonajes>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<InstanciadorPersonajes>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<InstanciadorPersonajes>().StatsP.daño = Stats.ataque;

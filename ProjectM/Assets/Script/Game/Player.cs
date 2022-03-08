@@ -422,6 +422,10 @@ public class Player : MonoBehaviour, IPunObservable
             MyBrain.isStopped = true;
             StartCoroutine("TimeStoped");
         }
+        if (other.gameObject.tag=="DañoArea")
+        {
+            Stats.vidacurrent -= 5;
+        }
     }
     [PunRPC]
     IEnumerator TimeStoped()
@@ -446,6 +450,7 @@ public class Player : MonoBehaviour, IPunObservable
         {
             disparo = PhotonNetwork.Instantiate("Disparo", transform.position, Quaternion.identity);
         }
+        disparo.GetComponent<Projectil>().StatsP.team = Stats.team;
         disparo.GetComponent<Projectil>().StatsP.Objectivo = Stats.Objetivo;
         disparo.GetComponent<Projectil>().StatsP.daño = Stats.ataque;
         disparo.GetComponent<Projectil>().StatsP.velocidad = 150f;
