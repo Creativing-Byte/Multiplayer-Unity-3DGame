@@ -11,8 +11,11 @@ public class Fireball : MonoBehaviour
     public StatsP StatsP = new StatsP();
     PhotonView myview;
     public bool vfx;
+    public bool zeus;
     public string vfxList;
     public Transform instanciaVFX;
+    public Transform instanciaVFX2;
+    public Transform instanciaVFX3;
     public float time;
     void Start()
     {
@@ -72,8 +75,19 @@ public class Fireball : MonoBehaviour
                             StatsP.Objectivo.GetComponent<PhotonView>().RPC("RecibirDanoRPC", RpcTarget.All, StatsP.daño);
                             if (vfx==true)
                             {
-                                PhotonNetwork.Instantiate(vfxList,instanciaVFX.position,instanciaVFX.transform.rotation);
-                                PhotonNetwork.Destroy(myview);
+                                if (zeus==true)
+                                {
+                                    PhotonNetwork.Instantiate(vfxList, instanciaVFX.position, instanciaVFX.transform.rotation);
+                                    PhotonNetwork.Instantiate(vfxList, instanciaVFX2.position, instanciaVFX2.transform.rotation);
+                                    PhotonNetwork.Instantiate(vfxList, instanciaVFX3.position, instanciaVFX3.transform.rotation);
+                                    PhotonNetwork.Destroy(myview);
+                                }
+                                else
+                                {
+                                    PhotonNetwork.Instantiate(vfxList, instanciaVFX.position, instanciaVFX.transform.rotation);
+                                    PhotonNetwork.Destroy(myview);
+                                }
+
                             }
                             else
                             {

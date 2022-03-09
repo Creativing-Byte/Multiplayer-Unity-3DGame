@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 8487396941578564536}
   - component: {fileID: 6770614069850112732}
   - component: {fileID: 4453410672770786344}
+  - component: {fileID: 5506014987903746755}
   m_Layer: 0
   m_Name: ZeusPunch
-  m_TagString: Untagged
+  m_TagString: "Da\xF1oArea"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6951663761111616419}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 40.15, y: 0, z: 7.5840006}
-  m_LocalScale: {x: 15.550213, y: 4.7793875, z: 4.7793875}
+  m_LocalPosition: {x: 40.15, y: -0.1, z: 7.4}
+  m_LocalScale: {x: 2.7163506, y: 2.8964298, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -178,3 +179,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   miView: {fileID: 0}
+--- !u!65 &5506014987903746755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951663761111616419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8032594, y: 1.8995382, z: 9.119672}
+  m_Center: {x: 0.1094674, y: 2.0259373, z: -0.07277346}

@@ -11,16 +11,7 @@ public class Zeus : Player
     public int enemiesInRange = 0;
     public GameObject PosDisparo;
     public GameObject Fireball, Tornado;
-    void Start()
-    {
-        MyBrain = GetComponent<NavMeshAgent>();
-        MyView = GetComponent<PhotonView>();
-        MyAnim = GetComponent<Animator>();
-        Launcher = GameObject.FindGameObjectWithTag("Launcher");
-        Stats.vidacurrent = Stats.vidamax;
-        AtaqueTimer = Stats.vataque;
-        GetComponentInChildren<SphereCollider>().radius = Stats.Range;
-    }
+
     public override void Punch()
     {
         punchVFX = PhotonNetwork.Instantiate("ZeusAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
