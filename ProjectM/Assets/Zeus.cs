@@ -15,7 +15,7 @@ public class Zeus : Player
     public override void Punch()
     {
         punchVFX = PhotonNetwork.Instantiate("ZeusAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
-        StartCoroutine("DestroyMIVfx");
+        //StartCoroutine("DestroyMIVfx");
     }
     override public void Attack()
     {

@@ -20,18 +20,12 @@ public class ThrowableTrigger : MonoBehaviour
             }
             else if (ObjectName == "FireballLanzador(Clone)")
             {
-                collider.gameObject.GetComponent<FireballPrefac>().Active();
-
-            }
-            else if (ObjectName == "DragonGigante(Clone)")
-            {
-                collider.gameObject.GetComponent<DragonGigante>().Active();
-
+                collider.gameObject.GetComponent<FireballInsta>().active = true;
+                Destroy(gameObject);
             }
             else if (ObjectName == "HachasPrefac(Clone)")
             {
                 collider.gameObject.GetComponent<AxesPrefac>().Active();
-
             }
 
         }
@@ -43,11 +37,6 @@ public class ThrowableTrigger : MonoBehaviour
         if (collider.gameObject.name == "Axe(Clone)")
         {
             collider.gameObject.GetComponent<Axes>().Vfx();
-            Destroy(gameObject);
-        }
-        if (collider.gameObject.name == "FireDragonGiGANTE(Clone)")
-        {
-            collider.gameObject.GetComponent<DragonGigantePersonaje>().Vfx();
             Destroy(gameObject);
         }
     }

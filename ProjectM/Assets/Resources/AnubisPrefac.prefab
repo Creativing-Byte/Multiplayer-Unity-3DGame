@@ -488,6 +488,7 @@ MonoBehaviour:
   healthBarRed: {fileID: 21300000, guid: 63e4ea33590fee24d8160f23f885b208, type: 3}
   healthbarBack: {fileID: 3445825266152471}
   healthbarFill: {fileID: 5822400670145979670}
+  Amount: {fileID: 0}
   healthMax: 100
   startingHealth: 100
 --- !u!114 &8820157766426545154
@@ -668,6 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e5c1bbcb458e2469d112e76cc32381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posInicial: {x: 0, y: 0, z: 0}
   Stats:
     team: 
     vidamax: 0
@@ -683,6 +685,14 @@ MonoBehaviour:
     Flying: 0
   Destino: {fileID: 0}
   punchVFXpuntoi: {fileID: 9095111039314954388}
+  ada: 0
+  mujerCuervo: 0
+  pCongelar: 0
+  prefac: 
+  objetivo: {fileID: 0}
+  velocidad: 0
+  rango: 0
+  MyAnim: {fileID: 0}
   attackminions: 1
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -691,8 +701,10 @@ MonoBehaviour:
   AnchuraMax: 10
   AlturaMax: 12
   Sfx: {fileID: 8300000, guid: 34d686b3574cea94b901201baff8b2b3, type: 3}
+  fireBallP: 0
   punchVFX: {fileID: 0}
   health: {fileID: 251682791618964964}
+  fireball: 0
 --- !u!54 &1213942325965955832
 Rigidbody:
   m_ObjectHideFlags: 0

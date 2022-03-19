@@ -17,6 +17,8 @@ public class Fireball : MonoBehaviour
     public Transform instanciaVFX2;
     public Transform instanciaVFX3;
     public float time;
+    public GameObject destino;
+    public float velocidad=2;
     void Start()
     {
         myview = GetComponent<PhotonView>();

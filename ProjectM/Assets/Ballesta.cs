@@ -38,14 +38,14 @@ public class Ballesta : Player
         }
         else
         {
-            //arma.SetActive(true);
+            arma.SetActive(true);
             disparo = PhotonNetwork.Instantiate("FlechaBallesta", PosDisparo.transform.position, Quaternion.identity);
             disparo.GetComponent<Fireball>().StatsP.team = Stats.team;
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
             disparo.GetComponent<Fireball>().StatsP.daño = Stats.ataque;
             disparo.GetComponent<Fireball>().StatsP.velocidad = 6f;
-            //StartCoroutine("ActiveArma");
+            StartCoroutine("ActiveArma");
         }
     }
 

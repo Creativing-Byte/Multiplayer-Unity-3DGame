@@ -92,22 +92,19 @@ public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
                         if (GetComponent<CardPlayer>().Carta.throwable)
                         {
 
-                            GameObject newThorw = Instantiate(GetComponent<CardPlayer>().ThrowableTrigger, /*GetComponent<CardPlayer>().poslanzamientolanzador.throwableTriggerPosition.position*/lanzador.throwableTriggerPosition.transform.position, Quaternion.identity);
-                            GetComponent<CardPlayer>().Spawnthrowable(GameObject.FindGameObjectWithTag("Throwable" + GetComponent<CardPlayer>().team).transform.position, newThorw);
+                            GameObject newThorw = Instantiate(GetComponent<CardPlayer>().ThrowableTrigger, lanzador.throwableTriggerPosition.transform.position, Quaternion.identity);
+                            GetComponent<CardPlayer>().Spawn(/*GameObject.FindGameObjectWithTag("Throwable" + GetComponent<CardPlayer>().team).transform.position,*/ newThorw);
                         }
                         else 
                         {
-                            GetComponent<CardPlayer>().Spawn();
+                            GetComponent<CardPlayer>().Spawn(null);
                         }
                     }
                 }
             }
-
-
             //Trigger.transform.GetChild(5).gameObject.transform.localPosition = new Vector3(Trigger.transform.GetChild(5).gameObject.transform.localPosition.x, Trigger.transform.GetChild(5).gameObject.transform.localPosition.y, 1.2f);
             Trigger.transform.GetChild(5).gameObject.GetComponent<MeshRenderer>().enabled = false;
             Trigger.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = false;
-
             if (Trigger.transform.GetChild(2).GetComponent<Trigger>().Active == true && Trigger.transform.GetChild(4).GetComponent<Trigger>().Active == true)
             {
                 Trigger.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = Trigger.transform.GetChild(0).GetComponent<MeshRenderer>().enabled;

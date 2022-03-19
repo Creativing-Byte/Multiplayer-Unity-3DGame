@@ -10,6 +10,7 @@ public class Tower : MonoBehaviour, IPunObservable
     public Stats Stats = new Stats();
     public GameObject destruccion;
     public AudioClip DestruccionFx;
+    public GameObject canonInst;
 
     public GameObject BarraVida, balaOffline;
 
@@ -235,13 +236,6 @@ public class Tower : MonoBehaviour, IPunObservable
         {
             Gizmos.color = Stats.Objetivo ? Color.green : Color.yellow;
             Gizmos.DrawSphere(transform.position, Stats.Range);
-        }
-    }
-    public virtual void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "DañoArea"&&other.GetComponent<Fireball>().StatsP.team!=Stats.team)
-        {
-            Stats.vidacurrent -= 5;
         }
     }
     void AttackSfx()

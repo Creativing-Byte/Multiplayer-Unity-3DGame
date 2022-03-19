@@ -7,7 +7,9 @@ using UnityEngine;
 public class CardDbInit : MonoBehaviour
 {
     DataSnapshot Cards;
-    void Start() => UpdateCards();
+    void Start() {
+        UpdateCards();
+    } 
 
     public async void UpdateCards()
     {

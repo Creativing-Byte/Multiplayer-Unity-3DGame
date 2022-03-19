@@ -12,16 +12,6 @@ public class Skater : Player
     public GameObject PosDisparo;
     public GameObject Fireball;
     //public GameObject arma;
-    void Start()
-    {
-        MyBrain = GetComponent<NavMeshAgent>();
-        MyView = GetComponent<PhotonView>();
-        MyAnim = GetComponent<Animator>();
-        Launcher = GameObject.FindGameObjectWithTag("Launcher");
-        Stats.vidacurrent = Stats.vidamax;
-        AtaqueTimer = Stats.vataque;
-        GetComponentInChildren<SphereCollider>().radius = Stats.Range;
-    }
 
     override public void Attack()
     {

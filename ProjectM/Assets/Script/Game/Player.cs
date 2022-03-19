@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IPunObservable
 {
-    public Vector3 posInicial;
+    public GameObject posInicial;
     public Stats Stats = new Stats();
     public GameObject Destino;
     public Transform punchVFXpuntoi;
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour, IPunObservable
     public GameObject objetivo;
     public float velocidad;
     public float rango;
-    protected Animator MyAnim;
+    public Animator MyAnim;
 
 
     protected Status EstadoActual = Status.Moviendo;
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour, IPunObservable
 
     public GameObject balaOffline;
     protected GameObject Launcher;
-
+    [HideInInspector]
     protected bool HaveenemyClose;
 
     [HideInInspector]
@@ -47,13 +47,26 @@ public class Player : MonoBehaviour, IPunObservable
     public AudioClip Sfx;
 
     private bool firstLoad = true;
+    public bool fireBallP;
     public GameObject punchVFX;
     [Space(10)]
     [SerializeField] private Healthbar health;
+    public bool holeToHell;
+    
 
     void Start()
     {
-        posInicial = transform.position;
+        if (posInicial== null)
+        {
+            if (Stats.team == "Blue")
+            {
+                posInicial = GameObject.Find("TowerBlueMid(Clone)");
+            }
+            else if (Stats.team == "Red")
+            {
+                posInicial = GameObject.Find("TowerRedMid(Clone)");
+            }
+        }
         TryGetComponent(out MyBrain);
         TryGetComponent(out MyView);
         TryGetComponent(out MyAnim);
@@ -69,7 +82,17 @@ public class Player : MonoBehaviour, IPunObservable
     //-------------------------------------------
     void Update()
     {
-        
+        if (posInicial == null)
+        {
+            if (Stats.team == "Blue")
+            {
+                posInicial = GameObject.Find("TowerBlueMid(Clone)");
+            }
+            else if (Stats.team == "Red")
+            {
+                posInicial = GameObject.Find("TowerRedMid(Clone)");
+            }
+        }
         CheckStatus();
 
         if (!HaveenemyClose)
@@ -79,7 +102,6 @@ public class Player : MonoBehaviour, IPunObservable
         else
         {
             attackEnemy();
-            print(Vector3.Distance(Stats.Objetivo.transform.position, gameObject.transform.position) + "distancia");
         }
 
         if (SceneManager.GetActiveScene().name == "Tutorial")
@@ -105,8 +127,7 @@ public class Player : MonoBehaviour, IPunObservable
                     else
                     {
                         PhotonNetwork.Destroy(MyView);
-                    }
-                    
+                    }                   
                 }
             }
             if (mujerCuervo==true)
@@ -125,6 +146,14 @@ public class Player : MonoBehaviour, IPunObservable
                     }
                 }
             }
+            if (holeToHell==true)
+            {
+                if (MyView.IsMine)
+                {
+                    PhotonNetwork.Destroy(MyView);
+                }
+            }
+
         }
 
         if (Stats.vidacurrent < Stats.vidamax)
@@ -277,7 +306,6 @@ public class Player : MonoBehaviour, IPunObservable
                 {
                     if (Vector3.Distance(Stats.Objetivo.transform.position, this.gameObject.transform.position) <= (Stats.Range+1))
                     {
-                        print(Vector3.Distance(Stats.Objetivo.transform.position, gameObject.transform.position) + "distancia");
                         if (MyView.IsMine /*&& AtaqueTimer >= Stats.vataque*/)
                         {
                             if (MyAnim)
@@ -424,7 +452,38 @@ public class Player : MonoBehaviour, IPunObservable
         }
         if (other.gameObject.tag=="DañoArea")
         {
-            Stats.vidacurrent -= 5;
+
+            if (other.gameObject.GetComponent<FirebaPlayer>().team!=Stats.team)
+            {
+                Stats.vidacurrent -= 50;
+                print("11");
+            }
+            else if (other.gameObject.GetComponent<Fireball>().StatsP.team!=Stats.team)
+            {
+                Stats.vidacurrent -= 5;
+                print("22");
+            }
+        }
+    }
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "DañoArea")
+        {
+            if (other.gameObject.GetComponent<DragonGigantePersonaje>().Stats.team != Stats.team)
+            {
+                Stats.vidacurrent -= 30;
+                print("33");
+            }
+            if (other.gameObject.GetComponent<FirebaPlayer>().team != Stats.team)
+            {
+                Stats.vidacurrent -= 50;
+                print("11");
+            }
+            if (other.gameObject.GetComponent<Fireball>().StatsP.team != Stats.team)
+            {
+                Stats.vidacurrent -= 5;
+                print("22");
+            }
         }
     }
     [PunRPC]

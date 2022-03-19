@@ -17,12 +17,11 @@ public class CardLoaded : MonoBehaviour
 
     GameObject Launcher;
 
-    [HideInInspector]
     public List<Card> Cartas;
    
     public string team;
 
-    private List<CardPlayer> drawingCardsAnimated = new List<CardPlayer>();
+    public List<CardPlayer> drawingCardsAnimated = new List<CardPlayer>();
 
     PhotonView MyView;
     void Awake()

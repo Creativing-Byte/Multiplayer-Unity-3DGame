@@ -51,7 +51,8 @@ public class DragonGigante : MonoBehaviour
     {
 
         spawn1 = PhotonNetwork.Instantiate("FireDragonGiGANTE", puntoHacha[0].transform.position, Quaternion.identity);
-
+        spawn2 = PhotonNetwork.Instantiate("FireDragonGiGANTE", puntoHacha[1].transform.position, Quaternion.identity);
+        spawn3 = PhotonNetwork.Instantiate("FireDragonGiGANTE", puntoHacha[2].transform.position, Quaternion.identity);
         yield return new WaitForSecondsRealtime(2);
         PhotonNetwork.Destroy(mypv);
 

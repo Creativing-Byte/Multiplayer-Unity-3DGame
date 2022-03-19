@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 344976845422493840}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 39.81, y: 0.87, z: 1.546}
-  m_LocalScale: {x: 3.1116903, y: 3.1116903, z: 3.1116903}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7233017361996643388}
   - {fileID: 9026740547499548369}
@@ -96,8 +96,14 @@ MonoBehaviour:
     HitBoxRadious: 0
     Objectivo: {fileID: 0}
   vfx: 1
+  zeus: 0
   vfxList: BallestaPunch
   instanciaVFX: {fileID: 7233017361996643388}
+  instanciaVFX2: {fileID: 0}
+  instanciaVFX3: {fileID: 0}
+  time: 0
+  destino: {fileID: 0}
+  velocidad: 2
 --- !u!114 &7744720011992836038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,32 +188,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4275046c76f6d1d42bd461a22fa710e9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.9147929
+      value: 8.254291
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4275046c76f6d1d42bd461a22fa710e9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9147931
+      value: 7.179955
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4275046c76f6d1d42bd461a22fa710e9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 39.138165
+      value: 148.28741
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4275046c76f6d1d42bd461a22fa710e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0000000018918
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4275046c76f6d1d42bd461a22fa710e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.017349
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4275046c76f6d1d42bd461a22fa710e9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.053139
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4275046c76f6d1d42bd461a22fa710e9,
         type: 3}
