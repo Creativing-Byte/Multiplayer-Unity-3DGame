@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5419674, g: 0.5982058, b: 0.71438766, a: 1}
+  m_IndirectSpecularColor: {r: 0.54196584, g: 0.59820485, b: 0.7143879, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -126,6 +126,90 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 524f7468da1576344815276b92bbb3a0, type: 2}
+--- !u!1001 &150824463
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 635208743001938305, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_Name
+      value: lanzamientothrowable
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.2821505
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.4598198
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc, type: 3}
 --- !u!1 &182119654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4691,6 +4775,7 @@ MonoBehaviour:
   PanelEmpate: {fileID: 1154962327989474325}
   PanelLose: {fileID: 1154962327053290733}
   endGamePanel: {fileID: 2012444258}
+  danger: {fileID: 0}
   opponentName: 
   DestrezaOp: 
   opponentDestreza: 0
@@ -4701,6 +4786,9 @@ MonoBehaviour:
   DestrezaLose: 
   bluePoints: 0
   redPoints: 0
+  Point: {fileID: 0}
+  Pointmarker: {fileID: 0}
+  Pointmarker2: {fileID: 0}
 --- !u!1 &1154962328138684031
 GameObject:
   m_ObjectHideFlags: 0

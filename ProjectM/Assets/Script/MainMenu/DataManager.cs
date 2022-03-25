@@ -99,7 +99,7 @@ public class DataManager : MonoBehaviour
         //    }
         //}
 
-
+        print(Launcher.DatosUser.Key);
 
         VersionInfo.text = "Version: " + Application.version;
         float Range = 1.0f / ExpMax * ExpCurrent;

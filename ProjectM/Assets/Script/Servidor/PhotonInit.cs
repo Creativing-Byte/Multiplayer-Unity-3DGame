@@ -366,6 +366,7 @@ public class PhotonInit : MonoBehaviourPunCallbacks
         if (SceneManager.GetActiveScene().name != "Lobby" && SceneManager.GetActiveScene().name != "LoadingGame")
         {
             InitializeGame();
+
         }
 
         if (SceneManager.GetActiveScene().name == "Lobby")

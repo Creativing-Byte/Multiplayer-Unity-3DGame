@@ -141,6 +141,9 @@ MonoBehaviour:
     TipoFlying: 0
     Ground: 1
     Flying: 1
+  destruccion: {fileID: 0}
+  DestruccionFx: {fileID: 0}
+  canonInst: {fileID: 0}
   BarraVida: {fileID: 8567904458755578216}
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -148,10 +151,14 @@ MonoBehaviour:
   AlturaMax: 34
   Portal: []
   PortalTag: TowerBlueDer
+  EscombrosTag: 
   IsCentral: 0
   AttackfxClip: {fileID: 8300000, guid: 86a86263976772a48a49983cea3f3b5e, type: 3}
   AttackBool: 0
   health: {fileID: 6120019297613976875}
+  BoolActivate1: {fileID: 0}
+  BoolActivate2: {fileID: 0}
+  Escombros: {fileID: 0}
 --- !u!135 &4613586201386271159
 SphereCollider:
   m_ObjectHideFlags: 0

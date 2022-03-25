@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.74698514, g: 0.5685717, b: 0.60394675, a: 1}
+  m_IndirectSpecularColor: {r: 0.7469834, g: 0.5685707, b: 0.6039472, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -549,6 +549,75 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1297669675}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1466157378
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 635208743001938305, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_Name
+      value: lanzamientothrowable
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.2563903
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.38136917
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635208743001938306, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6ca4abe8ac32ea4d82c6b689a88c4bc, type: 3}
 --- !u!1001 &1515565524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13421,6 +13490,7 @@ MonoBehaviour:
   PanelEmpate: {fileID: 5611339208995261248}
   PanelLose: {fileID: 5611339209666155448}
   endGamePanel: {fileID: 1297669677}
+  danger: {fileID: 0}
   opponentName: 
   DestrezaOp: 
   opponentDestreza: 0
@@ -13431,6 +13501,9 @@ MonoBehaviour:
   DestrezaLose: 
   bluePoints: 0
   redPoints: 0
+  Point: {fileID: 0}
+  Pointmarker: {fileID: 0}
+  Pointmarker2: {fileID: 0}
 --- !u!4 &5611339208603797804
 Transform:
   m_ObjectHideFlags: 0
