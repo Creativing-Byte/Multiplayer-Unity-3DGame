@@ -157,13 +157,14 @@ public class UserDbInit : MonoBehaviour
     public async Task writeNewUser(string userId, string name, string email, int destreza, int coins, int diamond, int tokens, int Etokens, string ultcon, string scene, string deckid, string deck1id, string deck2id, string deck3id, List<string> Cartas, List<string> friends)
     {
         int level = 1;
+        int Mstatus = 0;
         int exp = 0;
         int dice = 10;
         int gift = 0;
 
         string giftUnlocked = "None";
         Debug.Log("nuevo user realtime database");
-        User user = new User(name, email, destreza, coins, diamond, tokens, Etokens, ultcon, scene, deckid, level, exp, dice, gift, giftUnlocked, friends);
+        User user = new User(name, email, destreza, coins, diamond, tokens, Etokens, Mstatus, ultcon, scene, deckid, level, exp, dice, gift, giftUnlocked, friends);
         Deck deck1 = new Deck(deck1id, Cartas);
         Deck deck2 = new Deck(deck2id, Cartas);
         Deck deck3 = new Deck(deck3id, Cartas);
