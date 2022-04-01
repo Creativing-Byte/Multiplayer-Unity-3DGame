@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Velociraptors : MonoBehaviour
+public class Velociraptors : Player
 {
     
     public Stats Stats;

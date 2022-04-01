@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class FireballInsta : MonoBehaviour
+public class FireballInsta : Player
 {
     public Stats Stats;
     public GameObject PosInit;
@@ -51,7 +51,7 @@ public class FireballInsta : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    override public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name== "FireBallPrefac(Clone)")
         {

@@ -286,8 +286,10 @@ public class CardPlayer : MonoBehaviour
                                         Carta.spawn -= 1;
                                         if (Carta.spawn <= 0)
                                         {
-                                            print("yes");
+                                            print("yesasdsd");
                                             DeleteCard();
+                                            print("yesasdsdasdasd" +
+                                                "");
                                         }
                                         else
                                         {
@@ -308,7 +310,7 @@ public class CardPlayer : MonoBehaviour
 
                                         foreach (MonoBehaviour m in Spawn.GetComponents<MonoBehaviour>())
                                         {
-
+                                            print(1);
                                             if (!m.enabled)
                                                 m.enabled = true;
                                         }

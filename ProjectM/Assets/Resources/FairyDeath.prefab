@@ -14,11 +14,12 @@ GameObject:
   - component: {fileID: 6150981032250957972}
   - component: {fileID: 1412799620763861897}
   - component: {fileID: 4297563062636163821}
-  - component: {fileID: 7985836465797295313}
   - component: {fileID: 6775461927072286596}
+  - component: {fileID: 53232691308669313}
+  - component: {fileID: 4763394984078499105}
   m_Layer: 0
   m_Name: FairyDeath
-  m_TagString: Untagged
+  m_TagString: FairyDeath
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,31 +167,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 0
---- !u!114 &7985836465797295313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444530429998578578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae0d29b93dba4b43b5fb35bdb5a3b77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stats:
-    team: 
-    vidamax: 0
-    vidacurrent: 0
-    ataque: 0
-    velocidad: 0
-    vataque: 0
-    Range: 0
-    Objetivo: {fileID: 0}
-    TipoGround: 0
-    TipoFlying: 0
-    Ground: 0
-    Flying: 0
 --- !u!114 &6775461927072286596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,3 +181,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miView: {fileID: 0}
   time: 0
+--- !u!65 &53232691308669313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444530429998578578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.3467536, y: 5.5581284, z: 4.488709}
+  m_Center: {x: 0.015330885, y: -0.03435954, z: 0.31480297}
+--- !u!114 &4763394984078499105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444530429998578578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae0d29b93dba4b43b5fb35bdb5a3b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 

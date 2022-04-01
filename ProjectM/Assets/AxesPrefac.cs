@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
-public class AxesPrefac : MonoBehaviour
+public class AxesPrefac : Player
 {
     public Stats Stats;
 

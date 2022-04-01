@@ -52,7 +52,7 @@ public class Kimera : Player
             disparo.GetComponent<Fireball>().StatsP.team = Stats.team;
             disparo.GetComponent<Fireball>().StatsP.HitBoxRadious = 2;
             disparo.GetComponent<Fireball>().StatsP.Objectivo = Stats.Objetivo;
-            disparo.GetComponent<Fireball>().StatsP.daño = 10;
+            disparo.GetComponent<Fireball>().StatsP.daño =0;
             disparo.GetComponent<Fireball>().StatsP.velocidad = 10f;
         }
 

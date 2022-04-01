@@ -12,6 +12,7 @@ public class Fireball : MonoBehaviour
     PhotonView myview;
     public bool vfx;
     public bool zeus;
+    public bool cientifico;
     public string vfxList;
     public Transform instanciaVFX;
     public Transform instanciaVFX2;
@@ -19,6 +20,7 @@ public class Fireball : MonoBehaviour
     public float time;
     public GameObject destino;
     public float velocidad=2;
+    public bool pollo;
     void Start()
     {
         myview = GetComponent<PhotonView>();
@@ -84,6 +86,16 @@ public class Fireball : MonoBehaviour
                                     PhotonNetwork.Instantiate(vfxList, instanciaVFX3.position, instanciaVFX3.transform.rotation);
                                     PhotonNetwork.Destroy(myview);
                                 }
+                                else if (cientifico)
+                                {
+                                    
+                                    //PhotonNetwork.Instantiate(vfxList, instanciaVFX.position, instanciaVFX.transform.rotation);
+                                    //PhotonNetwork.Destroy(myview);
+                                }
+                                else if(pollo)
+                                {
+
+                                }
                                 else
                                 {
                                     PhotonNetwork.Instantiate(vfxList, instanciaVFX.position, instanciaVFX.transform.rotation);
@@ -129,6 +141,30 @@ public class Fireball : MonoBehaviour
         PhotonNetwork.Instantiate(vfxList, transform.transform.position, transform.rotation);
         yield return new WaitForSecondsRealtime(1);
         PhotonNetwork.Destroy(myview);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (cientifico)
+        {
+            if ((other.gameObject.name == "TriggerBottom" || other.gameObject.name == "TriggerUp" || other.gameObject.layer == 10) && other.gameObject.name != "CrazyScientific(Clone)")
+            {
+                StatsP.Objectivo.GetComponent<PhotonView>().RPC("RecibirDanoRPC", RpcTarget.All, StatsP.daño);
+                PhotonNetwork.Instantiate(vfxList, instanciaVFX.position, instanciaVFX.transform.rotation);
+                PhotonNetwork.Destroy(myview);
+                velocidad = 0;
+            }
+        }
+        if (pollo)
+        {
+            if ((other.gameObject.name == "TriggerBottom" || other.gameObject.name == "TriggerUp" || other.gameObject.layer == 10|| other.gameObject.layer == 9) && other.gameObject.name != "CrazyScientific(Clone)")
+            {
+                StatsP.Objectivo.GetComponent<PhotonView>().RPC("RecibirDanoRPC", RpcTarget.All, StatsP.daño);
+                PhotonNetwork.Instantiate(vfxList, instanciaVFX.position, instanciaVFX.transform.rotation);
+                PhotonNetwork.Destroy(myview);
+                velocidad = 0;
+            }
+        }
+
     }
     void OnDrawGizmosSelected()
     {

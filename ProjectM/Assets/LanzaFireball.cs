@@ -43,7 +43,7 @@ public class LanzaFireball : Player
 
     public override void Walk()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 1);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.5f);
     }
     public override void attackEnemy()
     {
@@ -53,7 +53,7 @@ public class LanzaFireball : Player
 
     public override void Punch()
     {
-        PhotonNetwork.Instantiate("FireBallVfx", transform.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate("Explosion", transform.transform.position, Quaternion.Euler(90,0,0));
         //StartCoroutine("DestroyMIVfx");
     }
     public void DestLanzador()

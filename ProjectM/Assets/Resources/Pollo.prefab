@@ -65,8 +65,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0.032820575, y: -0.030949688, z: -0.0005558679}
+  m_Size: {x: 1.1344588, y: 1.5575442, z: 1.551033}
+  m_Center: {x: -0.12260795, y: 4.6696844, z: 0.24065703}
 --- !u!114 &1484216853891294233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,13 +223,15 @@ MonoBehaviour:
     Objectivo: {fileID: 0}
   vfx: 0
   zeus: 0
-  vfxList: 
-  instanciaVFX: {fileID: 0}
+  cientifico: 0
+  vfxList: Punch
+  instanciaVFX: {fileID: 5692680499728861720}
   instanciaVFX2: {fileID: 0}
   instanciaVFX3: {fileID: 0}
   time: 0
   destino: {fileID: 0}
   velocidad: 0
+  pollo: 1
 --- !u!1 &1707708552009925851
 GameObject:
   m_ObjectHideFlags: 0

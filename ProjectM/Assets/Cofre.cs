@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Cofre : Player
 {
-    [HideInInspector]
+    public GameObject explosionContador;
     public int enemiesInRange = 0;
     public GameObject PosDisparo;
     public GameObject Fireball, Tornado, Explosion, personaje, vfxExplosion;
@@ -67,7 +67,10 @@ public class Cofre : Player
 
         }
     }
-
+    public void ExplosionMTD()
+    {
+        explosionContador.SetActive(true);
+    }
 
     override public void CheckStatus()
     {

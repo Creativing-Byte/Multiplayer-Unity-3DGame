@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ZarigueyaPrefac : MonoBehaviour
+public class ZarigueyaPrefac : Player
 {
     public Stats Stats;
 
