@@ -52,7 +52,7 @@ public class Player : MonoBehaviour, IPunObservable
     [Space(10)]
     [SerializeField] private Healthbar health;
     public bool holeToHell;
-    
+    public bool ganster;
 
     void Start()
     {
@@ -120,8 +120,8 @@ public class Player : MonoBehaviour, IPunObservable
                 {
                     if (ada==true)
                     {
-                        
-                        PhotonNetwork.Instantiate("FairyDeath", punchVFXpuntoi.transform.position, Quaternion.Euler(90,0,0));
+                        GameObject adaZona= PhotonNetwork.Instantiate("FairyDeath", punchVFXpuntoi.transform.position, Quaternion.Euler(90, 0, 0));
+                        adaZona.GetComponent<FairyDeath>().team = Stats.team;
                         PhotonNetwork.Destroy(MyView);
                     }
                     else
@@ -485,12 +485,21 @@ public class Player : MonoBehaviour, IPunObservable
                 print("22");
             }
         }
+        if (other.gameObject.tag== "FairyDeath")
+        {
+            if (other.GetComponent<FairyDeath>().team==Stats.team)
+            {
+                Stats.vidacurrent += 5;
+                Stats.vidamax += 5;
+            }
+
+        }
     }
     [PunRPC]
     IEnumerator TimeStoped()
     {
 
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(15);
         Stadisticas();
 
     }

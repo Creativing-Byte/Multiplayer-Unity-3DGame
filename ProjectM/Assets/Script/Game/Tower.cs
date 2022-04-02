@@ -43,6 +43,7 @@ public class Tower : MonoBehaviour, IPunObservable
 
     void Start()
     {
+
         myview = GetComponent<PhotonView>();
 
         Stats.vidacurrent = Stats.vidamax;
@@ -70,7 +71,10 @@ public class Tower : MonoBehaviour, IPunObservable
     void Update()
     {
         if (isDestroyed) return;
-
+        if (destruccion==null)
+        {
+            destruccion = GetComponentInChildren<ExploGameObje>().explosion;
+        }
         if (Stats.vidacurrent < Stats.vidamax)
         {
             //health.transform.GetChild(0).gameObject.SetActive(true);
@@ -154,8 +158,7 @@ public class Tower : MonoBehaviour, IPunObservable
                 CameraDestroyShake();
                 DestruccionSfx();
                 isDestroyed = true;
-                destruccion.SetActive(true);
-                PhotonNetwork.Instantiate("Explosion", this.transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate("Explosion", destruccion.transform.position, Quaternion.Euler(90,0,0));
                 PhotonNetwork.Destroy(gameObject);
             }
 

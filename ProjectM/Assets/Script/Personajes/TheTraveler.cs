@@ -7,24 +7,20 @@ using Photon.Pun;
 
 public class TheTraveler : Player
 {
+    public GameObject explosionContador;
     [HideInInspector]
     public int enemiesInRange = 0;
     public GameObject PosDisparo;
     public GameObject Fireball;
     public int destroyper;
     public DestroyPunch destroid;
+    public int velociodad;
     //public GameObject arma;
-
-    void Start()
+    public void Awake()
     {
-        MyBrain = GetComponent<NavMeshAgent>();
-        MyView = GetComponent<PhotonView>();
-        MyAnim = GetComponent<Animator>();
-        Launcher = GameObject.FindGameObjectWithTag("Launcher");
-        Stats.vidacurrent = Stats.vidamax;
-        AtaqueTimer = Stats.vataque;
-        GetComponentInChildren<SphereCollider>().radius = Stats.Range;
+        velocidad = Stats.velocidad;
     }
+
     public override void Punch()
     {
         punchVFX = PhotonNetwork.Instantiate("TravelerZone", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
@@ -33,7 +29,7 @@ public class TheTraveler : Player
     }
     public void LateUpdate()
     {
-        if (destroyper>2)
+        if (destroyper==2)
         {
             destroid.DestroyMiView();
         }
@@ -64,6 +60,17 @@ public class TheTraveler : Player
             StartCoroutine("ActiveArma");
         }
     }
+    public void ExplosionMTD()
+    {
+        explosionContador.SetActive(true);
+        Stats.velocidad = 0;   
+    }
+    public void ReturnVelocida()
+    {
+        Stats.velocidad = velocidad;
+        MyAnim.SetBool("isWalk", true);
+    }
+    
 
     override public void CheckStatus()
     {

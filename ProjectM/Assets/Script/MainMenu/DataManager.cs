@@ -222,18 +222,57 @@ public class DataManager : MonoBehaviour
 
         }
     }
-    public async void MatchMakind(int diceBet)
+    public /*async*/ void MatchMakind(/*int diceBet*/)
+    {
+        /*BattleManager.DiceBet = diceBet;
+
+        if (diceBet > 0)
+        {
+            var diceRef = FirebaseDatabase.DefaultInstance.GetReference("users").Child(Launcher.DatosUser.Key).Child("Date").Child("dice");
+
+
+            if (int.Parse((await diceRef.GetValueAsync()).Value.ToString()) < diceBet)
+            {
+                PopupMessage.instance.Show("Not enough tokens");
+                return;
+            }
+
+        }
+        var premium = FirebaseDatabase.DefaultInstance.GetReference("users").Child(Launcher.DatosUser.Key).Child("Date").Child("Mstatus");
+        if (int.Parse((await premium.GetValueAsync()).Value.ToString()) == 0)
+        {
+            PopupMessage.instance.Show("No Eres Premium");
+            return;
+        }*/
+
+        Lobbycontrol.ActivarPanelLoading();
+
+        PhotonInit.PhotonInitInstance.switchToRoom("World" + currentlyChosenLevel, true);
+        ChangedDeck();
+
+        TextLoading.text = "Searching Oponents";
+    }
+    public async void MatchMakindCasino(int diceBet)
     {
         BattleManager.DiceBet = diceBet;
 
         if (diceBet > 0)
         {
             var diceRef = FirebaseDatabase.DefaultInstance.GetReference("users").Child(Launcher.DatosUser.Key).Child("Date").Child("dice");
+
+
             if (int.Parse((await diceRef.GetValueAsync()).Value.ToString()) < diceBet)
             {
                 PopupMessage.instance.Show("Not enough tokens");
                 return;
             }
+
+        }
+        var premium = FirebaseDatabase.DefaultInstance.GetReference("users").Child(Launcher.DatosUser.Key).Child("Date").Child("Mstatus");
+        if (int.Parse((await premium.GetValueAsync()).Value.ToString()) == 0)
+        {
+            PopupMessage.instance.Show("No Eres Premium");
+            return;
         }
 
         Lobbycontrol.ActivarPanelLoading();

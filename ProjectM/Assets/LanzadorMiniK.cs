@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class LanzadorMiniK : MonoBehaviour
+public class LanzadorMiniK : Player
 {
     public Stats Stats;
 

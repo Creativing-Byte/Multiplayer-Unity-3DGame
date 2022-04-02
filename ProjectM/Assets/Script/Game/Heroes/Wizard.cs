@@ -20,9 +20,7 @@ public class Wizard : Player
         Stats.vidacurrent = Stats.vidamax;
         AtaqueTimer = Stats.vataque;
         GetComponentInChildren<SphereCollider>().radius = Stats.Range;
-       
     }
-
     override public void Attack()
     {
         GameObject disparo;
@@ -64,8 +62,6 @@ public class Wizard : Player
         punchVFX = PhotonNetwork.Instantiate("WizardAttack", punchVFXpuntoi.transform.position, punchVFXpuntoi.rotation);
         StartCoroutine("DestroyMIVfx");
     }
-
-
     override public void CheckStatus()
     {
         timerCheck += Time.deltaTime;

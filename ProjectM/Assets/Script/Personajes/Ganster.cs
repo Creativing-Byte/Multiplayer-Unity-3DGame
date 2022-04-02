@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Ganster : Player
 {
+    public GameObject explosionContador;
     [HideInInspector]
     public int enemiesInRange = 0;
     public GameObject PosDisparo;
@@ -63,7 +64,10 @@ public class Ganster : Player
 
         }
     }
-
+    public void ExplosionMTD()
+    {
+        explosionContador.SetActive(true);
+    }
 
     override public void CheckStatus()
     {

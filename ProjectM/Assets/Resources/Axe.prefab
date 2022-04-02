@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5216db091a7690d47b0d1b07edd16a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInicial: {x: 0, y: 0, z: 0}
+  posInicial: {fileID: 0}
   Stats:
     team: 
     vidamax: 100
@@ -1088,7 +1088,8 @@ MonoBehaviour:
   fireBallP: 0
   punchVFX: {fileID: 0}
   health: {fileID: 226093206187011461}
-  fireball: 0
+  holeToHell: 0
+  ganster: 0
   VelociraptorClone: {fileID: 0}
   velociraptoview: {fileID: 0}
   miView: {fileID: 0}
