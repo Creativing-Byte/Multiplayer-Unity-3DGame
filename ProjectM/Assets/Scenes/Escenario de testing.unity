@@ -12655,8 +12655,8 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: -6922793697723135513, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
   - {fileID: 5115824134251832052, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
-  - {fileID: -52773429122680670, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
-  - {fileID: -2813467912831258332, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
+  - {fileID: 2100000, guid: b579e317afa0dc74b9b999b4aeb81d0b, type: 2}
+  - {fileID: 2100000, guid: 881af4f13e4b5f54a9f622a841ea29ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17993,7 +17993,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -52773429122680670, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
+  - {fileID: 2100000, guid: b579e317afa0dc74b9b999b4aeb81d0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25377,6 +25377,32 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4623528886241651348, guid: 5f45b55b25a24d94ea0422cba54d0394,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623528886241651348, guid: 5f45b55b25a24d94ea0422cba54d0394,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623528886241651348, guid: 5f45b55b25a24d94ea0422cba54d0394,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623528886241651348, guid: 5f45b55b25a24d94ea0422cba54d0394,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623528886241651348, guid: 5f45b55b25a24d94ea0422cba54d0394,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8753577354773760630, guid: 4b5835e520c1dcd4082647f5ed11ca86,
+        type: 3}
     - target: {fileID: 5040053849337558408, guid: 5f45b55b25a24d94ea0422cba54d0394,
         type: 3}
       propertyPath: sceneViewId
@@ -31712,9 +31738,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6257049728728731878, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
-  - {fileID: -52773429122680670, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
-  - {fileID: 5115824134251832052, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
+  - {fileID: 2100000, guid: 881af4f13e4b5f54a9f622a841ea29ce, type: 2}
+  - {fileID: 2100000, guid: b579e317afa0dc74b9b999b4aeb81d0b, type: 2}
+  - {fileID: 2100000, guid: 690d1b82cc8b8d340b9ccf386d024034, type: 2}
   - {fileID: -6922793697723135513, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
   - {fileID: -3846018093981099296, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
   m_StaticBatchInfo:
@@ -43144,6 +43170,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3826494957360612632, guid: 3049c32b96ed4c04cb7e12eba47852d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 881af4f13e4b5f54a9f622a841ea29ce, type: 2}
+    - target: {fileID: 3826494957360612632, guid: 3049c32b96ed4c04cb7e12eba47852d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b579e317afa0dc74b9b999b4aeb81d0b, type: 2}
+    - target: {fileID: 3826494957360612632, guid: 3049c32b96ed4c04cb7e12eba47852d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 690d1b82cc8b8d340b9ccf386d024034, type: 2}
     - target: {fileID: 5360124088178489279, guid: 3049c32b96ed4c04cb7e12eba47852d3,
         type: 3}
       propertyPath: sceneViewId
@@ -43159,6 +43200,16 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8429441207076314646, guid: 3049c32b96ed4c04cb7e12eba47852d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: b579e317afa0dc74b9b999b4aeb81d0b, type: 2}
+    - target: {fileID: 8429441207076314646, guid: 3049c32b96ed4c04cb7e12eba47852d3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 881af4f13e4b5f54a9f622a841ea29ce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3049c32b96ed4c04cb7e12eba47852d3, type: 3}
 --- !u!1 &7447352818833099267

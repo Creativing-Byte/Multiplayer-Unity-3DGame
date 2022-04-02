@@ -1825,7 +1825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eeec4f4ecfa524eb1a5e946cfabfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInicial: {x: 0, y: 0, z: 0}
+  posInicial: {fileID: 0}
   Stats:
     team: 
     vidamax: 0
@@ -1848,6 +1848,7 @@ MonoBehaviour:
   objetivo: {fileID: 0}
   velocidad: 0
   rango: 0
+  MyAnim: {fileID: 0}
   attackminions: 1
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
@@ -1856,8 +1857,10 @@ MonoBehaviour:
   AnchuraMax: 3
   AlturaMax: 30
   Sfx: {fileID: 8300000, guid: c39ebf0c4c9a6e1468c351bc0fe45ca9, type: 3}
+  fireBallP: 0
   punchVFX: {fileID: 0}
   health: {fileID: 6093000314471495114}
+  holeToHell: 0
 --- !u!54 &4082827298331227203
 Rigidbody:
   m_ObjectHideFlags: 0

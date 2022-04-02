@@ -194,9 +194,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6257049728728731878, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
-  - {fileID: -52773429122680670, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
-  - {fileID: 5115824134251832052, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
+  - {fileID: 2100000, guid: 881af4f13e4b5f54a9f622a841ea29ce, type: 2}
+  - {fileID: 2100000, guid: b579e317afa0dc74b9b999b4aeb81d0b, type: 2}
+  - {fileID: 2100000, guid: 690d1b82cc8b8d340b9ccf386d024034, type: 2}
   - {fileID: -6922793697723135513, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
   - {fileID: -3846018093981099296, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
   m_StaticBatchInfo:
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482e935781fbbfa47a709afaac2b7546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInicial: {x: 0, y: 0, z: 0}
+  posInicial: {fileID: 0}
   Stats:
     team: 
     vidamax: 0
@@ -319,6 +319,7 @@ MonoBehaviour:
   objetivo: {fileID: 0}
   velocidad: 9
   rango: 9
+  MyAnim: {fileID: 0}
   attackminions: 1
   balaOffline: {fileID: 5688194942223606593, guid: acc148691314f0c47ba17eaad86366b2,
     type: 3}
@@ -327,8 +328,10 @@ MonoBehaviour:
   AnchuraMax: 13
   AlturaMax: 16
   Sfx: {fileID: 8300000, guid: b4287c95c121dad4690af6bf9e420259, type: 3}
+  fireBallP: 0
   punchVFX: {fileID: 0}
   health: {fileID: 3570004431178513399}
+  holeToHell: 0
   enemiesInRange: 0
   PosDisparo: {fileID: 5619022543269226962}
   Fireball: {fileID: 5688194942223606593, guid: acc148691314f0c47ba17eaad86366b2,
@@ -1176,8 +1179,8 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: -6922793697723135513, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
   - {fileID: 5115824134251832052, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
-  - {fileID: -52773429122680670, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
-  - {fileID: -2813467912831258332, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
+  - {fileID: 2100000, guid: b579e317afa0dc74b9b999b4aeb81d0b, type: 2}
+  - {fileID: 2100000, guid: 881af4f13e4b5f54a9f622a841ea29ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1724,7 +1727,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -52773429122680670, guid: 6fb97e2e32aa28f4a87c26c7baad1c1e, type: 3}
+  - {fileID: 2100000, guid: b579e317afa0dc74b9b999b4aeb81d0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
