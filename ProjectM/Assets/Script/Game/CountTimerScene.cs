@@ -52,6 +52,7 @@ public class CountTimerScene : MonoBehaviour
         {
             if (TimerSF <= 0)
             {
+                ControlTime();
                 TimerM -= 1;
                 TimerSF = 60f;
             }
@@ -70,7 +71,7 @@ public class CountTimerScene : MonoBehaviour
     }
     void ControlTime()
     {
-        if (TimerM == 0 && TimerS == 0)
+        if (TimerM <= 0 && TimerS <= 0)
         {
             BattleManager.instance.EndGame();
         }

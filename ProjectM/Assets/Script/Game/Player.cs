@@ -471,17 +471,17 @@ public class Player : MonoBehaviour, IPunObservable
         {
             if (other.gameObject.GetComponent<DragonGigantePersonaje>().Stats.team != Stats.team)
             {
-                Stats.vidacurrent -= 30;
+                Stats.vidacurrent -= 30;//daño de area de el dragon
                 print("33");
             }
             if (other.gameObject.GetComponent<FirebaPlayer>().team != Stats.team)
             {
-                Stats.vidacurrent -= 50;
+                Stats.vidacurrent -= 50;//daño area heroes
                 print("11");
             }
             if (other.gameObject.GetComponent<Fireball>().StatsP.team != Stats.team)
             {
-                Stats.vidacurrent -= 5;
+                Stats.vidacurrent -= 5;//daño area lanzables 
                 print("22");
             }
         }
@@ -489,13 +489,13 @@ public class Player : MonoBehaviour, IPunObservable
         {
             if (other.GetComponent<FairyDeath>().team==Stats.team)
             {
-                Stats.vidacurrent += 5;
+                Stats.vidacurrent += 5;// vida extra proporcionada por el ada
                 Stats.vidamax += 5;
             }
 
         }
     }
-    [PunRPC]
+    
     IEnumerator TimeStoped()
     {
 
