@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        time = tiempo;
     }
 
     // Update is called once per frame
@@ -21,6 +21,7 @@ public class Timer : MonoBehaviour
         if (tiempo <= 0)
         {
             contador.text = 0 + ":" + 0;
+            tiempo = time;
             gameObject.SetActive(false);
         }
     }
