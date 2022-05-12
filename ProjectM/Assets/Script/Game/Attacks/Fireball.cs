@@ -14,6 +14,7 @@ public class Fireball : MonoBehaviour
     public bool zeus;
     public bool cientifico;
     public string vfxList;
+    public string ParticleSystem;
     public Transform instanciaVFX;
     public Transform instanciaVFX2;
     public Transform instanciaVFX3;
@@ -83,6 +84,7 @@ public class Fireball : MonoBehaviour
                                 {
                                     PhotonNetwork.Instantiate(vfxList, instanciaVFX.position, instanciaVFX.transform.rotation);
                                     PhotonNetwork.Instantiate(vfxList, instanciaVFX2.position, instanciaVFX2.transform.rotation);
+                                    PhotonNetwork.Instantiate(ParticleSystem, instanciaVFX2.position, instanciaVFX2.transform.rotation);
                                     PhotonNetwork.Instantiate(vfxList, instanciaVFX3.position, instanciaVFX3.transform.rotation);
                                     PhotonNetwork.Destroy(myview);
                                 }

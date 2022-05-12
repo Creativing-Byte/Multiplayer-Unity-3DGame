@@ -10,6 +10,8 @@ public class LanzaFireball : Player
     public FireballInsta VelociraptorClone;
     public PhotonView velociraptoview;
     public PhotonView miView;
+    public Camera_Shake BoolActivate1;
+    public Camera_Shake BoolActivate2;
     public bool activacion;
     [HideInInspector]
     public int enemiesInRange = 0;
@@ -53,12 +55,23 @@ public class LanzaFireball : Player
 
     public override void Punch()
     {
-        PhotonNetwork.Instantiate("Explosion", transform.transform.position, Quaternion.Euler(90,0,0));
+        PhotonNetwork.Instantiate("Explosion", transform.transform.position, Quaternion.Euler(90, 0, 0));
+        CameraDestroyShake();
         //StartCoroutine("DestroyMIVfx");
     }
     public void DestLanzador()
     {
         target.GetComponentInParent<DestroyPunch>().DestroyMiView();
+    }
+
+    void CameraDestroyShake()
+    {
+        GameObject g = GameObject.FindGameObjectWithTag("Camera2");
+        GameObject g2 = GameObject.FindGameObjectWithTag("Camera1");
+        BoolActivate2 = g.GetComponent<Camera_Shake>();
+        BoolActivate2.start = true;
+        BoolActivate1 = g2.GetComponent<Camera_Shake>();
+        BoolActivate1.start = true;
     }
 
     IEnumerator Attaque()

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System;
+
 
 public class DestroyPunch : MonoBehaviour
 {
@@ -10,8 +12,15 @@ public class DestroyPunch : MonoBehaviour
     {
         miView = GetComponent<PhotonView>();
     }
+
+    public void Destroy()
+    {
+        PhotonNetwork.Destroy(gameObject);
+    }
     public void DestroyMiView()
     {
         PhotonNetwork.Destroy(miView);
+
+
     }
 }

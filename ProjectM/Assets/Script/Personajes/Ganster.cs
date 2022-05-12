@@ -11,6 +11,8 @@ public class Ganster : Player
     [HideInInspector]
     public int enemiesInRange = 0;
     public GameObject PosDisparo;
+    public Camera_Shake BoolActivate1;
+    public Camera_Shake BoolActivate2;
     public GameObject Fireball, Tornado, Explosion,personaje,vfxExplosion;
     void Start()
     {
@@ -25,6 +27,7 @@ public class Ganster : Player
     public override void Punch()
     {
         punchVFX = PhotonNetwork.Instantiate("Explosion", punchVFXpuntoi.transform.position, punchVFXpuntoi.transform.rotation);
+        CameraDestroyShake();
         StartCoroutine("DestroyMIVfx");
     }
     override public void Attack()
@@ -69,6 +72,15 @@ public class Ganster : Player
         explosionContador.SetActive(true);
     }
 
+    void CameraDestroyShake()
+    {
+        GameObject g = GameObject.FindGameObjectWithTag("Camera2");
+        GameObject g2 = GameObject.FindGameObjectWithTag("Camera1");
+        BoolActivate2 = g.GetComponent<Camera_Shake>();
+        BoolActivate2.start = true;
+        BoolActivate1 = g2.GetComponent<Camera_Shake>();
+        BoolActivate1.start = true;
+    }
     override public void CheckStatus()
     {
         timerCheck += Time.deltaTime;

@@ -47,65 +47,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.989208, y: 1, z: 0.9398403, w: 0}
+    m_Value: {x: 1, y: 0.9187856, z: 0.797895, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.9926597, y: 0.89114386, z: 1, w: 0.21482618}
+    m_Value: {x: 1, y: 0.8716005, z: 0.9908486, w: 0.21482618}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 0.8157937, y: 0.8790439, z: 1, w: -0.045385774}
---- !u!114 &-4592861214337738475
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: 
-  active: 0
-  m_AdvancedMode: 0
-  threshold:
-    m_OverrideState: 1
-    m_Value: 0.86
-    min: 0
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-  scatter:
-    m_OverrideState: 1
-    m_Value: 0.7
-    min: 0
-    max: 1
-  clamp:
-    m_OverrideState: 1
-    m_Value: 65472
-    min: 0
-  tint:
-    m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
-  highQualityFiltering:
-    m_OverrideState: 1
-    m_Value: 0
-  skipIterations:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 16
-  dirtTexture:
-    m_OverrideState: 1
-    m_Value: {fileID: 0}
-  dirtIntensity:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
+    m_Value: {x: 1, y: 0.8605249, z: 0.85437393, w: -0.045385774}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,76 +67,12 @@ MonoBehaviour:
   m_Name: Volume Olimpo
   m_EditorClassIdentifier: 
   components:
-  - {fileID: -4592861214337738475}
   - {fileID: -6593258121747583875}
   - {fileID: 807516945009016783}
   - {fileID: 576188291615515692}
   - {fileID: 1075030295413668772}
   - {fileID: -5515082373743620381}
-  - {fileID: 376236268166576441}
   - {fileID: 3709128639367623997}
---- !u!114 &376236268166576441
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
-  m_Name: DepthOfField
-  m_EditorClassIdentifier: 
-  active: 0
-  m_AdvancedMode: 0
-  mode:
-    m_OverrideState: 1
-    m_Value: 1
-  gaussianStart:
-    m_OverrideState: 0
-    m_Value: 10
-    min: 0
-  gaussianEnd:
-    m_OverrideState: 0
-    m_Value: 30
-    min: 0
-  gaussianMaxRadius:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0.5
-    max: 1.5
-  highQualitySampling:
-    m_OverrideState: 0
-    m_Value: 0
-  focusDistance:
-    m_OverrideState: 0
-    m_Value: 10
-    min: 0.1
-  aperture:
-    m_OverrideState: 0
-    m_Value: 5.6
-    min: 1
-    max: 32
-  focalLength:
-    m_OverrideState: 0
-    m_Value: 50
-    min: 1
-    max: 300
-  bladeCount:
-    m_OverrideState: 0
-    m_Value: 5
-    min: 3
-    max: 9
-  bladeCurvature:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 1
-  bladeRotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: -180
-    max: 180
 --- !u!114 &576188291615515692
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -439,13 +323,13 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   temperature:
-    m_OverrideState: 0
-    m_Value: 4.2
+    m_OverrideState: 1
+    m_Value: -8
     min: -100
     max: 100
   tint:
     m_OverrideState: 0
-    m_Value: 36.03
+    m_Value: -8
     min: -100
     max: 100
 --- !u!114 &1075030295413668772
@@ -464,7 +348,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.12
+    m_Value: -0.13
   contrast:
     m_OverrideState: 1
     m_Value: -22.7
@@ -478,12 +362,12 @@ MonoBehaviour:
     showEyeDropper: 1
   hueShift:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: -12
     min: -180
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: -1.5
+    m_Value: -7
     min: -100
     max: 100
 --- !u!114 &3709128639367623997
@@ -502,13 +386,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.82034075, y: 0.8991217, z: 1, w: 0}
+    m_Value: {x: 0.72981745, y: 0.775454, z: 1, w: 0.038022745}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.9964919, y: 1, z: 0.8690131, w: 0}
+    m_Value: {x: 1, y: 0.9065387, z: 0.8706018, w: 0}
   highlights:
     m_OverrideState: 0
-    m_Value: {x: 0.953182, y: 0.99702394, z: 1, w: 0}
+    m_Value: {x: 0.970302, y: 0.9738374, z: 1, w: 0}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
