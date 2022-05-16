@@ -10,7 +10,7 @@ public TextMeshProUGUI Amount;
     public int valueAct;
 
     float secondsCounter;
-    float secondsToCount = 0.12f;
+    float secondsToCount = 0.3f;
 
     float Range;
     public Gradient myGradient;

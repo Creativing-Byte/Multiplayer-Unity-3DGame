@@ -233,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &32245392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.750008, y: -63.13}
+  m_AnchoredPosition: {x: 5.800006, y: -82.03}
   m_SizeDelta: {x: 131.274, y: 20.865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41160313
@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 45792195}
   - component: {fileID: 45792194}
   - component: {fileID: 45792196}
+  - component: {fileID: 45792197}
   m_Layer: 5
   m_Name: message
   m_TagString: Untagged
@@ -429,8 +430,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.1, y: -4.3}
-  m_SizeDelta: {x: 130.145, y: 42.64}
+  m_AnchoredPosition: {x: -2.384, y: -3.101}
+  m_SizeDelta: {x: 99.313, y: 42.638}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45792194
 MonoBehaviour:
@@ -550,6 +551,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &45792197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45792192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - NO TIENES UNA CUENTA?
+  - DONT HAVE ACCOUNT?
+  - VOUS N'VEZ PAS DE COMPTE?
+  - VOCE NAO TEM UMA CONTA?
+  Upper: 1
 --- !u!1 &47831811
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +827,7 @@ GameObject:
   - component: {fileID: 100713800}
   - component: {fileID: 100713802}
   - component: {fileID: 100713801}
+  - component: {fileID: 100713803}
   m_Layer: 5
   m_Name: Username
   m_TagString: Untagged
@@ -839,8 +859,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.4, y: 127.2}
-  m_SizeDelta: {x: 72.375, y: 36.214}
+  m_AnchoredPosition: {x: -57.794, y: 133.532}
+  m_SizeDelta: {x: 115.59, y: 24.945}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &100713801
 MonoBehaviour:
@@ -890,11 +910,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.6
+  m_fontSize: 20.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 15.2
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -940,6 +960,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100713799}
   m_CullTransparentMesh: 1
+--- !u!114 &100713803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100713799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - 'NOMBRE:'
+  - 'USERNAME:'
+  - 'NOM D''UTILISATEUR:'
+  - 'NOME:'
+  Upper: 1
 --- !u!1 &105222849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,6 +1997,7 @@ GameObject:
   - component: {fileID: 186044990}
   - component: {fileID: 186044992}
   - component: {fileID: 186044991}
+  - component: {fileID: 186044993}
   m_Layer: 5
   m_Name: Infotext
   m_TagString: Untagged
@@ -2038,7 +2077,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 15.4
   m_fontSizeMax: 19
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -2084,6 +2123,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186044989}
   m_CullTransparentMesh: 1
+--- !u!114 &186044993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186044989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - BIENVENIDO VIAJERO, CONVIERTETE EN GUERRERO PARA JUGAR Y GANAR
+  - WELCOME TRAVELER, BECOME A WARRIOR TO PLAY AND EARN
+  - BIENVENUE VOYAGEUR, DEVENEZ UN GUERRIER POUR JOUER ET GAGNER
+  - BEM-VINDO VIAJANTE, TORNE-SE UM GUERREIRO PARA JOGAR E GANHAR
+  Upper: 1
 --- !u!1 &199232983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,6 +2307,7 @@ GameObject:
   - component: {fileID: 210078143}
   - component: {fileID: 210078145}
   - component: {fileID: 210078144}
+  - component: {fileID: 210078146}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2274,7 +2332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.66151, y: 235.42}
+  m_AnchoredPosition: {x: -0.66152, y: 230.8}
   m_SizeDelta: {x: 177.494, y: 36.541}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &210078144
@@ -2332,7 +2390,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2375,6 +2433,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210078142}
   m_CullTransparentMesh: 1
+--- !u!114 &210078146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210078142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - CONSEJOS
+  - CREDENTIAL TIPS
+  - CONSEILS
+  - DICAS DE CREDENCIAIS
+  Upper: 1
 --- !u!1 &219058666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,6 +2693,7 @@ GameObject:
   - component: {fileID: 265921917}
   - component: {fileID: 265921919}
   - component: {fileID: 265921918}
+  - component: {fileID: 265921920}
   m_Layer: 5
   m_Name: text
   m_TagString: Untagged
@@ -2742,6 +2819,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265921916}
   m_CullTransparentMesh: 1
+--- !u!114 &265921920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265921916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - ACEPTAR
+  - ACCEPT
+  - J'ACCEPTE
+  - ACEITAR
+  Upper: 1
 --- !u!1 &291895527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3038,7 +3133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.750004, y: -42.265}
+  m_AnchoredPosition: {x: 5.800002, y: -61.165}
   m_SizeDelta: {x: 131.274, y: 20.865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359358187
@@ -4987,6 +5082,7 @@ GameObject:
   - component: {fileID: 622599965}
   - component: {fileID: 622599967}
   - component: {fileID: 622599966}
+  - component: {fileID: 622599968}
   m_Layer: 5
   m_Name: Body
   m_TagString: Untagged
@@ -5011,7 +5107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80.748, y: -26.083}
+  m_AnchoredPosition: {x: 60.098, y: -37.182995}
   m_SizeDelta: {x: 233.872, y: 42.129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622599966
@@ -5034,8 +5130,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To identify yourself correctly and all your friends can recognize you,
-    You will need a great Nickname
+  m_text: Para identificarte correctamente y que todos tus amigos puedan reconocerte,
+    necesitaras a buen nombre
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8867e2fb40c22304194e4dd3811ae723, type: 2}
   m_sharedMaterial: {fileID: 3272900508219204365, guid: 8867e2fb40c22304194e4dd3811ae723,
@@ -5063,7 +5159,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.25
+  m_fontSize: 11.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5113,6 +5209,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622599964}
   m_CullTransparentMesh: 1
+--- !u!114 &622599968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622599964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - Para identificarte correctamente y que todos tus amigos puedan reconocerte, necesitaras
+    a buen nombre
+  - To identify yourself correctly and all your friends can recognize you, You will
+    need a great Nickname
+  - "Pour vous identifier correctement et que tous vos amis puissent vous reconna\xEEtre,
+    vous aurez besoin d'un bon nom"
+  - Para se identificar corretamente e que todos os seus amigos possam reconhece-lo,
+    voce precisara de um bom nome
+  Upper: 0
 --- !u!1 &633959105
 GameObject:
   m_ObjectHideFlags: 0
@@ -5327,6 +5445,7 @@ GameObject:
   - component: {fileID: 679899352}
   - component: {fileID: 679899354}
   - component: {fileID: 679899353}
+  - component: {fileID: 679899355}
   m_Layer: 5
   m_Name: Infotext
   m_TagString: Untagged
@@ -5406,7 +5525,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 14
   m_fontSizeMax: 19
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -5452,6 +5571,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679899351}
   m_CullTransparentMesh: 1
+--- !u!114 &679899355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679899351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - AQUI TENEMOS ALGUNOS CONSEJOS PARA TU CUENTA
+  - HERE WE HAVE FOR YOU SOME TIPS FOR YOUR ACCOUNT
+  - ICI NOUS AVONS POUR VOUS QUELQUES CONSEILS POUR VOTRE COMPTE
+  - AQUI TEMOS PARA VOCE ALGUMAS DICAS PARA SUA CONTA
+  Upper: 1
 --- !u!1 &704289560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,7 +5970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.599997, y: -44.965004}
+  m_AnchoredPosition: {x: 14.080999, y: -46.539}
   m_SizeDelta: {x: 131.274, y: 20.865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &756874723
@@ -5945,6 +6082,7 @@ GameObject:
   - component: {fileID: 759461240}
   - component: {fileID: 759461242}
   - component: {fileID: 759461241}
+  - component: {fileID: 759461243}
   m_Layer: 5
   m_Name: Body
   m_TagString: Untagged
@@ -6071,6 +6209,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759461239}
   m_CullTransparentMesh: 1
+--- !u!114 &759461243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759461239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - Para resolver cualquier problema con tu cuenta contacta al soporte tecnico, Recuerda
+    que jamas te pediremos tu contrasena
+  - To solve any problem with your account, contact the technical support, Remeber
+    that they will never ask you for your password.
+  - Pour resoudre tout probleme avec votre compte, contactez le support technique.
+    N'oubliez pas que nous ne vous demanderons jamais votre mot de passe.
+  - Para resolver qualquer problema com sua conta, entre em contato com o suporte
+    tecnico. Lembre-se de que nunca solicitaremos sua senha.
+  Upper: 0
 --- !u!1 &767106618
 GameObject:
   m_ObjectHideFlags: 0
@@ -6865,6 +7025,7 @@ GameObject:
   - component: {fileID: 833360870}
   - component: {fileID: 833360872}
   - component: {fileID: 833360871}
+  - component: {fileID: 833360873}
   m_Layer: 5
   m_Name: Condition 3
   m_TagString: Untagged
@@ -6889,7 +7050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61.455, y: -95.8}
+  m_AnchoredPosition: {x: 47.936005, y: -97.374}
   m_SizeDelta: {x: 153.684, y: 14.717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &833360871
@@ -6990,6 +7151,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833360869}
   m_CullTransparentMesh: 1
+--- !u!114 &833360873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833360869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - Tener al menos un caracter especial
+  - Have some special chatacter
+  - Avoir au moins un caractere special
+  - Ter pelo menos um caractere especial
+  Upper: 1
 --- !u!1 &838951508
 GameObject:
   m_ObjectHideFlags: 0
@@ -7202,6 +7381,7 @@ GameObject:
   - component: {fileID: 840545682}
   - component: {fileID: 840545684}
   - component: {fileID: 840545683}
+  - component: {fileID: 840545685}
   m_Layer: 5
   m_Name: Infotext
   m_TagString: Untagged
@@ -7281,7 +7461,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 14.1
   m_fontSizeMax: 19
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -7327,6 +7507,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840545681}
   m_CullTransparentMesh: 1
+--- !u!114 &840545685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840545681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - RECUERDA NUNCA COMPARTIR TUS DATOS
+  - REMEMBER NEVER SHARE YOUR CREDENTIALS
+  - RAPPELEZ-VOUS DE NE JAMAIS PARTAGER VOS INFORMATIONS D'IDENTIFICATION
+  - LEMBRE-SE DE NUNCA COMPARTILHAR SUAS CREDENCIAIS
+  Upper: 1
 --- !u!1 &845447375
 GameObject:
   m_ObjectHideFlags: 0
@@ -7753,6 +7951,7 @@ GameObject:
   - component: {fileID: 903711161}
   - component: {fileID: 903711163}
   - component: {fileID: 903711162}
+  - component: {fileID: 903711164}
   m_Layer: 5
   m_Name: Condition 2
   m_TagString: Untagged
@@ -7777,7 +7976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44.45, y: -73.4}
+  m_AnchoredPosition: {x: 21.499998, y: -92.299995}
   m_SizeDelta: {x: 117.374, y: 20.135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &903711162
@@ -7878,6 +8077,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903711160}
   m_CullTransparentMesh: 1
+--- !u!114 &903711164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903711160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - Unico y reconocible
+  - Unique and recognizable
+  - Unique et reconnaissable
+  - Unique et reconnaissable
+  Upper: 0
 --- !u!1 &913856071
 GameObject:
   m_ObjectHideFlags: 0
@@ -8012,7 +8229,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.6, y: -24.1}
+  m_AnchoredPosition: {x: 14.081003, y: -25.674002}
   m_SizeDelta: {x: 131.274, y: 20.865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &914150293
@@ -8380,7 +8597,7 @@ MonoBehaviour:
   - ACEPTO LOS TERMINOS Y CONDICIONES DEL SERVICIO
   - I ACCEPT THE TERMS OF SERVICE
   - j'accepte les termes et conditions du service
-  - "eu aceito os termos e condi\xE7\xF5es do servi\xE7o"
+  - eu aceito os termos e condicoes do servico
   Upper: 1
 --- !u!114 &951243337
 MonoBehaviour:
@@ -8701,8 +8918,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000000059605, y: -0.0000015497}
-  m_SizeDelta: {x: 41.158, y: 15.731}
+  m_AnchoredPosition: {x: -1.5, y: -0.0000012517}
+  m_SizeDelta: {x: 50.225, y: 15.422}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972545081
 MonoBehaviour:
@@ -8718,7 +8935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Traduccion:
   - INGRESAR
-  - SIGN IN
+  - LOGIN
   - CONNEXION
   - CONECTE-SE
   Upper: 1
@@ -8770,7 +8987,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.65
+  m_fontSize: 12.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8831,6 +9048,7 @@ GameObject:
   - component: {fileID: 979812577}
   - component: {fileID: 979812579}
   - component: {fileID: 979812578}
+  - component: {fileID: 979812580}
   m_Layer: 5
   m_Name: Body
   m_TagString: Untagged
@@ -8855,8 +9073,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66.919, y: -24.626001}
-  m_SizeDelta: {x: 209.914, y: 30.413}
+  m_AnchoredPosition: {x: 62.816, y: -25.991}
+  m_SizeDelta: {x: 228.747, y: 29.996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979812578
 MonoBehaviour:
@@ -8907,7 +9125,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.2
+  m_fontSize: 12.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8957,6 +9175,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979812576}
   m_CullTransparentMesh: 1
+--- !u!114 &979812580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979812576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - "Para garantizar tu seguridad requerimos que tu contrase\xF1a cumpla estas caracteristicas:"
+  - 'To guarantee your security we require that your password have certain characteristics:'
+  - 'Pour garantir votre securite, nous exigeons que votre mot de passe reponde a
+    ces caracteristiques :'
+  - 'Para garantir sua seguranca, exigimos que sua senha atenda a estas caracteristicas:'
+  Upper: 0
 --- !u!1 &984549434
 GameObject:
   m_ObjectHideFlags: 0
@@ -8968,6 +9205,7 @@ GameObject:
   - component: {fileID: 984549435}
   - component: {fileID: 984549437}
   - component: {fileID: 984549436}
+  - component: {fileID: 984549438}
   m_Layer: 5
   m_Name: Condition 3
   m_TagString: Untagged
@@ -8992,7 +9230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.4, y: -96.8}
+  m_AnchoredPosition: {x: 28.449999, y: -115.7}
   m_SizeDelta: {x: 131.274, y: 20.865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984549436
@@ -9093,6 +9331,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984549434}
   m_CullTransparentMesh: 1
+--- !u!114 &984549438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984549434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - Evita usar caracteres especiales
+  - Avoid using special characters
+  - Evitez d'utiliser des caracteres speciaux
+  - Evite usar caracteres especiais
+  Upper: 1
 --- !u!850595691 &1006404531
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -12609,7 +12865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1529809448
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12782,8 +13038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.9}
-  m_SizeDelta: {x: 70.3, y: 15.789}
+  m_AnchoredPosition: {x: -0.75, y: 0.421}
+  m_SizeDelta: {x: 53.514, y: 15.565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1554044682
 MonoBehaviour:
@@ -12851,7 +13107,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.7
+  m_fontSize: 12.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13442,6 +13698,7 @@ GameObject:
   - component: {fileID: 1719660238}
   - component: {fileID: 1719660240}
   - component: {fileID: 1719660239}
+  - component: {fileID: 1719660241}
   m_Layer: 5
   m_Name: Condition 1
   m_TagString: Untagged
@@ -13466,7 +13723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.703003, y: -55.385998}
+  m_AnchoredPosition: {x: 25.753, y: -74.285995}
   m_SizeDelta: {x: 125.88, y: 23.676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719660239
@@ -13567,6 +13824,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719660237}
   m_CullTransparentMesh: 1
+--- !u!114 &1719660241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719660237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - Tener al menos 6 caracteres
+  - Have at least 6 characters
+  - Avoir au moins 6 caracteres
+  - Ter pelo menos 6 caracteres
+  Upper: 0
 --- !u!1 &1726619361
 GameObject:
   m_ObjectHideFlags: 0
@@ -14221,7 +14496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.6, y: -65.83001}
+  m_AnchoredPosition: {x: 14.081003, y: -67.40401}
   m_SizeDelta: {x: 131.274, y: 20.865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782415390
@@ -14667,6 +14942,7 @@ GameObject:
   - component: {fileID: 1829800316}
   - component: {fileID: 1829800318}
   - component: {fileID: 1829800317}
+  - component: {fileID: 1829800319}
   m_Layer: 5
   m_Name: Condition 2
   m_TagString: Untagged
@@ -14691,7 +14967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.299995, y: -76.100006}
+  m_AnchoredPosition: {x: 29.780998, y: -77.674}
   m_SizeDelta: {x: 117.374, y: 20.135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829800317
@@ -14792,6 +15068,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829800315}
   m_CullTransparentMesh: 1
+--- !u!114 &1829800319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829800315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - Tener al menos un numero
+  - Have at least one number
+  - Avoir au moins un numero
+  - Tenha pelo menos um numero
+  Upper: 0
 --- !u!1 &1836520312
 GameObject:
   m_ObjectHideFlags: 0
@@ -15116,6 +15410,7 @@ GameObject:
   - component: {fileID: 1876973639}
   - component: {fileID: 1876973641}
   - component: {fileID: 1876973640}
+  - component: {fileID: 1876973642}
   m_Layer: 5
   m_Name: Condition 1
   m_TagString: Untagged
@@ -15140,7 +15435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 47.552998, y: -58.086002}
+  m_AnchoredPosition: {x: 34.034, y: -59.66}
   m_SizeDelta: {x: 125.88, y: 23.676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876973640
@@ -15241,6 +15536,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876973638}
   m_CullTransparentMesh: 1
+--- !u!114 &1876973642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876973638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - Tener al menos 7 caracteres
+  - Have at least 7 characters
+  - Avoir au moins 7 caracteres
+  - Ter pelo menos 7 caracteres
+  Upper: 0
 --- !u!1 &1887082258
 GameObject:
   m_ObjectHideFlags: 0
@@ -15988,7 +16301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.750004, y: -21.4}
+  m_AnchoredPosition: {x: 5.8, y: -40.3}
   m_SizeDelta: {x: 131.274, y: 20.865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952486601
@@ -16313,6 +16626,7 @@ GameObject:
   - component: {fileID: 2067636244}
   - component: {fileID: 2067636246}
   - component: {fileID: 2067636245}
+  - component: {fileID: 2067636247}
   m_Layer: 5
   m_Name: Password
   m_TagString: Untagged
@@ -16344,8 +16658,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -76.84001, y: 0.7550039}
-  m_SizeDelta: {x: 77.495, y: 23.703}
+  m_AnchoredPosition: {x: -65.387, y: -2}
+  m_SizeDelta: {x: 100.402, y: 23.711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067636245
 MonoBehaviour:
@@ -16395,11 +16709,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 19.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 12.6
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -16445,6 +16759,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067636243}
   m_CullTransparentMesh: 1
+--- !u!114 &2067636247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067636243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33efac43bb0774f9309241e3ece174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Traduccion:
+  - "CONTRASE\xD1A:"
+  - 'PASSWORD:'
+  - 'LE MOT DE PASSE:'
+  - 'SENHA:'
+  Upper: 1
 --- !u!1 &2087746735
 GameObject:
   m_ObjectHideFlags: 0
@@ -16979,11 +17311,101 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1458315146}
+    - target: {fileID: 3283246956384393009, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956384393009, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956384393009, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956384393009, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956384393009, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956384393009, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3283246956556522249, guid: 0504429ff146c2e468bf449ee7551772,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1458315146}
+    - target: {fileID: 3283246956560872193, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956560872193, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956560872193, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956560872193, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956560872193, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246956560872193, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957294959064, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957294959064, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957294959064, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957294959064, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957294959064, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957294959064, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3283246957337465673, guid: 0504429ff146c2e468bf449ee7551772,
         type: 3}
       propertyPath: m_Pivot.x
@@ -17094,10 +17516,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: LanguagePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3283246957337465718, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3283246957642345361, guid: 0504429ff146c2e468bf449ee7551772,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1458315146}
+    - target: {fileID: 3283246957665871142, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957665871142, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957665871142, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957665871142, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957665871142, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283246957665871142, guid: 0504429ff146c2e468bf449ee7551772,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0504429ff146c2e468bf449ee7551772, type: 3}

@@ -1,0 +1,532 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.2f1 (d6360bedb9a0) revision 14038539'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19042) 64bit Professional' Language: 'es' Physical Memory: 16225 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\2021.3.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/juanc/ProjectM_3/Untime-Clash-Beta/ProjectM
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+57974
+Successfully changed project path to: C:/Users/juanc/ProjectM_3/Untime-Clash-Beta/ProjectM
+C:/Users/juanc/ProjectM_3/Untime-Clash-Beta/ProjectM
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 217.54 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.2f1 (d6360bedb9a0)
+[Subsystems] Discovering subsystems at path D:/2021.3.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/juanc/ProjectM_3/Untime-Clash-Beta/ProjectM/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon RX 5500 XT (ID=0x7340)
+    Vendor:   ATI
+    VRAM:     8151 MB
+    Driver:   30.0.14029.5006
+Initialize mono
+Mono path[0] = 'D:/2021.3.2f1/Editor/Data/Managed'
+Mono path[1] = 'D:/2021.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/2021.3.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56956
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/2021.3.2f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: D:/2021.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: D:/2021.3.2f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Register platform support module: D:/2021.3.2f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.008235 seconds.
+Native extension for UWP target not found
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 151.42 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.097 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1098ms)
+		BeginReloadAssembly (103ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (693ms)
+			LoadAssemblies (104ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (151ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (422ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (79ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (152ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (130ms)
+				ProcessInitializeOnLoadMethodAttributes (60ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.046152 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for UWP target not found
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 157.80 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unable to write to 'ProjectSettings\GvhProjectSettings.xml' (System.IO.IOException: Sharing violation on path C:\Users\juanc\ProjectM_3\Untime-Clash-Beta\ProjectM\ProjectSettings\GvhProjectSettings.xml
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <6073cf49ed704e958b8a66d540dea948>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <6073cf49ed704e958b8a66d540dea948>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean useAsync) [0x00000] in <6073cf49ed704e958b8a66d540dea948>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,bool)
+  at System.Xml.XmlWriterSettings.CreateWriter (System.String outputFileName) [0x00051] in <938a03e8c5f34c788591fc3c21d5b34b>:0 
+  at System.Xml.XmlWriter.Create (System.String outputFileName, System.Xml.XmlWriterSettings settings) [0x0000a] in <938a03e8c5f34c788591fc3c21d5b34b>:0 
+  at Google.ProjectSettings.Save () [0x0009c] in <3436f8c260f84eac9340d40363cda678>:0 , Project settings were not saved!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+Google.Logger:Log (string,Google.LogLevel)
+Google.ProjectSettings:Save ()
+Google.ProjectSettings:SetBool (string,bool,Google.SettingsLocation)
+Google.ProjectSettings:SetBool (string,bool)
+Google.IOSResolver:set_VerboseLoggingEnabled (bool)
+Google.IOSResolver:.cctor ()
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  2.259 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2260ms)
+		BeginReloadAssembly (271ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (140ms)
+		EndReloadAssembly (1842ms)
+			LoadAssemblies (166ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (374ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (117ms)
+			SetupLoadedEditorAssemblies (1108ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (30ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (158ms)
+				BeforeProcessingInitializeOnLoad (173ms)
+				ProcessInitializeOnLoadAttributes (527ms)
+				ProcessInitializeOnLoadMethodAttributes (215ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 2.10 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5101 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 180 unused Assets / (36.3 KB). Loaded Objects now: 5443.
+Memory consumption went from 295.6 MB to 295.6 MB.
+Total: 9.415000 ms (FindLiveObjects: 0.552800 ms CreateObjectMapping: 0.351800 ms MarkObjects: 8.410600 ms  DeleteObjects: 0.098500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 385257.615417 seconds.
+  path: Assets/Resources/Towers/World5/Particle System.prefab
+  artifactKey: Guid(2068b5b4848b3ef40b2c10c1246a059e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/Particle System.prefab using Guid(2068b5b4848b3ef40b2c10c1246a059e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a7c1285153abc13e8833221c92418c6') in 2.416822 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedMid.prefab
+  artifactKey: Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedMid.prefab using Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edb7177c187c10dc07f06be97fcc15eb') in 12.132834 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueIzq.prefab
+  artifactKey: Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueIzq.prefab using Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a1263f6b2c1cdb1f2e4db81372610d') in 0.809068 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 81.072526 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueDer.prefab
+  artifactKey: Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueDer.prefab using Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '835e049c3217ec572cbe61bbe75f1b8e') in 0.813588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.825169 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueDer.prefab
+  artifactKey: Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueDer.prefab using Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04e089938f9e84c864ad348b054961cb') in 0.797269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.755037 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueDer.prefab
+  artifactKey: Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueDer.prefab using Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45eaec15cc7072b4c99220a45159c377') in 0.791952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.755863 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueDer.prefab
+  artifactKey: Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueDer.prefab using Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ea061f41da3da162c557b85ce442a7a') in 0.795354 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.686083 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueDer.prefab
+  artifactKey: Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueDer.prefab using Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27e3f2cd48f25dbe3249cca95d4a04bc') in 1.465026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.805188 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueDer.prefab
+  artifactKey: Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueDer.prefab using Guid(71f546033c500254dac48ad18ff3ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dea93d0176c09e339ae4697d7c2d8ec8') in 0.793278 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 77.001950 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueIzq.prefab
+  artifactKey: Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueIzq.prefab using Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00dba0eea2a038b4ca013e0e30e6c8b2') in 0.791725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.454290 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueIzq.prefab
+  artifactKey: Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueIzq.prefab using Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b45942a3c4162bb9067b9f472a793d31') in 0.797618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.670143 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueIzq.prefab
+  artifactKey: Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueIzq.prefab using Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a028fbe2fb29a195595c381e4c4bd841') in 0.795308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.455024 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueIzq.prefab
+  artifactKey: Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueIzq.prefab using Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51456b99c4e032761822a8303fb3a791') in 0.788869 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.360675 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueIzq.prefab
+  artifactKey: Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueIzq.prefab using Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd344e2799e11cb937faa24b45b0e80fc') in 0.792620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.505775 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueIzq.prefab
+  artifactKey: Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueIzq.prefab using Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6257b8db3d343660eb0c9824c4819f6') in 0.795941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 255.302644 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueIzq.prefab
+  artifactKey: Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueIzq.prefab using Guid(7320ef40a52632943acd007f10455163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8d5e3c7d3fd227f3d5a895fa4be36ba') in 6.047663 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 304.818257 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueMid.prefab
+  artifactKey: Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueMid.prefab using Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23dd020da355d8729409d05e122f038b') in 1.466932 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.343600 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueMid.prefab
+  artifactKey: Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueMid.prefab using Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b56fde70d8f1c0933a2388a96d0903f') in 0.869401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.139324 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueMid.prefab
+  artifactKey: Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueMid.prefab using Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27dd3ad74026fe298e06682fdf155af2') in 0.863652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.030836 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueMid.prefab
+  artifactKey: Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueMid.prefab using Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdd23bfbef35265965509b099738f5bb') in 1.656117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.601188 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueMid.prefab
+  artifactKey: Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueMid.prefab using Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e6fb97040bda12d6bb94a5e04d4711c') in 2.175935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.833812 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueMid.prefab
+  artifactKey: Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueMid.prefab using Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ea1f2e7a67d21da382d8a3f9e1a6e63') in 5.658738 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 58.037745 seconds.
+  path: Assets/Resources/Towers/World5/TowerBlueMid.prefab
+  artifactKey: Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerBlueMid.prefab using Guid(601e08bc33407264c8fcdf302bf25fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73597f54ab7f2bdbf419c4e5c19b7621') in 2.905441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 76.526027 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedDer.prefab
+  artifactKey: Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedDer.prefab using Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc44aa4b7e0d909c28f0d8937d3cc4ea') in 2.180022 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.247097 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedDer.prefab
+  artifactKey: Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedDer.prefab using Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4888126591898fb786d449a58805505b') in 0.795956 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.531701 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedDer.prefab
+  artifactKey: Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedDer.prefab using Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cef7edf8c217996765a406cab7efea5b') in 1.483229 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.096050 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedDer.prefab
+  artifactKey: Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedDer.prefab using Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79fa4d3f958e08032d99798bdaba7ac8') in 0.786839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.046592 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedDer.prefab
+  artifactKey: Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedDer.prefab using Guid(0fe5107a6bdca7c469df7a2421ab78b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66aa5e87844569b2ec0e577eb2b74376') in 0.786775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 126.204948 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedIzq.prefab
+  artifactKey: Guid(335b698e746db8d409f507c4e503331e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedIzq.prefab using Guid(335b698e746db8d409f507c4e503331e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c09750fb5f03af3718a4aa252af6d97b') in 0.814479 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.122317 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedIzq.prefab
+  artifactKey: Guid(335b698e746db8d409f507c4e503331e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedIzq.prefab using Guid(335b698e746db8d409f507c4e503331e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef3f98c06427700d2d7513e89342fb8f') in 0.802640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.845503 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedMid.prefab
+  artifactKey: Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedMid.prefab using Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64dbc805fb3ff5b9548dfe5df3ddc6b5') in 0.885801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.576574 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedMid.prefab
+  artifactKey: Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedMid.prefab using Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01d9c81dde40272a380da4ebdf0b520a') in 0.870764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 57.406280 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedMid.prefab
+  artifactKey: Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedMid.prefab using Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c1d32952c49f4ff0ae793d3169f628b') in 0.883652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.299441 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedMid.prefab
+  artifactKey: Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedMid.prefab using Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54abdd5b9c9ddc8851159ef295dd22e0') in 0.875636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.764493 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedMid.prefab
+  artifactKey: Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedMid.prefab using Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '459249e0d906f8d872d44484c18e90f9') in 0.871715 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.810877 seconds.
+  path: Assets/Resources/Towers/World5/TowerRedMid.prefab
+  artifactKey: Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Towers/World5/TowerRedMid.prefab using Guid(a9cbce94e38434941b238fbaad64819b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bc53ef6fb86686128bafc2525f0251f') in 0.869279 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.967946 seconds.
+  path: Assets/Scenes/Chat 1.prefab
+  artifactKey: Guid(89b77224282fe1f4984a9488caa56c18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Chat 1.prefab using Guid(89b77224282fe1f4984a9488caa56c18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bef82aecf44462e3810e8578c5706f18') in 4.871696 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Scenes/LoadingGame.unity
+  artifactKey: Guid(9d778680fdbe1a54bba4ed2c907d50dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LoadingGame.unity using Guid(9d778680fdbe1a54bba4ed2c907d50dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00e5a825ae06f42d65116abcfbc9fa88') in 0.007377 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.043739 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for UWP target not found
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 2.30 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.707 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2708ms)
+		BeginReloadAssembly (197ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (63ms)
+		EndReloadAssembly (2368ms)
+			LoadAssemblies (155ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (353ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (85ms)
+			SetupLoadedEditorAssemblies (1657ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (587ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (144ms)
+				ProcessInitializeOnLoadAttributes (700ms)
+				ProcessInitializeOnLoadMethodAttributes (217ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (15ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 23.60 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4931 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 130 unused Assets / (29.2 KB). Loaded Objects now: 5501.
+Memory consumption went from 296.6 MB to 296.5 MB.
+Total: 9.410200 ms (FindLiveObjects: 0.575000 ms CreateObjectMapping: 0.294700 ms MarkObjects: 8.454400 ms  DeleteObjects: 0.084800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 48.56 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 128 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 128 unused Assets / (25.6 KB). Loaded Objects now: 5501.
+Memory consumption went from 194.0 MB to 194.0 MB.
+Total: 10.124300 ms (FindLiveObjects: 0.470100 ms CreateObjectMapping: 0.250800 ms MarkObjects: 9.344300 ms  DeleteObjects: 0.058000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.040915 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for UWP target not found
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 3.04 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 33.024 seconds
+Domain Reload Profiling:
+	ReloadAssembly (35272ms)
+		BeginReloadAssembly (2644ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (28ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (179ms)
+		EndReloadAssembly (32116ms)
+			LoadAssemblies (191ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (407ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (93ms)
+			SetupLoadedEditorAssemblies (10481ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8076ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (155ms)
+				ProcessInitializeOnLoadAttributes (2019ms)
+				ProcessInitializeOnLoadMethodAttributes (222ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (15ms)
+Platform modules already initialized, skipping
