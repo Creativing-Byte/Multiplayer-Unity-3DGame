@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6204897697603275887}
   - component: {fileID: 9166365623206071212}
   - component: {fileID: 1003882682281021697}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: templo_secundario3.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: -1603815937010821247}
   - component: {fileID: -2793881716211230060}
   - component: {fileID: -7964692548222889162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerRedDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,8 @@ MonoBehaviour:
   destruccion: {fileID: 2815352054865152379}
   DestruccionFx: {fileID: 8300000, guid: cd010edbec4999c46bc5942659a4aec1, type: 3}
   canonInst: {fileID: 0}
-  BarraVida: {fileID: 5674442788051247298}
+  BarraVida: {fileID: 1804200761118418897, guid: b16711a4ad1823543955f70141f8770e,
+    type: 3}
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
     type: 3}
   AnchuraMax: 2
@@ -311,7 +312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6778112775671952115}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tower3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +348,7 @@ GameObject:
   - component: {fileID: 804319451905288753}
   - component: {fileID: 3206306205252967290}
   - component: {fileID: 7961628023939549660}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +569,7 @@ GameObject:
   - component: {fileID: 8160180591366999335}
   - component: {fileID: 8160180591366999334}
   - component: {fileID: 8160180591366999329}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cartoon flame (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,6 +738,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion
       objectReference: {fileID: 0}
+    - target: {fileID: 4419550328493127266, guid: 3712cfbc1f1ad3042ad487d5959677df,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3712cfbc1f1ad3042ad487d5959677df, type: 3}
 --- !u!4 &145944222652405996 stripped
@@ -818,6 +824,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 6021357986399158356, guid: 2068b5b4848b3ef40b2c10c1246a059e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7017906227914589989, guid: 2068b5b4848b3ef40b2c10c1246a059e,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -851,12 +862,12 @@ PrefabInstance:
     - target: {fileID: 1804200759214162154, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1804200760052715886, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1804200760052715886, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
@@ -871,7 +882,7 @@ PrefabInstance:
     - target: {fileID: 1804200760365539034, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1804200760365539035, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
@@ -891,7 +902,7 @@ PrefabInstance:
     - target: {fileID: 1804200761118418897, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1804200761118418897, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
@@ -1013,20 +1024,40 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3243828630151107456, guid: b16711a4ad1823543955f70141f8770e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5438046300195478202, guid: b16711a4ad1823543955f70141f8770e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484256967507494417, guid: b16711a4ad1823543955f70141f8770e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6256852586497525557, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6530797109614835308, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6530797109614835308, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918096514307051829, guid: b16711a4ad1823543955f70141f8770e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7035208780187279712, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
@@ -1038,6 +1069,11 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 64.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7760795172886636406, guid: b16711a4ad1823543955f70141f8770e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7769217032023415413, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
       propertyPath: m_text
@@ -1046,7 +1082,7 @@ PrefabInstance:
     - target: {fileID: 7862949952709837091, guid: b16711a4ad1823543955f70141f8770e,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3117783276083577526, guid: b16711a4ad1823543955f70141f8770e, type: 3}
