@@ -258,7 +258,7 @@ public class DataManager : MonoBehaviour
 
         if (diceBet > 0)
         {
-            var diceRef = FirebaseDatabase.DefaultInstance.GetReference("users").Child(Launcher.DatosUser.Key).Child("Date").Child("dice");
+            var diceRef = FirebaseDatabase.DefaultInstance.GetReference("users").Child(Launcher.DatosUser.Key).Child("Date").Child("tokens");
 
 
             if (int.Parse((await diceRef.GetValueAsync()).Value.ToString()) < diceBet)
