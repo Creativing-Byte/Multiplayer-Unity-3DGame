@@ -36,6 +36,7 @@ Transform:
   - {fileID: 4148993337365336137}
   - {fileID: 7275438265216134590}
   - {fileID: 4760379198959162368}
+  - {fileID: 8872693559700614523}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -66,7 +67,7 @@ MonoBehaviour:
     Flying: 1
   destruccion: {fileID: 4747867364147412009}
   DestruccionFx: {fileID: 8300000, guid: cd010edbec4999c46bc5942659a4aec1, type: 3}
-  canonInst: {fileID: 0}
+  canonInst: {fileID: 265167906313294356}
   BarraVida: {fileID: 1804200761118418897, guid: b16711a4ad1823543955f70141f8770e,
     type: 3}
   balaOffline: {fileID: 5688194942223606593, guid: 98e7f8d6c104d4c48885c186f6850625,
@@ -219,6 +220,51 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!1 &265167906313294356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8872693559700614523}
+  - component: {fileID: 9147833155763809911}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8872693559700614523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265167906313294356}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1904068, y: 0.41817093, z: -9.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2524074851245766252}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9147833155763809911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265167906313294356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4f8b139f638234280e76435f24fa7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canon: {fileID: 0}
 --- !u!1 &1928047459303138054
 GameObject:
   m_ObjectHideFlags: 0
