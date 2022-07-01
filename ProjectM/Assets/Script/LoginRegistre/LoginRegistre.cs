@@ -90,7 +90,7 @@ public class LoginRegistre : MonoBehaviour
                     string deck1 = Guid.NewGuid().ToString();
                     GameObject Launcher = GameObject.FindGameObjectWithTag("Launcher");
                     var userDb = Launcher.GetComponent<UserDbInit>();
-                    await userDb.writeNewUser(user.UserId, LoginRegistreInput[3].text, user.Email, 50, 50, 50, 0, 0, DateTime.UtcNow.ToString("MM'/'dd'/'yyyy' 'HH':'mm':'ss"), "Tutorial", deck1, deck1, Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), carta, friends);
+                    await userDb.writeNewUser(user.UserId, LoginRegistreInput[3].text, user.Email, 10, 50, 0, 0, 0, DateTime.UtcNow.ToString("MM'/'dd'/'yyyy' 'HH':'mm':'ss"), "Tutorial", deck1, deck1, Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), carta, friends, "None");
                     userDb.reloadDate();
                 }
             }

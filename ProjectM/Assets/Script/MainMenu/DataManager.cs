@@ -20,9 +20,13 @@ public class DataManager : MonoBehaviour
     public TextMeshProUGUI Infolevel;
     public LobbyControl Lobbycontrol;
     public Text username;
+    public bool Mstatus;
+    public TextMeshProUGUI isSubscribedText;
     public Image progress;
     public Button UserInfo;
     public GameObject UserInfoPanel;
+    public Color premiumcolor;
+    public Color Normalcolor;
 
     [Header("User Exp System")]
     public Image BarExp;
@@ -65,6 +69,7 @@ public class DataManager : MonoBehaviour
         CasinoDivisas[1].text = Launcher.DatosUser.Child("Date").Child("Etokens").Value.ToString();
         CasinoDivisas[2].text = Launcher.DatosUser.Child("Date").Child("Etokens").Value.ToString();
 
+
         username.text = Launcher.DatosUser.Child("Date").Child("username").Value.ToString();
         username.gameObject.transform.GetChild(0).GetComponent<Text>().text = username.text;
 
@@ -83,6 +88,8 @@ public class DataManager : MonoBehaviour
 
         InfoUsername.text = Launcher.DatosUser.Child("Date").Child("username").Value.ToString();
         Infolevel.text = LevelCurrent.ToString();
+
+        Mstatus = Convert.ToBoolean (Launcher.DatosUser.Child("Date").Child("Mstatus").Value.ToString());
 
         UpdateDate();
     }
@@ -104,12 +111,21 @@ public class DataManager : MonoBehaviour
         VersionInfo.text = "Version: " + Application.version;
         float Range = 1.0f / ExpMax * ExpCurrent;
         BarExp.fillAmount = Range;
-        progress.fillAmount = float.Parse(Launcher.DatosUser.Child("Date").Child("destreza").Value.ToString())/20;
+        progress.fillAmount = float.Parse(Launcher.DatosUser.Child("Date").Child("destreza").Value.ToString()) / 20;
 
         Exp.text = ExpCurrent + "/" + ExpMax;
         Exp.gameObject.transform.GetChild(0).GetComponent<Text>().text = Exp.text;
         Level.gameObject.transform.GetChild(0).GetComponent<Text>().text = Level.text;
         username.gameObject.transform.GetChild(0).GetComponent<Text>().text = username.text;
+        isSubscribedText.text = Mstatus ? "PREMIUM USER" : "NO MEMBERSHIP";
+        if (Mstatus == true)
+        {
+            isSubscribedText.color = premiumcolor;
+        }
+        else
+        {
+            isSubscribedText.color = Normalcolor;
+        }
 
         //if (gift == 1)
         //{
@@ -200,7 +216,7 @@ public class DataManager : MonoBehaviour
             CasinoDivisas[0].text = args.Snapshot.Child("tokens").Value.ToString();
             CasinoDivisas[1].text = args.Snapshot.Child("Etokens").Value.ToString();
             CasinoDivisas[2].text = args.Snapshot.Child("Etokens").Value.ToString();
-
+            Mstatus = Convert.ToBoolean (args.Snapshot.Child("Mstatus").Value.ToString());
 
             username.text = args.Snapshot.Child("username").Value.ToString();
 
@@ -324,6 +340,16 @@ public class DataManager : MonoBehaviour
         return (x / y) * y;
     }
 
+    public void Updatestatusactive()
+    {
+        UserDataRef.Child("Mstatus").SetValueAsync(true);
+    }
+
+    public void Updatestatusinactive()
+    {
+        UserDataRef.Child("Mstatus").SetValueAsync(false);
+    }
+
 
     public void UnlockGift()
     {
@@ -348,6 +374,9 @@ public class DataManager : MonoBehaviour
             GiftReward();
         }
     }
+
+
+
     void GiftReward()
     {
         bool oro = UnityEngine.Random.Range(0, 10) == 1;
@@ -386,6 +415,99 @@ public class DataManager : MonoBehaviour
             UserDataRef.Child("exp").SetValueAsync(ExpReward);
         }
 
+    }
+
+    //Store Voids
+    public void Buying1() // Codigo para presentacion, Corregir despues
+
+    {
+        int CGems = int.Parse(Launcher.DatosUser.Child("Date").Child("diamond").Value.ToString());
+        if (CGems >= 45)
+        {
+            Debug.Log("El usuario tiene suficientes gemas");
+            BuyCoins1();
+        }
+        else
+        {
+            Debug.Log("El usuario no tiene suficientes gemas");
+        }
+
+    }
+    public void Buying2() // Codigo para presentacion, Corregir despues
+
+    {
+        int CGems = int.Parse(Launcher.DatosUser.Child("Date").Child("diamond").Value.ToString());
+        if (CGems >= 89)
+        {
+            Debug.Log("El usuario tiene suficientes gemas");
+            BuyCoins2();
+        }
+        else
+        {
+            Debug.Log("El usuario no tiene suficientes gemas");
+        }
+
+    }
+    public void Buying3() // Codigo para presentacion, Corregir despues
+
+    {
+        int CGems = int.Parse(Launcher.DatosUser.Child("Date").Child("diamond").Value.ToString());
+        if (CGems >= 180)
+        {
+            Debug.Log("El usuario tiene suficientes gemas");
+            BuyCoins3();
+        }
+        else
+        {
+            Debug.Log("El usuario no tiene suficientes gemas");
+        }
+
+    }
+    public void BuyCoins1()
+    {
+        int coin = int.Parse(Launcher.DatosUser.Child("Date").Child("coins").Value.ToString());
+        int coinsadded = coin + 420;
+        Debug.Log("Coins" + coinsadded);
+        UserDataRef.Child("coins").SetValueAsync(coinsadded);
+    }
+    public void BuyCoins2()
+    {
+        int coin = int.Parse(Launcher.DatosUser.Child("Date").Child("coins").Value.ToString());
+        int coinsadded = coin + 1000;
+        Debug.Log("Coins" + coinsadded);
+        UserDataRef.Child("coins").SetValueAsync(coinsadded);
+    }
+    public void BuyCoins3()
+    {
+        int coin = int.Parse(Launcher.DatosUser.Child("Date").Child("coins").Value.ToString());
+        int coinsadded = coin + 2500;
+        Debug.Log("Coins" + coinsadded);
+        UserDataRef.Child("coins").SetValueAsync(coinsadded);
+    }
+    public void BuyPremiumTicket()
+    {
+        UserDataRef.Child("Mstatus").SetValueAsync(true);
+    }
+    public void BuyPunchOfGems()
+    {
+        int Gems = int.Parse(Launcher.DatosUser.Child("Date").Child("diamond").Value.ToString());
+        int GemsAdded = Gems + 200;
+        Debug.Log("Gems " + GemsAdded);
+        UserDataRef.Child("diamond").SetValueAsync(GemsAdded);
+    }
+    public void BuyGemsBucket()
+    {
+        int Gems = int.Parse(Launcher.DatosUser.Child("Date").Child("diamond").Value.ToString());
+        int GemsAdded = Gems + 700;
+        Debug.Log("Gems " + GemsAdded);
+        UserDataRef.Child("diamond").SetValueAsync(GemsAdded);
+    }
+    public void BuyGemsChest()
+    {
+        int Gems = int.Parse(Launcher.DatosUser.Child("Date").Child("diamond").Value.ToString());
+        int GemsAdded = Gems + 1600;
+        Debug.Log("Gems " + GemsAdded);
+        UserDataRef.Child("diamond").SetValueAsync(GemsAdded);
     }
 
     private void OnDestroy() 
