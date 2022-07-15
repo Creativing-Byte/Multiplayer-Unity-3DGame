@@ -8,7 +8,7 @@ public class User
     public int diamond;
     public int tokens;
     public int Etokens;
-    public int Mstatus;
+    public bool Mstatus;
     public string ultcon;
     public string scene;
     public string deckid;
@@ -18,11 +18,13 @@ public class User
     public int gift;
     public string giftUnlocked;
     public List<string> friends;
+    public string cmail;
+
     public User()
     {
     }
 
-    public User(string username, string email, int destreza, int coins, int diamond, int tokens, int Etokens, int Mstatus, string ultcon, string scene, string deckid, int level, int exp, int dice, int gift, string giftUnlocked, List<string> friends)
+    public User(string username, string email, int destreza, int coins, int diamond, int tokens, int Etokens, bool Mstatus, string ultcon, string scene, string deckid, int level, int exp, int dice, int gift, string giftUnlocked, List<string> friends, string cmail)
     {
         this.username = username;
         this.email = email;
@@ -41,6 +43,7 @@ public class User
         this.gift = gift;
         this.giftUnlocked = giftUnlocked;
         this.friends = friends;
+        this.cmail = cmail;
     }
 }
 
