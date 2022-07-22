@@ -70147,6 +70147,9 @@ MonoBehaviour:
   fullName: {fileID: 485803773}
   adrress: {fileID: 661653076}
   PaypalEmail: {fileID: 292160887}
+  moneyImput: {fileID: 0}
+  money: 0
+  token: 
 --- !u!1 &1305115197
 GameObject:
   m_ObjectHideFlags: 0
@@ -75269,7 +75272,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1388440918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303905543}
+        m_TargetAssemblyTypeName: InfoFirebasePayPal, Assembly-CSharp
+        m_MethodName: EscibirSimple
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1388440918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79449,7 +79464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15775, y: 0.3}
   m_AnchorMax: {x: 0.81058335, y: 0.3416715}
-  m_AnchoredPosition: {x: 19, y: 1}
+  m_AnchoredPosition: {x: 19, y: 1.000061}
   m_SizeDelta: {x: 36.88501, y: 78.94299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1449305194
@@ -83745,7 +83760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.41500002, y: 0.19600001}
   m_AnchorMax: {x: 0.55385345, y: 0.24100001}
-  m_AnchoredPosition: {x: -4.3378906, y: 1.8155975}
+  m_AnchoredPosition: {x: -4.3378906, y: 1.8160248}
   m_SizeDelta: {x: -4.3149986, y: 6.9117126}
   m_Pivot: {x: 1.2289239, y: 1.1203613}
 --- !u!95 &1529492242

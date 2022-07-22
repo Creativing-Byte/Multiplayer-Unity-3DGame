@@ -5,35 +5,8 @@ using UnityEngine.Networking;
 
 public class WebRequest : MonoBehaviour
 {
-    [System.Serializable]
-    public struct Data
-    {
-        public string username;
-        public string password;
 
-    }
-    public string user;
-    public int monedas;
-    public Data dataWeb;
-    public string token;
-    [ContextMenu("Leer Simple")]
-    public void LeerSimple()
-    {
-        StartCoroutine(CorrutinaLeerSimple());
-    }
-    IEnumerator CorrutinaLeerSimple()
-    {
-        UnityWebRequest web = UnityWebRequest.Get("http://moneywar.procotec.com.co/api/Authentication");
-        yield return web.SendWebRequest();
-        Debug.Log(UnityWebRequest.Result.ProtocolError);
-    }
-    [ContextMenu("Escribir Simple")]
-    public void EscibirSimple()
-    {
-
-        StartCoroutine(CorrutinaEscibirSimple());
-    }
-    IEnumerator CorrutinaEscibirSimple()
+    /*IEnumerator CorrutinaEscibirSimple()
     {
         WWWForm form = new WWWForm();
         UnityWebRequest web = UnityWebRequest.Put("http://moneywar.procotec.com.co/api/Authentication", "{\"userName\":\"moneywar.admin\",\"password\":\"Colombia2022*\"}");
@@ -70,5 +43,5 @@ public class WebRequest : MonoBehaviour
         {
             Debug.Log(web.downloadHandler.text);
         }
-    }
+    }*/
 }
