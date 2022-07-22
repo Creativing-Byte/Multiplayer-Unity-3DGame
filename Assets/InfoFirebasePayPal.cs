@@ -87,6 +87,7 @@ public class InfoFirebasePayPal : MonoBehaviour
         else
         {
             Debug.Log("Received: " + req.downloadHandler.text);
+            //cqui se debe colocar que la transaccions fue exitosa y se debe descontar las monedas 
         }
     }
 }
